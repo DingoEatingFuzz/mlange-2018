@@ -4,90 +4,86 @@
   box-sizing: border-box;
 }
 
-.layout {
+.home-page {
   display:flex;
   font-size: 2vw;
   font-family: 'Source Sans Pro', sans-serif;
-}
-
-section {
-  height:100vh;
-  width: 70vw;
-  background:white;
-  padding: 0 2rem;
-  text-align: right;
-  display:flex;
-  align-items: center;
-  justify-content: flex-end;
-
-  h1, p {
-    margin:0;
-  }
-
-  h1 {
-    font-family: 'Nunito', sans-serif;
-  }
-
-  p {
-    font-weight: 300;
-  }
-}
-
-nav {
-  height:100vh;
-  width:30vw;
-  background: rgb(224, 224, 231);
-  display:flex;
-  align-items: center;
-
-  ol {
-    padding:0;
-    margin:0;
-    list-style:none;
-    width:100%;
-
-    li {
-      display: block;
-      width:100%;
-    }
-
-    a {
-      text-decoration: none;
-      padding:1rem 2rem;
-      display: block;
-      width:100%;
-      color: rgb(22, 90, 121);
-      transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
-
-      &:hover {
-        background: rgba(0,0,0,0.1);
-        color: rgb(0, 115, 168);
-      }
-    }
-  }
-}
-
-@media (max-width: 900px) and (orientation: portrait), screen and (orientation: portrait) {
-
-  .layout {
-    flex-direction: column;
-    font-size:3vh;
-  }
 
   section {
-    width:100vw;
-    height: 50vh;
-    text-align:center;
-    justify-content: center;
-    align-items: flex-end;
-    padding:2rem 0;
+    height:100vh;
+    width: 70vw;
+    background:white;
+    padding: 0 2rem;
+    text-align: right;
+    display:flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    h1, p {
+      margin:0;
+    }
+
+    h1 {
+      font-family: 'Nunito', sans-serif;
+    }
+
+    p {
+      font-weight: 300;
+    }
   }
 
   nav {
-    width:100vw;
-    height:50vh;
-    align-items:flex-start;
-    text-align: center;
+    height:100vh;
+    width:30vw;
+    background: rgb(224, 224, 231);
+    display:flex;
+    align-items: center;
+
+    ol {
+      padding:0;
+      margin:0;
+      list-style:none;
+      width:100%;
+
+      li {
+        display: block;
+        width:100%;
+      }
+
+      a {
+        text-decoration: none;
+        padding:1rem 2rem;
+        display: block;
+        width:100%;
+        color: rgb(22, 90, 121);
+        transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+
+        &:hover {
+          background: rgba(0,0,0,0.1);
+          color: rgb(0, 115, 168);
+        }
+      }
+    }
   }
 
+  @media (max-width: 900px) and (orientation: portrait), screen and (orientation: portrait) {
+    flex-direction: column;
+    font-size:3vh;
+
+    section {
+      width:100vw;
+      height: 50vh;
+      text-align:center;
+      justify-content: center;
+      align-items: flex-end;
+      padding:2rem 0;
+    }
+
+    nav {
+      width:100vw;
+      height:50vh;
+      align-items:flex-start;
+      text-align: center;
+    }
+  }
 }
