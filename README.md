@@ -1,3 +1,5 @@
+[![forthebadge cc-by-nd](http://ForTheBadge.com/images/badges/cc-by-nd.svg)](https://creativecommons.org/licenses/by-nd/4.0) This project is read-only.
+
 # gatsby-starter-default
 The default Gatsby starter
 
