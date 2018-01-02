@@ -9,7 +9,8 @@ import './index.scss'
 const TemplateWrapper = ({ children }) => (
   <div>
     <Helmet
-      title="Michael Lange"
+      titleTemplate="%s &middot; Michael Lange"
+      defaultTitle="Michael Lange"
       meta={[
         { name: 'description', content: 'Michael Lange, maker of things' },
         { name: 'keywords', content: 'developer, designer, maker, things, javascript, algorithmic art, projects, portfolio' },
