@@ -1,21 +1,46 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import CommonNavigation from '../components/common-navigation'
+import { default as Link, withPrefix } from 'gatsby-link'
 
-const ProjectsPage = () => (
-  <div>
+import './projects.scss'
+
+const ProjectsPage = ({ data }) => (
+  <div className="projects-page">
     <Helmet title="Projects" description="A collection of my larger, more recent, projects."/>
-    <CommonNavigation/>
+
+    <header>
+      <Link to="/">Michael Lange</Link>
+      <CommonNavigation/>
+    </header>
+
     <section>
-      <h1>Projects</h1>
       <ul>
-        <li>Project One</li>
-        <li>Project Two</li>
-        <li>Project Three</li>
-        <li>Project Four</li>
+        {data.dataProjectsToml.projects.map((project, index) => (
+          <li>
+            <h3><a href={project.url}>{project.name}</a></h3>
+            <h4>{project.year}</h4>
+            <p dangerouslySetInnerHTML={{__html: project.description}} />
+            <img src={__PATH_PREFIX__ + project.thumbnail} alt={"Thumbnail for " + project.name} />
+          </li>
+        ))}
       </ul>
     </section>
   </div>
 )
 
 export default ProjectsPage
+
+export const query = graphql`
+  query Projects {
+    dataProjectsToml {
+      projects {
+        name
+        url
+        year
+        thumbnail
+        description
+      }
+    }
+  }
+`

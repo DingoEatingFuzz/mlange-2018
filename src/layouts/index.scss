@@ -1,6 +1,9 @@
-div {
-  h1 {
-    color: black;
-      font-family: sans-serif;
-  }
+@import url('https://fonts.googleapis.com/css?family=Nunito|Source+Sans+Pro:300,400');
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: sans-serif;
 }
