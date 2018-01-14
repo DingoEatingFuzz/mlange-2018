@@ -8,7 +8,7 @@ const CommonNavigation = () => (
       <li><Link to="/writing" activeClassName="active">Writing</Link></li>
       <li><Link to="/blog" activeClassName="active">Blog</Link></li>
       <li><Link to="/talks" activeClassName="active">Talks</Link></li>
-      <li><Link to="/archive" activeClassName="active">Archive</Link></li>
+      <li><Link to="/photography" activeClassName="active">Photography</Link></li>
     </ol>
   </nav>
 )
