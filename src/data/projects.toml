@@ -1,8 +1,9 @@
 [[projects]]
 name = "Nomad Web UI"
+slug = "nomad-web-ui"
 url = "https://nomadproject.io"
 year = 2017
-tags = [ "JavaScript", "EmberJS", "Cluster Scheduler", "DevOps" ]
+tags = [ "JavaScript", "EmberJS", "Cluster Scheduler", "DevOps", "Work" ]
 thumbnail = "/images/nomad-ui.png"
 description = """
 The Web UI for the Nomad cluster scheduler developed and maintained by HashiCorp. Cluster schedulers are tools designed to take arbitrary workloads and run them on arbitrary computers in a cluster. The UI helps operators in an organization maintain availability of services and computation while monitoring resources across the cluster. The UI also helps developers deploy their own services without needing the expertise operators sepcialize in.
@@ -10,6 +11,7 @@ The Web UI for the Nomad cluster scheduler developed and maintained by HashiCorp
 
 [[projects]]
 name = "U.S. in Water"
+slug = "us-in-water"
 url = "http://mlange.io/wc-final"
 year = 2017
 tags = [ "JavaScript", "Cartography", "Tippecanoe", "GCP" ]
@@ -20,16 +22,18 @@ A detailed look at all the rivers, streams, and bodies of water in the United St
 
 [[projects]]
 name = "Climb Tracker"
+slug = "climb-tracker"
 url = "http://climb.mlange.io"
 year = 2016
 tags = [ "JavaScript", "React", "Firebase" ]
-thumbnail = "/images/ct-tracker.png"
+thumbnail = "/images/ct-tracker-thumb.png"
 description = """
 A simple web app for tracking bouldering workouts. It focuses on quickly marking which problems were completed and which were attempted. In this way, at the end of the workout, a histogram and tally of problems and problem difficulties is plotted. There are also monthly reports to look back on.
 """
 
 [[projects]]
 name = "Emoji Skin Tone Randomizer"
+slug = "emoji-skin-tone-randomizer"
 url = "https://github.com/DingoEatingFuzz/chrome-emoji-skin-tone-randomizer"
 year = 2016
 tags = [ "JavaScript", "Chrome" ]
@@ -40,6 +44,7 @@ A chrome extension for assigning a random skin tone to a skin tone eligible emoj
 
 [[projects]]
 name = "Headers Middleman"
+slug = "headers-middleman"
 url = "https://github.com/DingoEatingFuzz/chrome-headers-middleman"
 year = 2015
 tags = [ "JavaScript", "React", "Chrome" ]
@@ -50,6 +55,7 @@ A chrome extension for modifying the headers of HTTP Requests based on regex pat
 
 [[projects]]
 name = "NPR Music We Love Bookmarklets"
+slug = "npr-music-we-love"
 url = "https://github.com/DingoEatingFuzz/npr-music-we-love-bookmarklets"
 year = 2015
 tags = [ "JavaScript", "Browsers" ]
@@ -60,6 +66,7 @@ The NPR Music We Love app was a wonderful things, but it had no way to pin/favor
 
 [[projects]]
 name = "Github Avatar Arrangement"
+slug = "github-avatar-arrangement"
 url = "https://github.com/DingoEatingFuzz/github-gravatars"
 year = 2014
 tags = [ "Python", "Processing" ]
