@@ -1,18 +1,76 @@
+@import url('https://fonts.googleapis.com/css?family=Noticia+Text|Open+Sans');
+
+$sans-stack: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+
 .blog-page {
   width:90vw;
   max-width: 1200px;
   margin:auto;
   font-size:16px;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: $sans-stack;
 
   @media (max-width: 900px) {
     font-size: 2vw;
   }
+}
 
-  section {
-    padding: 2em 0;
-    text-align: center;
-    font-size: 5em;
-    color:#CCC;
+.blog-post {
+  margin:auto;
+  font-size: calc(14px + 0.25vw);
+  line-height: 1.8;
+  font-family: 'Open Sans';
+  font-weight: lighter;
+
+  * {
+    max-width: 40vw;
+    margin-left:auto;
+    margin-right:auto;
+
+    @media (max-width:1500px) {
+      max-width:600px;
+    }
+
+    @media (max-width:650px) {
+      max-width: 90vw;
+    }
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    margin-top: 1.5em;
+    margin-bottom: 0;
+    line-height: 1.2;
+
+    + * {
+      margin-top:0.25em;
+    }
+  }
+
+  ol, ul {
+    padding-left: 3em;
+  }
+
+  dl {
+    margin-top:0;
+    margin-bottom:2em;
+    padding:0;
+    list-style:none;
+    font-family: $sans-stack;
+    font-size:0.8em;
+
+    dd {
+      margin:0;
+      padding:0;
+    }
+  }
+
+  h1.title {
+    font-family: 'Noticia Text';
+    font-weight: bold;
+    font-size: 2em;
+    margin-bottom: 0;
+  }
+
+  @media (max-width:1200px) {
+    font-size: 16px;
   }
 }
