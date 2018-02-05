@@ -8,8 +8,9 @@
     "gatsby-link": "^1.6.32",
     "gatsby-plugin-react-helmet": "^1.0.8",
     "gatsby-plugin-sass": "^1.0.15",
+    "gatsby-remark-prismjs": "^1.2.12",
     "gatsby-source-filesystem": "^1.5.11",
-    "gatsby-transformer-remark": "^1.7.26",
+    "gatsby-transformer-remark": "^1.7.30",
     "gatsby-transformer-toml": "^1.1.7",
     "normalize.css": "^7.0.0",
     "react-masonry-component": "^6.0.2"

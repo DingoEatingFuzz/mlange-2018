@@ -5,7 +5,17 @@ module.exports = {
   plugins: [
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
-    'gatsby-transformer-remark',
+    {
+      resolve: 'gatsby-transformer-remark',
+      options: {
+        plugins: [
+          {
+            resolve: 'gatsby-remark-prismjs',
+            classPrefix: 'language-',
+          },
+        ],
+      },
+    },
     'gatsby-transformer-toml',
     {
       resolve: 'gatsby-source-filesystem',

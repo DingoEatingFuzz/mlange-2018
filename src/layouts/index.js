@@ -6,6 +6,8 @@ import Helmet from 'react-helmet'
 import 'normalize.css'
 import './index.scss'
 
+require("prismjs/themes/prism.css");
+
 const TemplateWrapper = ({ children }) => (
   <div>
     <Helmet
