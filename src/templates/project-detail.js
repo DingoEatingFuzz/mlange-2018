@@ -4,13 +4,14 @@ import Helmet from 'react-helmet'
 import NarrowHeader from '../components/narrow-header'
 import MarkdownArticle from '../components/markdown-article'
 
+import Layout from '../components/layout'
 import '../pages/projects.scss'
 
 export default ({ data }) => {
   const post = data.markdownRemark
   const meta = data.dataProjectsToml.projects.find(p => p.slug === post.fields.id)
   return (
-    <div>
+    <Layout>
       <NarrowHeader link="/projects" noun="projects" />
       <div className="project-detail">
         <Helmet
@@ -28,7 +29,7 @@ export default ({ data }) => {
           </dl>
         </MarkdownArticle>
       </div>
-    </div>
+    </Layout>
   )
 }
 

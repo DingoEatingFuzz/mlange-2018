@@ -3,17 +3,20 @@ import Helmet from 'react-helmet'
 import CommonHeader from '../components/common-header'
 import Link from 'gatsby-link'
 
+import Layout from '../components/layout'
 import './writing.scss'
 
 const WritingPage = () => (
-  <div className="writing-page">
-    <Helmet title="Writing" description="Longer, more polished stories and visual explanations"/>
-    <CommonHeader/>
+  <Layout>
+    <div className="writing-page">
+      <Helmet title="Writing" description="Longer, more polished stories and visual explanations"/>
+      <CommonHeader/>
 
-    <section>
-      Coming Soon.
-    </section>
-  </div>
+      <section>
+        Coming Soon.
+      </section>
+    </div>
+  </Layout>
 )
 
 export default WritingPage

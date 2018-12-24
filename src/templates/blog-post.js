@@ -4,12 +4,13 @@ import Helmet from 'react-helmet'
 import NarrowHeader from '../components/narrow-header'
 import MarkdownArticle from '../components/markdown-article'
 
+import Layout from '../components/layout'
 import '../pages/blog.scss'
 
 export default ({ data }) => {
   const post = data.markdownRemark
   return (
-    <div>
+    <Layout>
       <Helmet
         title={post.frontmatter.title}
         description={post.frontmatter.description || `Blog post posted on ${post.frontmatter.date}`}/>
@@ -24,7 +25,7 @@ export default ({ data }) => {
           </dl>
         </MarkdownArticle>
       </div>
-    </div>
+    </Layout>
   )
 }
 

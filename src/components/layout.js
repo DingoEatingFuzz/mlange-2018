@@ -4,7 +4,7 @@ import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
 
 import 'normalize.css'
-import './index.scss'
+import './layout.scss'
 
 require("prismjs/themes/prism.css");
 
@@ -18,7 +18,7 @@ const TemplateWrapper = ({ children }) => (
         { name: 'keywords', content: 'developer, designer, maker, things, javascript, algorithmic art, projects, portfolio' },
       ]}
     />
-    {children()}
+    {children}
   </div>
 )
 
