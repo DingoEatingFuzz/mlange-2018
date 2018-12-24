@@ -2,11 +2,22 @@
 name = "Nomad Web UI"
 slug = "nomad-web-ui"
 url = "https://nomadproject.io"
-year = 2017
+year = 2018
 tags = [ "JavaScript", "EmberJS", "Cluster Scheduler", "DevOps", "Work" ]
 thumbnail = "/images/nomad-ui.png"
 description = """
 The Web UI for the Nomad cluster scheduler developed and maintained by HashiCorp. Cluster schedulers are tools designed to take arbitrary workloads and run them on arbitrary computers in a cluster. The UI helps operators in an organization maintain availability of services and computation while monitoring resources across the cluster. The UI also helps developers deploy their own services without needing the expertise operators sepcialize in.
+"""
+
+[[projects]]
+name = "CIVIC Platform"
+slug = "civic-platform"
+url = "https://civicplatform.org"
+year = 2018
+tags = [ "JavaScript", "Data Visualization", "Python", "Leadership", "Volunteering" ]
+thumbnail = "/images/civic-platform.png"
+description = """
+The CIVIC Platform is the flagship product from the CIVIC Software foundation: a non-profit I am the volunteer CTO of. The platform facilitates a data pipeline, moving public data into structured, queryable databases in the cloud. It exposes numerous APIs for building tools and stories with public data. It also comes with a web application that curates stories in the form of cards to show insights that are consumable by any citizen.
 """
 
 [[projects]]

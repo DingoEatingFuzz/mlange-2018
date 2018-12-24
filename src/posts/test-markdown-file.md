@@ -35,3 +35,9 @@ Yeah, that's a good question. We should probably try that out, and while we're a
   <p class="{{if isJumbo "jumbo"}} empty-message">Empty</p>
 {{/each}}
 ```
+
+## Lastly, what do you have for me for images?
+
+A lot, as it turns out. Images are pulled from source and preprocessed to have blur up behavior. This is the state of the art best practice for fast pages without hindering UX.
+
+![An image](/images/climb-tracker.png)

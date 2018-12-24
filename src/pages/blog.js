@@ -10,8 +10,8 @@ const BlogPage = ({ data }) => (
     <Helmet title="Blog" description="Small form, thoughts, hot takes, and sloppy edits."/>
     <CommonHeader/>
 
-    <section>
-      <ol>
+    <main>
+      <ol className="post-list">
         {data.allMarkdownRemark.edges.map(post => (
           <li key={post.node.id}>
             <h2>
@@ -23,7 +23,7 @@ const BlogPage = ({ data }) => (
           </li>
         ))}
       </ol>
-    </section>
+    </main>
   </div>
 )
 
@@ -31,7 +31,7 @@ export default BlogPage
 
 export const query = graphql`
   query BlogPosts {
-    allMarkdownRemark(sort: {fields: [frontmatter___date], order: DESC}) {
+    allMarkdownRemark(filter: {fields: {type: {eq: "blog"}}}, sort: {fields: [frontmatter___date], order: DESC}) {
       edges {
         node {
           fields {

@@ -1,0 +1,5 @@
+Nomad is a cluster scheduler by HashiCorp. The purpose of a cluster scheduler is to assist with the workflow of getting all your software working somewhere in your fleet of compute capacity. Cluster schedulers automate the process of finding what server is best fit to run software. This software could be a service, like a web server, or a batch job, like a video render.
+
+This is a very technical product generally used by SREs or anyone else whose responsibilities are under the umbrella of devops. Although Nomad can also be used via the commandline, a good graphical user interface can simplify common operations such as debugging issues, keeping tabs on jobs running in the cluster, and keeping tabs on the nodes in the cluster.
+
+A graphical user interface also invites a broader audience of people to interact with Nomad. It doesn't have to strictly be an internal devops tool, it could also be used by management, security teams, or a variety of others if the experience is sufficiently accessible to less savvy users.

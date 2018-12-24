@@ -13,6 +13,14 @@ module.exports = {
             resolve: 'gatsby-remark-prismjs',
             classPrefix: 'language-',
           },
+          {
+            resolve: 'gatsby-remark-images',
+            options: {
+              maxWidth:1200,
+              linkImagesToOriginal: true,
+              sizeByPixelDensity: true,
+            },
+          },
         ],
       },
     },

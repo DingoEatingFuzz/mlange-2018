@@ -6,6 +6,11 @@ import { default as Link, withPrefix } from 'gatsby-link'
 
 import './projects.scss'
 
+const linkForSlug = (slug, nodes) => {
+  let node = nodes.find(n => n.node.fields.id === slug);
+  return node && node.node.fields.slug;
+}
+
 const ProjectsPage = ({ data }) => (
   <div className="projects-page">
     <Helmet title="Projects" description="A collection of my larger, more recent, projects."/>
@@ -15,7 +20,14 @@ const ProjectsPage = ({ data }) => (
       <Masonry elementType='ul' options={{ transitionDuration: 0 }}>
         {data.dataProjectsToml.projects.map(project => (
           <li key={project.slug}>
-            <h3><a href={project.url}>{project.name}</a></h3>
+            <h3>
+              {linkForSlug(project.slug, data.allMarkdownRemark.edges)
+                ? (<Link
+                    to={linkForSlug(project.slug, data.allMarkdownRemark.edges)}>
+                    {project.name}
+                  </Link>)
+                : project.name}
+             </h3>
             <h4>{project.year}</h4>
             <ul className="tags">
               {project.tags.map(tag => (
@@ -44,6 +56,17 @@ export const query = graphql`
         year
         thumbnail
         description
+      }
+    }
+    allMarkdownRemark(filter: {fields: {type: {eq: "project"}}}) {
+      edges {
+        node {
+          fields {
+            slug
+            id
+          }
+          id
+        }
       }
     }
   }
