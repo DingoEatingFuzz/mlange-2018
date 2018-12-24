@@ -1,7 +1,6 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import CommonHeader from '../components/common-header'
-import Link from 'gatsby-link'
 
 import Layout from '../components/layout'
 import './talks.scss'
