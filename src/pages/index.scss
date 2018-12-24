@@ -1,7 +1,9 @@
+@import '../styles/fonts';
+
 .home-page {
   display:flex;
   font-size: 2vw;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: $sans-stack;
 
   section {
     height:100vh;

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Nunito|Source+Sans+Pro:300,400');
+@import '../styles/fonts';
 
 * {
   box-sizing: border-box;
@@ -6,4 +6,9 @@
 
 html {
   font-family: sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Noticia Text', serif;
+  font-weight: bold;
 }

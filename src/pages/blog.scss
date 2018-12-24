@@ -1,6 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Noticia+Text|Open+Sans');
-
-$sans-stack: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+@import '../styles/fonts';
 
 .blog-page {
   width:90vw;
@@ -65,18 +63,4 @@ $sans-stack: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu
 
 .blog-post {
   margin:auto;
-
-  > * {
-    max-width: 40vw;
-    margin-left:auto;
-    margin-right:auto;
-
-    @media (max-width:1500px) {
-      max-width:600px;
-    }
-
-    @media (max-width:650px) {
-      max-width: 90vw;
-    }
-  }
 }

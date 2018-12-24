@@ -1,28 +1,34 @@
-@import url('https://fonts.googleapis.com/css?family=Noticia+Text|Open+Sans');
-
-$sans-stack: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+@import '../styles/fonts';
 
 .markdown-article {
-  font-size: calc(14px + 0.25vw);
+  box-sizing: border-box;
+  font-size: calc(16px + 0.25vw);
   line-height: 1.8;
-  font-family: 'Open Sans';
+  font-family: $sans-stack;
   font-weight: lighter;
 
-  max-width: 100vw;
-  width: 100vw;
+  max-width: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 
   > *, article > * {
-    max-width: 40vw;
+    max-width: 50vw;
     margin-left:auto;
     margin-right:auto;
 
     @media (max-width:1500px) {
-      max-width:600px;
+      max-width:750px;
     }
 
-    @media (max-width:650px) {
+    @media (max-width:800px) {
       max-width: 90vw;
     }
+  }
+
+  > article {
+    width: 100%;
+    max-width: 100%;
   }
 
   @media (max-width:1500px) {
@@ -68,20 +74,33 @@ $sans-stack: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu
     }
   }
 
-  .gatsby-highlight {
-    max-width:50vw;
+  .gatsby-highlight, img {
+    max-width:60vw;
 
     @media (max-width:1500px) {
-      max-width:900px;
+      max-width:1000px;
     }
 
-    @media (max-width:650px) {
-      max-width: 100vw;
+    @media (max-width:1000px) {
+      max-width: 100%;
     }
   }
 
   pre {
     font-size:0.8em;
+  }
+
+  img {
+    display: block;
+    margin: 3em auto;
+    width: 100%;
+
+    @media (max-width:800px) {
+      width: calc(100% + 10vw);
+      max-width: calc(100% + 10vw);
+      margin-left: -5vw;
+      margin-right: -5vw;
+    }
   }
 
   .gatsby-highlight-code-line {
@@ -95,6 +114,6 @@ $sans-stack: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu
   }
 
   @media (max-width:1200px) {
-    font-size: 16px;
+    font-size: 18px;
   }
 }
