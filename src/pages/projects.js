@@ -1,10 +1,11 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import Masonry from 'react-masonry-component'
-import CommonHeader from '../components/common-header'
 import { default as Link, withPrefix } from 'gatsby-link'
+import { graphql } from 'gatsby'
 
 import Layout from '../components/layout'
+import CommonHeader from '../components/common-header'
 import './projects.scss'
 
 const linkForSlug = (slug, nodes) => {

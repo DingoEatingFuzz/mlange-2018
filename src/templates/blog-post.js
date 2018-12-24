@@ -1,9 +1,10 @@
 import React from 'react'
 import Link from 'gatsby-link';
 import Helmet from 'react-helmet'
+import { graphql } from 'gatsby'
+
 import NarrowHeader from '../components/narrow-header'
 import MarkdownArticle from '../components/markdown-article'
-
 import Layout from '../components/layout'
 import '../pages/blog.scss'
 
