@@ -36,7 +36,7 @@ const ProjectsPage = ({ data }) => (
             </ul>
             <p dangerouslySetInnerHTML={{__html: project.description}} />
             <div className="thumbnail">
-              <img src={__PATH_PREFIX__ + project.thumbnail} alt={"Thumbnail for " + project.name} />
+              <img src={withPrefix(project.thumbnail)} alt={"Thumbnail for " + project.name} />
             </div>
           </li>
         ))}
