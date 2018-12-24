@@ -1,7 +1,7 @@
 const path = require('path')
 const { createFilePath } = require('gatsby-source-filesystem')
 
-exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
+exports.onCreateNode = ({ node, getNode, actions }) => {
   if (node.internal.type === 'MarkdownRemark') {
     const fileNode = getNode(node.parent)
     const [,sourceDirectory] = node.fileAbsolutePath.split('/').reverse();
@@ -21,19 +21,19 @@ exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
         break;
     }
 
-    boundActionCreators.createNodeField({
+    actions.createNodeField({
       node,
       name: 'slug',
       value: slug
     })
 
-    boundActionCreators.createNodeField({
+    actions.createNodeField({
       node,
       name: 'type',
       value: type
     })
 
-    boundActionCreators.createNodeField({
+    actions.createNodeField({
       node,
       name: 'id',
       value: id.replace(/^.(.+).$/, '$1')
@@ -41,8 +41,8 @@ exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
   }
 }
 
-exports.createPages = ({ graphql, boundActionCreators }) => {
-  const { createPage } = boundActionCreators
+exports.createPages = ({ graphql, actions }) => {
+  const { createPage } = actions
   const typeToTemplate = {
     project: './src/templates/project-detail.js',
     blog: './src/templates/blog-post.js',
