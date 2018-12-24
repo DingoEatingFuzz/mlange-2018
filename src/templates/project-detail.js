@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'gatsby-link';
 import Helmet from 'react-helmet'
+import NarrowHeader from '../components/narrow-header'
 
 import '../pages/projects.scss'
 import '../pages/blog.scss'
@@ -10,12 +11,7 @@ export default ({ data }) => {
   const meta = data.dataProjectsToml.projects.find(p => p.slug === post.fields.id)
   return (
     <div>
-      <header className="blog-header">
-        <section className="blog-header-inside">
-          <Link to="/">Michael Lange</Link>
-          <Link to="/projects">All projects →</Link>
-        </section>
-      </header>
+      <NarrowHeader link="/projects" noun="projects" />
       <div className="project-detail">
         <Helmet
           title={meta.name}

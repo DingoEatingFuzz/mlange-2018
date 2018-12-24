@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'gatsby-link';
 import Helmet from 'react-helmet'
+import NarrowHeader from '../components/narrow-header'
 
 import '../pages/blog.scss'
 
@@ -8,12 +9,7 @@ export default ({ data }) => {
   const post = data.markdownRemark
   return (
     <div>
-      <header className="blog-header">
-        <section className="blog-header-inside">
-          <Link to="/">Michael Lange</Link>
-          <Link to="/blog">All posts →</Link>
-        </section>
-      </header>
+      <NarrowHeader link="/blog" noun="posts" />
       <div className="blog-post">
         <Helmet
           title={post.frontmatter.title}
