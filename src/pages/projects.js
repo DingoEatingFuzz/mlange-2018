@@ -1,7 +1,8 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import Masonry from 'react-masonry-component'
-import { default as Link, withPrefix } from 'gatsby-link'
+import Link from 'gatsby-link'
+import Img from 'gatsby-image'
 import { graphql } from 'gatsby'
 
 import Layout from '../components/layout'
@@ -9,8 +10,13 @@ import CommonHeader from '../components/common-header'
 import './projects.scss'
 
 const linkForSlug = (slug, nodes) => {
-  let node = nodes.find(n => n.node.fields.id === slug);
-  return node && node.node.fields.slug;
+  let node = nodes.find(n => n.node.fields.id === slug)
+  return node && node.node.fields.slug
+}
+
+const thumbnailForImg = (img, nodes) => {
+  let node = nodes.find(n => n.node.relativePath === img)
+  return node && node.node.childImageSharp.fluid
 }
 
 const ProjectsPage = ({ data }) => (
@@ -39,7 +45,10 @@ const ProjectsPage = ({ data }) => (
               </ul>
               <p dangerouslySetInnerHTML={{__html: project.description}} />
               <div className="thumbnail">
-                <img src={withPrefix(project.thumbnail)} alt={"Thumbnail for " + project.name} />
+                <Img
+                  fluid={thumbnailForImg(project.thumbnail, data.allFile.edges)}
+                  fadeIn={false}
+                  alt={"Thumbnail for " + project.name} />
               </div>
             </li>
           ))}
@@ -72,6 +81,18 @@ export const query = graphql`
             id
           }
           id
+        }
+      }
+    }
+    allFile(filter: {sourceInstanceName: {eq: "images"}}) {
+      edges {
+        node {
+          relativePath
+          childImageSharp {
+            fluid(maxWidth: 800) {
+              ...GatsbyImageSharpFluid
+            }
+          }
         }
       }
     }

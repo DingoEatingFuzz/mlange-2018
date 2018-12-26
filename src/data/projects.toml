@@ -4,7 +4,7 @@ slug = "nomad-web-ui"
 url = "https://nomadproject.io"
 year = 2018
 tags = [ "JavaScript", "EmberJS", "Cluster Scheduler", "DevOps", "Work" ]
-thumbnail = "/images/nomad-ui.png"
+thumbnail = "nomad-ui.png"
 description = """
 The Web UI for the Nomad cluster scheduler developed and maintained by HashiCorp. Cluster schedulers are tools designed to take arbitrary workloads and run them on arbitrary computers in a cluster. The UI helps operators in an organization maintain availability of services and computation while monitoring resources across the cluster. The UI also helps developers deploy their own services without needing the expertise operators sepcialize in.
 """
@@ -15,7 +15,7 @@ slug = "civic-platform"
 url = "https://civicplatform.org"
 year = 2018
 tags = [ "JavaScript", "Data Visualization", "Python", "Leadership", "Volunteering" ]
-thumbnail = "/images/civic-platform.png"
+thumbnail = "civic-platform.png"
 description = """
 The CIVIC Platform is the flagship product from the CIVIC Software foundation: a non-profit I am the volunteer CTO of. The platform facilitates a data pipeline, moving public data into structured, queryable databases in the cloud. It exposes numerous APIs for building tools and stories with public data. It also comes with a web application that curates stories in the form of cards to show insights that are consumable by any citizen.
 """
@@ -26,7 +26,7 @@ slug = "us-in-water"
 url = "http://mlange.io/wc-final"
 year = 2017
 tags = [ "JavaScript", "Cartography", "Tippecanoe", "GCP" ]
-thumbnail = "/images/us-in-water.png"
+thumbnail = "us-in-water.png"
 description = """
 A detailed look at all the rivers, streams, and bodies of water in the United States as tracked in the <a href="https://nhd.usgs.gov/">USGS National Hydrography Dataset</a>. Many gigabytes of data were converted into vector tiles using Mapbox's Tippecanoe tool.
 """
@@ -37,7 +37,7 @@ slug = "climb-tracker"
 url = "http://climb.mlange.io"
 year = 2016
 tags = [ "JavaScript", "React", "Firebase" ]
-thumbnail = "/images/ct-tracker-thumb.png"
+thumbnail = "ct-tracker-thumb.png"
 description = """
 A simple web app for tracking bouldering workouts. It focuses on quickly marking which problems were completed and which were attempted. In this way, at the end of the workout, a histogram and tally of problems and problem difficulties is plotted. There are also monthly reports to look back on.
 """
@@ -48,7 +48,7 @@ slug = "emoji-skin-tone-randomizer"
 url = "https://github.com/DingoEatingFuzz/chrome-emoji-skin-tone-randomizer"
 year = 2016
 tags = [ "JavaScript", "Chrome" ]
-thumbnail = "/images/emoji-skin-tones.png"
+thumbnail = "emoji-skin-tones.png"
 description = """
 A chrome extension for assigning a random skin tone to a skin tone eligible emoji that doesn't already have one assigned.
 """
@@ -59,7 +59,7 @@ slug = "headers-middleman"
 url = "https://github.com/DingoEatingFuzz/chrome-headers-middleman"
 year = 2015
 tags = [ "JavaScript", "React", "Chrome" ]
-thumbnail = "/images/headers-middle-man.png"
+thumbnail = "headers-middle-man.png"
 description = """
 A chrome extension for modifying the headers of HTTP Requests based on regex pattern matching.
 """
@@ -70,7 +70,7 @@ slug = "npr-music-we-love"
 url = "https://github.com/DingoEatingFuzz/npr-music-we-love-bookmarklets"
 year = 2015
 tags = [ "JavaScript", "Browsers" ]
-thumbnail = "/images/npr-songs-we-love.png"
+thumbnail = "npr-songs-we-love.png"
 description = """
 The NPR Music We Love app was a wonderful things, but it had no way to pin/favorite/star/save the tracks you liked. This was solvable in many ways, but the way that sounded the most interesting at the time was bookmarklets. With a click of a bookmarklet, the track would be saved to localstorage. I went overboard and created additional bookmarklets for seeing the track list and for disliking tracks. You know, just for fun.
 """
@@ -81,7 +81,7 @@ slug = "github-avatar-arrangement"
 url = "https://github.com/DingoEatingFuzz/github-gravatars"
 year = 2014
 tags = [ "Python", "Processing" ]
-thumbnail = "/images/github-gravatars.png"
+thumbnail = "github-gravatars.png"
 description = """
 A quick sketch that generates all possible Github Avatars (not including color variations). Since Github default avatars are created through the toggling of 15 states, the resulting space is only 2<sup>15</sup>. Which is high, but not so high it isn't presentable in a single image.
 """

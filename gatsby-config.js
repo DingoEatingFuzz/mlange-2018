@@ -1,3 +1,5 @@
+const path = require('path')
+
 module.exports = {
   siteMetadata: {
     title: `Michael Lange`,
@@ -29,8 +31,17 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'src',
-        path: `${__dirname}/src/`,
+        path: path.join(__dirname, 'src'),
       },
     },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'images',
+        path: path.join(__dirname, 'static', 'images'),
+      },
+    },
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp'
   ],
 }
