@@ -8,12 +8,13 @@ import './talks.scss'
 const TalksPage = () => (
   <Layout>
     <div className="talks-page">
-      <Helmet title="Talks" description="Video, transcripts, and written transpositions of talks I've given."/>
-      <CommonHeader/>
+      <Helmet
+        title="Talks"
+        description="Video, transcripts, and written transpositions of talks I've given."
+      />
+      <CommonHeader />
 
-      <section>
-        Coming Soon.
-      </section>
+      <section>Coming Soon.</section>
     </div>
   </Layout>
 )

@@ -5,7 +5,7 @@ import Helmet from 'react-helmet'
 import 'normalize.css'
 import './layout.scss'
 
-require("prismjs/themes/prism.css");
+require('prismjs/themes/prism.css')
 
 const TemplateWrapper = ({ children }) => (
   <div>
@@ -14,7 +14,11 @@ const TemplateWrapper = ({ children }) => (
       defaultTitle="Michael Lange"
       meta={[
         { name: 'description', content: 'Michael Lange, maker of things' },
-        { name: 'keywords', content: 'developer, designer, maker, things, javascript, algorithmic art, projects, portfolio' },
+        {
+          name: 'keywords',
+          content:
+            'developer, designer, maker, things, javascript, algorithmic art, projects, portfolio',
+        },
       ]}
     />
     {children}

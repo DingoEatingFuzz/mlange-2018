@@ -7,6 +7,6 @@ import './common-header.scss'
 export default () => (
   <header className="common-header">
     <Link to="/">Michael Lange</Link>
-    <CommonNavigation/>
+    <CommonNavigation />
   </header>
 )

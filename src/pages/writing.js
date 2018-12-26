@@ -8,12 +8,13 @@ import './writing.scss'
 const WritingPage = () => (
   <Layout>
     <div className="writing-page">
-      <Helmet title="Writing" description="Longer, more polished stories and visual explanations"/>
-      <CommonHeader/>
+      <Helmet
+        title="Writing"
+        description="Longer, more polished stories and visual explanations"
+      />
+      <CommonHeader />
 
-      <section>
-        Coming Soon.
-      </section>
+      <section>Coming Soon.</section>
     </div>
   </Layout>
 )

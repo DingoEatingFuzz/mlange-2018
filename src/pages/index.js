@@ -2,7 +2,7 @@ import React from 'react'
 import CommonNavigation from '../components/common-navigation'
 
 import Layout from '../components/layout'
-import './index.scss';
+import './index.scss'
 
 const IndexPage = () => (
   <Layout>
@@ -13,7 +13,7 @@ const IndexPage = () => (
           <p>Maker of things</p>
         </div>
       </section>
-      <CommonNavigation/>
+      <CommonNavigation />
     </div>
   </Layout>
 )

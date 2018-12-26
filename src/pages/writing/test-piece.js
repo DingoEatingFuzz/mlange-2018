@@ -9,11 +9,14 @@ import '../projects.scss'
 const TestPiece = () => (
   <Layout>
     <div className="projects-page">
-      <Helmet title="This is a test piece" description="A test piece for the longer form of writing"/>
+      <Helmet
+        title="This is a test piece"
+        description="A test piece for the longer form of writing"
+      />
 
       <header>
         <Link to="/">Michael Lange</Link>
-        <CommonNavigation/>
+        <CommonNavigation />
       </header>
 
       <section>

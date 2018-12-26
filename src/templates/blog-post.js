@@ -13,7 +13,11 @@ export default ({ data }) => {
     <Layout>
       <Helmet
         title={post.frontmatter.title}
-        description={post.frontmatter.description || `Blog post posted on ${post.frontmatter.date}`}/>
+        description={
+          post.frontmatter.description ||
+          `Blog post posted on ${post.frontmatter.date}`
+        }
+      />
 
       <NarrowHeader link="/blog" noun="posts" />
 
@@ -21,7 +25,9 @@ export default ({ data }) => {
         <MarkdownArticle content={post.html}>
           <h1 className="title">{post.frontmatter.title}</h1>
           <dl>
-            <dd>Posted <strong>{post.frontmatter.date}</strong></dd>
+            <dd>
+              Posted <strong>{post.frontmatter.date}</strong>
+            </dd>
           </dl>
         </MarkdownArticle>
       </div>

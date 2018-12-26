@@ -8,12 +8,13 @@ import './photography.scss'
 const PhotographyPage = () => (
   <Layout>
     <div className="photography-page">
-      <Helmet title="Photography" description="I sometimes take photos. Might as well put them on the Internet."/>
-      <CommonHeader/>
+      <Helmet
+        title="Photography"
+        description="I sometimes take photos. Might as well put them on the Internet."
+      />
+      <CommonHeader />
 
-      <section>
-        Coming Soon.
-      </section>
+      <section>Coming Soon.</section>
     </div>
   </Layout>
 )
