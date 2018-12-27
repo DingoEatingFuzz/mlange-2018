@@ -10,6 +10,16 @@ The Web UI for the Nomad cluster scheduler developed and maintained by HashiCorp
 """
 
 [[projects]]
+name = "HashiConf Generative Art Plotter"
+slug = "hashiconf-genart-plotter"
+year = 2018
+tags = [ "Processing", "Generative Art", "SVG" ]
+thumbnail = "hashiconf-genart-plotter.jpg"
+description = """
+An art installation at HashiConf 2018. Throughout the two conference days, the 2D plotter and a preview monitor were installed in the HashiCafe for attendees to watch and (if they were lucky) take home a one-of-a-kind keepsake.
+"""
+
+[[projects]]
 name = "CIVIC Platform"
 slug = "civic-platform"
 url = "https://civicplatform.org"
