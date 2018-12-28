@@ -19,9 +19,6 @@ export default ({ data }) => {
         <Helmet title={meta.name} description={meta.description || meta.name} />
         <MarkdownArticle content={post.html}>
           <h1 className="title">{meta.name}</h1>
-          <ul className="tags">
-            {meta.tags.map(tag => <li key={tag}>{tag}</li>)}
-          </ul>
           <dl>
             <dd>
               Circa <strong>{meta.year}</strong>
