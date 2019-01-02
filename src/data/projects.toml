@@ -75,14 +75,14 @@ A chrome extension for modifying the headers of HTTP Requests based on regex pat
 """
 
 [[projects]]
-name = "NPR Music We Love Bookmarklets"
-slug = "npr-music-we-love"
+name = "NPR Songs We Love Bookmarklets"
+slug = "npr-songs-we-love"
 url = "https://github.com/DingoEatingFuzz/npr-music-we-love-bookmarklets"
 year = 2015
 tags = [ "JavaScript", "Browsers" ]
 thumbnail = "npr-songs-we-love.png"
 description = """
-The NPR Music We Love app was a wonderful things, but it had no way to pin/favorite/star/save the tracks you liked. This was solvable in many ways, but the way that sounded the most interesting at the time was bookmarklets. With a click of a bookmarklet, the track would be saved to localstorage. I went overboard and created additional bookmarklets for seeing the track list and for disliking tracks. You know, just for fun.
+The NPR Songs We Love app was a wonderful thing, but it had no way to pin/favorite/star/save the tracks you liked. This was solvable in many ways, but the way that sounded the most interesting at the time was bookmarklets. With a click of a bookmarklet, the track would be saved to localstorage. I went overboard and created additional bookmarklets for seeing the track list and for disliking tracks. You know, just for fun.
 """
 
 [[projects]]
