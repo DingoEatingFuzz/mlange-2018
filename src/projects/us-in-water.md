@@ -5,7 +5,7 @@ In the summer of 2017, I took a web cartography class. Before this I had dabbled
 
 ## The Web Cartography class
 
-From the first day of this class, I was drawn to big datasets that cripple browsers. I tried placing every building in Shanghai on a map. When confronted with performance issues, I added a heatmap layer. When confronted with more performance issues, I wrote my own object tracking using a quadtree.
+From the first day of this class, I was drawn to big datasets that cripple browsers. I tried placing every building in Shanghai on a map. When confronted with performance issues, I added a heatmap layer. When confronted with more performance issues, I wrote my own object tracking using a quadtree and frustrum culling.
 
 This class taught us a lot about manipulating GIS data from both QGIS and the commandline, using tools like [topojson]() and [turf.js](). I put these tools to use with this needlessly ambitious project that started a simple political statement which led me to a wonderful dataset. The dataset is the [National Hydrography Dataset](https://www.usgs.gov/core-science-systems/ngp/national-hydrography/access-national-hydrography-products). The political statement was
 
@@ -33,7 +33,7 @@ In addition to the NHD tiles, I wanted to present political boundaries to drive 
 
 I'm not sure if I'll ever return to this project, but deep down I hope I do. This project, although fun and successful in its own way, was ultimately a letdown. I didn't achieve my goal of expressing the political statement above, and the tiles aren't rich in detail like I wanted.
 
-If I pick this back up, the first thing I need to do is bake raster tiles from the 100 MB vector tiles. I attempted to do this, but I couldn't find any existing projects that did what I needed. I suspect that the [mapbox-gl-native](https://github.com/mapbox/mapbox-gl-native) library can be repurposed for this, but I haven't experimented with it at all. If I can bake raster tiles, then I get small files as well as detailed tiles.
+If I pick this back up, the first thing I need to do is bake raster tiles from the 100 MB vector tiles. I attempted to do this, but I couldn't find any existing projects that did what I needed. I suspect that the [mapbox-gl-native]() library can be repurposed for this, but I haven't experimented with it at all. If I can bake raster tiles, then I get small files as well as detailed tiles.
 
 The second thing I need to do is find a cartographer buddy or hit the books to make sure I represent the data properly. It's very apparent just looking at the map that certain features (especially rivers) are misrepresented. There is no doubt in my mind that the NHD contains the required data to properly represent all water features, I just don't know what I'm doing.
 
