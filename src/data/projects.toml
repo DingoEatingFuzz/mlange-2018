@@ -44,7 +44,7 @@ A detailed look at all the rivers, streams, and bodies of water in the United St
 [[projects]]
 name = "Climb Tracker"
 slug = "climb-tracker"
-url = "http://climb.mlange.io"
+url = "https://climb.mlange.io"
 year = 2016
 tags = [ "JavaScript", "React", "Firebase" ]
 thumbnail = "ct-tracker-thumb.png"
