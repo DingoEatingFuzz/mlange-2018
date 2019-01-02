@@ -38,3 +38,14 @@ If I pick this back up, the first thing I need to do is bake raster tiles from t
 The second thing I need to do is find a cartographer buddy or hit the books to make sure I represent the data properly. It's very apparent just looking at the map that certain features (especially rivers) are misrepresented. There is no doubt in my mind that the NHD contains the required data to properly represent all water features, I just don't know what I'm doing.
 
 But jumping into the deep-end without knowing what you're doing is half the fun.
+
+## Technology used
+
+- ArcGIS
+- QGIS
+- Geojson
+- Make
+- GCE
+- GCS
+- Tippecanoe
+- Mapbox GL JS
