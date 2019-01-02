@@ -41,3 +41,11 @@ So this needs to be handled in the extension to make sure that if the original a
 At this point, all that was left to do was write the JS and regular expressions that actually did the text substitutions and call that code at the write time from within the Chrome extension. The write time to run the code is during the [`document_end`](https://github.com/DingoEatingFuzz/chrome-emoji-skin-tone-randomizer/blob/master/src/manifest.json#L18-L23) content script hook, and the write regex is [this unfortunate thing](https://github.com/DingoEatingFuzz/chrome-emoji-skin-tone-randomizer/blob/master/src/postprocess.js#L3).
 
 Add the extension from the Chrome web store 👉 [Emoji Skin Tone Randomizer](https://chrome.google.com/webstore/detail/emoji-skin-tone-randomize/ohhjagdgpnjmffkbdmgocehijcppnicj).
+
+## Technology used
+
+- JavaScript
+- Chrome extensions
+- emoji-data
+- Python
+- Unicode
