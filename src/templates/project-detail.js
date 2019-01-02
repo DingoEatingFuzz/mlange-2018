@@ -20,6 +20,11 @@ export default ({ data }) => {
         <MarkdownArticle content={post.html}>
           <h1 className="title">{meta.name}</h1>
           <dl>
+            {meta.url && (
+              <dd>
+                Visit the project at <a href={meta.url} target="_blank">{meta.url}</a>
+              </dd>
+            )}
             <dd>
               Circa <strong>{meta.year}</strong>
             </dd>
