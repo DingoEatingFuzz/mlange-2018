@@ -89,14 +89,28 @@
 
   a {
     font-weight: normal;
+    color: rgb(100, 141, 197);
+
+    &:hover {
+      color: rgb(28, 98, 196);
+    }
+
+    &:visited {
+      color: rgb(89, 81, 134);
+    }
   }
 
   pre {
     font-size:0.8em;
   }
 
-  code {
+  :not(pre) > code {
     font-size: 0.9em;
+
+    &[class*="language-"] {
+      background: rgb(224, 232, 241);
+      color: rgb(20, 37, 59);
+    }
   }
 
   img {
