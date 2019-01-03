@@ -12,10 +12,13 @@ export default ({ data }) => {
   const meta = data.dataProjectsToml.projects.find(
     p => p.slug === post.fields.id
   )
+  const images = data.dataProjectsToml.images.filter(
+    p => p.project === post.fields.id
+  )
   return (
     <Layout>
       <NarrowHeader link="/projects" noun="projects" />
-      <div className="project-detail">
+      <div className={`project-detail ${images && images.length ? 'with-gallery' : ''}`}>
         <Helmet title={meta.name} description={meta.description || meta.name} />
         <MarkdownArticle content={post.html}>
           <h1 className="title">{meta.name}</h1>
@@ -29,7 +32,24 @@ export default ({ data }) => {
               Circa <strong>{meta.year}</strong>
             </dd>
           </dl>
+          {images && images.length && (
+            <div className="gallery-note">
+              <strong>Note!</strong> There's a gallery after all these words.
+            </div>
+          )}
         </MarkdownArticle>
+        {images && images.length && (
+          <ul className="gallery">
+            {images.map(img => (
+              <li key={img.url}>
+                <figure>
+                  <img src={img.url} alt={img.alt} />
+                  <figcaption>{img.caption}</figcaption>
+                </figure>
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
     </Layout>
   )
@@ -52,6 +72,12 @@ export const query = graphql`
         year
         thumbnail
         description
+      }
+      images {
+        project
+        url
+        alt
+        caption
       }
     }
   }

@@ -95,3 +95,30 @@ thumbnail = "github-gravatars.png"
 description = """
 A quick sketch that generates all possible Github Avatars (not including color variations). Since Github default avatars are created through the toggling of 15 states, the resulting space is only 2<sup>15</sup>. Which is high, but not so high it isn't presentable in a single image.
 """
+
+[[images]]
+project = "hashiconf-genart-plotter"
+url = "/images/hashiconf-genart-plotter.jpg"
+alt = "A finished plot of the Consul product"
+caption = """
+Each of the six HashiCorp products can potentially be plotted via the generative art algorithm. This is an example of the Consul product, which is the only product
+grid that features circles.
+"""
+
+[[images]]
+project = "hashiconf-genart-plotter"
+url = "/images/hashiconf-genart-plotter-nomad.jpg"
+alt = "A finished plot of the Nomad product"
+caption = """
+This is an example of the Nomad product. Each plot is unique, so although each product grid is typically very well ordered, here they are not.
+Using perlin noise, some lines are dropped, spaced irregularly, and slightly rotated.
+"""
+
+[[images]]
+project = "hashiconf-genart-plotter"
+url = "/images/hashiconf-genart-plotter-terraform.jpg"
+alt = "A finished plot of the Terraform product"
+caption = """
+To prevent the art from going to abstract, each plot includes the product logo, stylized in a way that complements the line art a plotter produces.
+Then, to tie the plot to the event, the latest product version number is plotted to hopefully invoke nostalgia years later.
+"""
