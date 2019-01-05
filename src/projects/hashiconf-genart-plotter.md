@@ -52,6 +52,9 @@ The last piece of the performance was creating a preview screen so it was a litt
 
 All this together made for a pretty seamless performance. Next time I'll do a better job estimating how much paper and ink we'll go through, so I won't have to make another emergency trip to the art store.
 
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Only at HashiConf, you can get a plotter-print of HashiCorp tools. Each background is randomized and totally unique! <a href="https://twitter.com/DingoEatingFuzz?ref_src=twsrc%5Etfw">@DingoEatingFuzz</a> <a href="https://t.co/YIcSEuzAdl">pic.twitter.com/YIcSEuzAdl</a></p>&mdash; Mitchell Hashimoto (@mitchellh) <a href="https://twitter.com/mitchellh/status/1054827741890002945?ref_src=twsrc%5Etfw">October 23, 2018</a></blockquote>
+
+
 ## Technology used
 
 - Processing
