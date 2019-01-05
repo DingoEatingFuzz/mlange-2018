@@ -43,7 +43,7 @@ export default ({ data }) => {
             {images.map(img => (
               <li key={img.url}>
                 <figure>
-                  <img src={img.url} alt={img.alt} />
+                  <a href={img.url} target="_blank"><img src={img.url} alt={img.alt} /></a>
                   <figcaption>{img.caption}</figcaption>
                 </figure>
               </li>

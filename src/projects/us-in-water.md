@@ -1,6 +1,5 @@
 In the summer of 2017, I took a web cartography class. Before this I had dabbled with Google Maps, Leaflet, and Mapbox as a developer, but I hadn't gone deep on any projects. U.S. in Water was my final project, in which I focused on building my own vector map tiles.
 
- - [View this project online](http://wc-final.mlange.io)
  - [View the source code on GitHub](https://github.com/dingoeatingfuzz/wc-final)
 
 ## The Web Cartography class

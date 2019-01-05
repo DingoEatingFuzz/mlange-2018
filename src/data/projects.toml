@@ -122,3 +122,44 @@ caption = """
 To prevent the art from going to abstract, each plot includes the product logo, stylized in a way that complements the line art a plotter produces.
 Then, to tie the plot to the event, the latest product version number is plotted to hopefully invoke nostalgia years later.
 """
+
+[[images]]
+project = "us-in-water"
+url = "/images/us-in-water-fullscreen.png"
+alt = "A fullscreen seenshot of the U.S. in Water project"
+caption = """
+The project is presented as a minimalist map with a set of clickable features on the left-hand side. The features on the left are hand-picked coordinates
+that I think are interesting to look at.
+"""
+
+[[images]]
+project = "us-in-water"
+url = "/images/us-in-water-central-california.png"
+alt = "Central California in the U.S. in Water map"
+caption = """
+Central California has well-documented flowlines, which make for a rich picture of the passage of water.
+"""
+
+[[images]]
+project = "us-in-water"
+url = "/images/us-in-water-louisiana.png"
+alt = "Louisiana in the U.S. in Water map"
+caption = """
+As the state sinks and eordes while the gulf rises, the total land area of Luisiana is shrinking.
+"""
+
+[[images]]
+project = "us-in-water"
+url = "/images/us-in-water-mt-hood.png"
+alt = "Mt. Hood in the U.S. in Water map"
+caption = """
+The shape of Mt. Hood is distinct through the features of glaciers and lakes alone.
+"""
+
+[[images]]
+project = "us-in-water"
+url = "/images/us-in-water-salton-sea.png"
+alt = "Salton Sea in the U.S. in Water map"
+caption = """
+The Salton Sea is the biggest lake in California. Evident in the water lines, there are massive-scale feats of engineering surrounding the lake.
+"""
