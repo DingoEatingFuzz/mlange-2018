@@ -163,3 +163,35 @@ alt = "Salton Sea in the U.S. in Water map"
 caption = """
 The Salton Sea is the biggest lake in California. Evident in the water lines, there are massive-scale feats of engineering surrounding the lake.
 """
+
+[[images]]
+project = "civic-platform"
+url = "/images/civic-platform-overview.png"
+alt = "The CIVIC Platform home page"
+caption = """
+The CIVIC Platform website is a gateway to a suite of story cards that each provide an interactive tool or insight that lets people understand their city a little bit better.
+"""
+
+[[images]]
+project = "civic-platform"
+url = "/images/civic-platform-housing.png"
+alt = "A story card in the 2018 housing collection"
+caption = """
+All StoryCards aim to have some explanation, some data visualization, and some interactivity.
+"""
+
+[[images]]
+project = "civic-platform"
+url = "/images/civic-platform-disaster.png"
+alt = "A multivariate plot chart in the 2018 disaster collection"
+caption = """
+The frontend <a href="https://github.com/hackoregon/civic" target="_blank" />civic frontend repo</a> provides a collection of a UI components that enable quickly making rich and interactive visual explanations.
+"""
+
+[[images]]
+project = "civic-platform"
+url = "/images/civic-platform-sandbox.png"
+alt = "The CIVIC platform sandbox"
+caption = """
+The CIVIC sandbox is a feature of the CIVIC platform that gives people a chance to dive deeper into data without having to make the jump into developer tools to run databases and notebooks locally.
+"""

@@ -32,24 +32,24 @@ export default ({ data }) => {
               Circa <strong>{meta.year}</strong>
             </dd>
           </dl>
-          {images && images.length && (
+          {images && images.length ? (
             <div className="gallery-note">
               <strong>Note!</strong> There's a gallery after all these words.
             </div>
-          )}
+          ) : ''}
         </MarkdownArticle>
-        {images && images.length && (
+        {images && images.length ? (
           <ul className="gallery">
             {images.map(img => (
               <li key={img.url}>
                 <figure>
                   <a href={img.url} target="_blank"><img src={img.url} alt={img.alt} /></a>
-                  <figcaption>{img.caption}</figcaption>
+                  <figcaption dangerouslySetInnerHTML={{ __html: img.caption }}></figcaption>
                 </figure>
               </li>
             ))}
           </ul>
-        )}
+        ) : ''}
       </div>
     </Layout>
   )
