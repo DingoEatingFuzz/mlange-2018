@@ -133,6 +133,7 @@
   .big-feature {
     width: 80vw;
     max-width: 80vw;
+    margin-bottom: 2em;
 
     @media (max-width:1000px) {
       width: 90vw;
@@ -144,11 +145,23 @@
       max-width: 100%;
     }
 
-    > * {
+    > *, > figure img {
       width: 100%;
       max-width: 100%;
       margin-left: 0;
       margin-right: 0;
+    }
+
+    img {
+      margin: 1em auto 0;
+    }
+
+    figcaption {
+      width: 50vw;
+      max-width: 50vw;
+      padding: 0 1em;
+      margin: auto;
+      font-style: italic;
     }
   }
 

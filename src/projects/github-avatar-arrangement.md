@@ -81,13 +81,21 @@ save('tiles-full.png')
 ## The final arrangements
 
 <div class="big-feature">
+  <figure>
     <img src="https://raw.githubusercontent.com/DingoEatingFuzz/github-gravatars/master/github_gravatar/tiles-full.png" alt="Full arrangement, ordered">
+    <figcaption>
+      An ordered arrangement of all 32k avatars
+    </figcaption>
+  </figure>
 </div>
 
-_An ordered arrangement of all 32k avatars_
 
 <div class="big-feature">
+  <figure>
     <img src="https://raw.githubusercontent.com/DingoEatingFuzz/github-gravatars/master/github_gravatar_shuffle/tiles-full.png" alt="Full arrangement, shuffled">
+    <figcaption>
+      A shuffled arrangement of all 32k avatars
+    </figcaption>
+  </figure>
 </div>
 
-_A shuffled arrangement of all 32k avatars_
