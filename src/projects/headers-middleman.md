@@ -42,6 +42,8 @@ The core code of reading a URL at the right time and injecting headers was alrea
 
 There are a couple of features I'd still like to add to this, but I honestly don't have a need for this tool anymore. It served me well when I needed to add that auth header, and maybe it will serve me again in the future, but for now I'm content with all the requests I make without any doctoring.
 
+Add the extension from the Chrome web store 👉 [Headers Middleman](https://chrome.google.com/webstore/detail/headers-middleman/ailllopdhbookcbfncgjglbejjgjcapo).
+
 ## Technology used
 
 - JavaScript
