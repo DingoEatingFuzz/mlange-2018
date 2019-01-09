@@ -33,7 +33,7 @@ The CIVIC Platform is the flagship product from the CIVIC Software foundation: a
 [[projects]]
 name = "U.S. in Water"
 slug = "us-in-water"
-url = "http://mlange.io/wc-final"
+url = "http://stuff.mlange.io/wc-final"
 year = 2017
 tags = [ "JavaScript", "Cartography", "Tippecanoe", "GCP" ]
 thumbnail = "us-in-water.png"
@@ -241,4 +241,40 @@ alt = "Headers Middleman options page"
 caption = """
 The options page for Headers Middleman. Used to add "rules", which are regular expressions that match URLs, and "headers" which can be values
 for new headers, values to override headers, or removing an unwanted header.
+"""
+
+[[images]]
+project = "npr-songs-we-love"
+url = "/images/songs-we-love-love.png"
+alt = "NPR Songs We Love love indication"
+caption = """
+Since clicking a bookmark to add an entry to local storage gives no feedback to the user, this heart is flashed on the screen. It's just slapped
+into the DOM with some jQuery.
+"""
+
+[[images]]
+project = "npr-songs-we-love"
+url = "/images/songs-we-love-hate.png"
+alt = "NPR Songs We Love hate indication"
+caption = """
+Hate is a nearly identical bookmark to Love. The only differences are the local storage key and the hotlinked icon URL.
+"""
+
+[[images]]
+project = "npr-songs-we-love"
+url = "/images/songs-we-love-list.png"
+alt = "NPR Songs We Love love list"
+caption = """
+The Love List bookmarklet acts as a toggle. If the Love List element is found on the page, it's removed, otherwise it's added. This ended up being
+a tricky bookmarklet since it contains full blown templating for binding the loved track data. Included in this project write up is
+a sample of what that templating looks like.
+"""
+
+[[images]]
+project = "npr-songs-we-love"
+url = "/images/songs-we-love-bookmarklets.png"
+alt = "NPR Songs We Love bookmarklet page"
+caption = """
+This was the quick and dirty "installation" page. A user interested in this augmentation to the Songs We Love 2014 app would drag these links
+into their bookmark bar. The trick being that they aren't your typical link. They take the form of <code>javascript:&lt;insert-lots-of-javascript-here&gt;</code>.
 """
