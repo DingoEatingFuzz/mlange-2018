@@ -195,3 +195,50 @@ alt = "The CIVIC platform sandbox"
 caption = """
 The CIVIC sandbox is a feature of the CIVIC platform that gives people a chance to dive deeper into data without having to make the jump into developer tools to run databases and notebooks locally.
 """
+
+[[images]]
+project = "climb-tracker"
+url = "/images/ct-home.png"
+alt = "The landing page for the Climb Tracker app"
+caption = """
+A straight-forward page that markets some features and requires auth. The background photo I took in Zion National Park.
+"""
+
+[[images]]
+project = "climb-tracker"
+url = "/images/ct-tracker-blank.png"
+alt = "The Climb Tracker tracker with nothing tracked yet"
+caption = """
+This is the screen you see after authenticating. It is the tracker, which is the primary experience. It has two features which are immediately
+identifiable: a list of colored buttons for tracking a climb of a difficulty, and an undo button in the event you track something in error.
+The third less obvious feature is the "A" button, which marks attempts at problems.
+"""
+
+[[images]]
+project = "climb-tracker"
+url = "/images/ct-tracker-full.png"
+alt = "The Climb Tracker tracker with various climbs tracked"
+caption = """
+As you use the climb tracker throughout your session, a histogram is formed that makes it very clear which difficulties you are focusing on.
+This can be used to tell you when your warmup is done, if you're pushing yourself too hard and maybe that's why you aren't finishing anything, or
+simply, what your success rate per difficulty is. The stripe-textured regions denote attempts.
+"""
+
+[[images]]
+project = "climb-tracker"
+url = "/images/ct-reports.png"
+alt = "The Climb Tracker reports section"
+caption = """
+The reports section gives you a detailed memory of your climbing progress and frequency over time. The dashboard metrics at the top
+are useful for quick stats for the current month. Proceeding the dashboard metrics are monthly report cards that feature kabob
+charts to illustrate difficulty histograms over time.
+"""
+
+[[images]]
+project = "headers-middleman"
+url = "/images/headers-middle-man-large.png"
+alt = "Headers Middleman options page"
+caption = """
+The options page for Headers Middleman. Used to add "rules", which are regular expressions that match URLs, and "headers" which can be values
+for new headers, values to override headers, or removing an unwanted header.
+"""
