@@ -1,6 +1,8 @@
+@import '../styles/colors';
+
 header.common-header {
   padding:1em 0;
-  border-bottom: 2px solid rgb(203, 203, 216);
+  border-bottom: 2px solid $primary-200;
   font-size:1.5em;
   font-family: 'Nunito', sans-serif;
   display: flex;
@@ -8,7 +10,7 @@ header.common-header {
 
   a {
     text-decoration: none;
-    color:rgb(92, 96, 107);
+    color: $gray-500;
   }
 
   nav {
@@ -22,10 +24,10 @@ header.common-header {
         font-size:0.7em;
         padding: 0.25em 0;
         margin: 0 0.5em;
-        color: rgb(46, 81, 175);
+        color: $primary-600;
 
         &.active {
-          border-bottom:2px solid rgb(116, 137, 196);
+          border-bottom:2px solid $primary-300;
         }
       }
     }

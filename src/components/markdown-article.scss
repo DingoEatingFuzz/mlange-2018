@@ -1,4 +1,5 @@
 @import '../styles/fonts';
+@import '../styles/colors';
 
 .markdown-article {
   box-sizing: border-box;
@@ -89,14 +90,14 @@
 
   a {
     font-weight: normal;
-    color: rgb(100, 141, 197);
+    color: $other-primary-400;
 
     &:hover {
-      color: rgb(28, 98, 196);
+      color: $other-primary-500;
     }
 
     &:visited {
-      color: rgb(89, 81, 134);
+      color: $purple-400;
     }
   }
 
@@ -108,8 +109,8 @@
     font-size: 0.9em;
 
     &[class*="language-"] {
-      background: rgb(224, 232, 241);
-      color: rgb(20, 37, 59);
+      background: $gray-100;
+      color: $other-primary-600;
     }
   }
 
@@ -166,13 +167,13 @@
   }
 
   .gatsby-highlight-code-line {
-    background-color: #feb;
+    background-color: $orange-100;
     display: block;
     margin-right: -1em;
     margin-left: -1em;
     padding-right: 1em;
     padding-left: 0.75em;
-    border-left: 0.25em solid #f99;
+    border-left: 0.25em solid $orange-400;
   }
 
   @media (max-width:1200px) {
