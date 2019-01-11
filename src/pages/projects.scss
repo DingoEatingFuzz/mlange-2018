@@ -13,7 +13,11 @@
   }
 
   a {
-    color: $primary-600;
+    color: $primary-500;
+
+    &:hover {
+      color: $primary-400;
+    }
   }
 
   section {
@@ -92,7 +96,7 @@
         text-transform: uppercase;
         letter-spacing: 0.05em;
         background: $gray-100;
-        color: $other-primary-600;
+        color: $primary-600;
         white-space: nowrap;
       }
     }
@@ -155,15 +159,16 @@
         width: 100%;
         margin: 0;
         padding: 0;
-        transform: translateX(10px);
+        text-align: right;
 
         @media (max-width:1200px) {
-          transform: translateX(0);
+          text-align: center;
         }
 
         img {
           max-width: 100%;
-          border-radius: 5px;
+          border-top-left-radius: 5px;
+          border-bottom-left-radius: 5px;
 
           @media (max-width:1200px) {
             border-radius: 0;
@@ -176,8 +181,9 @@
           font-style: italic;
           font-family: $sans-stack;
           padding-right: 30px;
-          color: $gray-500-2;
+          color: $gray-400;
           width: 100%;
+          text-align: left;
 
           @media (max-width:1200px) {
             padding: 0 2em;

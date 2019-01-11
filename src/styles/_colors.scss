@@ -1,26 +1,20 @@
-$primary-200: rgb(203, 203, 216);
-$primary-300: rgb(116, 137, 196);
-$primary-400: rgb(22, 90, 121);
-$primary-500: rgb(0, 115, 168);
-$primary-600: rgb(46, 81, 175);
-
+$primary-100: #DCF3F7;
+$primary-200: #80CCD9;
+$primary-300: #42A6B8;
+$primary-400: #00849C;
+$primary-500: #006B7D;
+$primary-600: #1C5963;
 $primary: $primary-400;
-
-$other-primary-600: rgb(20, 37, 59);
-$other-primary-500: rgb(28, 98, 196);
-$other-primary-400: rgb(100, 141, 197);
-$other-primary-300: saturate(lighten($other-primary-400, 10), 20);
-$other-primary-200: lighten($other-primary-400, 20);
-$other-primary-100: desaturate(lighten($other-primary-400, 32), 10);
 
 $purple-400: rgb(89, 81, 134);
 
-$gray-500: rgb(92, 96, 107);
-$gray-500-2: #666;
-$gray-400: #999;
-$gray-300: #CCC;
-$gray-200: #DDD;
-$gray-100: rgb(224, 224, 231);
+$gray-100: #E6EEF4;
+$gray-200: #B5C3CE;
+$gray-300: #8892A0;
+$gray-400: #606E7C;
+$gray-500: #3E4C54;
+$gray-600: #2A3942;
+$gray: $gray-400;
 
 $orange-100: #feb;
 $orange-400: #f99;

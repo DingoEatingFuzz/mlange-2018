@@ -90,10 +90,10 @@
 
   a {
     font-weight: normal;
-    color: $other-primary-400;
+    color: $primary-400;
 
     &:hover {
-      color: $other-primary-500;
+      color: $primary-500;
     }
 
     &:visited {
@@ -110,7 +110,7 @@
 
     &[class*="language-"] {
       background: $gray-100;
-      color: $other-primary-600;
+      color: $primary-600;
     }
   }
 
