@@ -24,11 +24,6 @@ const CommonNavigation = () => (
           Talks
         </Link>
       </li>
-      <li>
-        <Link to="/photography" activeClassName="active">
-          Photography
-        </Link>
-      </li>
     </ol>
   </nav>
 )
