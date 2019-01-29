@@ -46,6 +46,7 @@
     background: $gray-100;
     display:flex;
     align-items: center;
+    position: relative;
 
     ol {
       padding:0;
@@ -69,6 +70,46 @@
         &:hover {
           background: rgba($gray-200, 0.5);
           color: $primary-500;
+        }
+      }
+    }
+
+    footer {
+      font-size: 0.8em;
+      position: absolute;
+      bottom: 0;
+      border-top: 1px solid $gray-200;
+      width: 100%;
+
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: space-around;
+
+        li {
+          display: flex;
+          width: 50%;
+
+          + li {
+            border-left: 1px solid $gray-200;
+          }
+
+          a {
+            padding: 0.5em;
+            width: 100%;
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            color: $primary;
+            transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+
+            &:hover {
+              background: rgba($gray-200, 0.5);
+              color: $primary-500;
+            }
+          }
         }
       }
     }

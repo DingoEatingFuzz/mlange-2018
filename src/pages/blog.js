@@ -5,6 +5,7 @@ import Link from 'gatsby-link'
 import { graphql } from 'gatsby'
 
 import Layout from '../components/layout'
+import CommonFooter from '../components/common-footer';
 import './blog.scss'
 
 const BlogPage = ({ data }) => (
@@ -35,6 +36,7 @@ const BlogPage = ({ data }) => (
           ))}
         </ol>
       </main>
+      <CommonFooter />
     </div>
   </Layout>
 )

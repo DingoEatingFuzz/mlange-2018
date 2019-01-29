@@ -3,6 +3,7 @@ import Helmet from 'react-helmet'
 import CommonHeader from '../components/common-header'
 
 import Layout from '../components/layout'
+import CommonFooter from '../components/common-footer';
 import './writing.scss'
 
 const WritingPage = () => (
@@ -15,6 +16,7 @@ const WritingPage = () => (
       <CommonHeader />
 
       <section>Coming Soon.</section>
+      <CommonFooter />
     </div>
   </Layout>
 )

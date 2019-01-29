@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'gatsby-link'
 
-const CommonNavigation = () => (
+const CommonNavigation = ({ children }) => (
   <nav>
     <ol>
       <li>
@@ -25,6 +25,7 @@ const CommonNavigation = () => (
         </Link>
       </li>
     </ol>
+    {children}
   </nav>
 )
 

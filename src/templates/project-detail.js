@@ -4,6 +4,7 @@ import { graphql } from 'gatsby'
 
 import NarrowHeader from '../components/narrow-header'
 import MarkdownArticle from '../components/markdown-article'
+import CommonFooter from '../components/common-footer';
 import Layout from '../components/layout'
 import '../pages/projects.scss'
 
@@ -25,7 +26,7 @@ export default ({ data }) => {
           <dl>
             {meta.url && (
               <dd>
-                Visit the project at <a href={meta.url} target="_blank">{meta.url}</a>
+                Visit the project at <a href={meta.url} target="_blank" rel="noopener noreferrer">{meta.url}</a>
               </dd>
             )}
             <dd>
@@ -43,7 +44,7 @@ export default ({ data }) => {
             {images.map(img => (
               <li key={img.url}>
                 <figure>
-                  <a href={img.url} target="_blank"><img src={img.url} alt={img.alt} /></a>
+                  <a href={img.url} target="_blank" rel="noopener noreferrer"><img src={img.url} alt={img.alt} /></a>
                   <figcaption dangerouslySetInnerHTML={{ __html: img.caption }}></figcaption>
                 </figure>
               </li>
@@ -51,6 +52,7 @@ export default ({ data }) => {
           </ul>
         ) : ''}
       </div>
+      <CommonFooter />
     </Layout>
   )
 }

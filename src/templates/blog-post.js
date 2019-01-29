@@ -4,6 +4,7 @@ import { graphql } from 'gatsby'
 
 import NarrowHeader from '../components/narrow-header'
 import MarkdownArticle from '../components/markdown-article'
+import CommonFooter from '../components/common-footer';
 import Layout from '../components/layout'
 import '../pages/blog.scss'
 
@@ -31,6 +32,7 @@ export default ({ data }) => {
           </dl>
         </MarkdownArticle>
       </div>
+      <CommonFooter />
     </Layout>
   )
 }

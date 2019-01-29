@@ -65,3 +65,8 @@
 .blog-post {
   margin:auto;
 }
+
+.blog-post + footer.common-footer {
+  justify-content: center;
+  margin-top: 5em;
+}

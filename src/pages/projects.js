@@ -7,6 +7,7 @@ import { graphql } from 'gatsby'
 
 import Layout from '../components/layout'
 import CommonHeader from '../components/common-header'
+import CommonFooter from '../components/common-footer'
 import './projects.scss'
 
 const linkForSlug = (slug, nodes) => {
@@ -59,6 +60,7 @@ const ProjectsPage = ({ data }) => (
           ))}
         </Masonry>
       </section>
+      <CommonFooter />
     </div>
   </Layout>
 )

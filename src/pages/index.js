@@ -15,7 +15,14 @@ const IndexPage = () => (
           <p>Maker of things</p>
         </div>
       </section>
-      <CommonNavigation />
+      <CommonNavigation>
+        <footer>
+          <ul>
+            <li><a href="https://twitter.com/DingoEatingFuzz" target="_blank" rel="noopenner noreferrer">Twitter</a></li>
+            <li><a href="https://github.com/DingoEatingFuzz" target="_blank" rel="noopenner noreferrer">Github</a></li>
+          </ul>
+        </footer>
+      </CommonNavigation>
     </div>
   </Layout>
 )
