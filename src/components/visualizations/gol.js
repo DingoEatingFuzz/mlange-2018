@@ -82,11 +82,13 @@ export default class Gol extends React.Component {
     this.seed = Math.random() * 50
     this.setupGOLProgram();
 
-    this.resizeHandler = window.addEventListener('resize', e => {
+    this.resizeHandler = e => {
       requestAnimationFrame(() => {
         this.setupGOLProgram()
       })
-    })
+    };
+
+    window.addEventListener('resize', this.resizeHandler);
 
     this.startAnimation();
   }
