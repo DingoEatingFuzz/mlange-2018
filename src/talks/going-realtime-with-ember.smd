@@ -1,0 +1,285 @@
+---
+title: "Going Realtime With Ember"
+date: "2018/10/11"
+primary: "#000000"
+secondary: "#25ba80"
+conferences:
+  - "EmberFest 2018"
+---
+
+It used to be that only the most impressive websites would update data live as you sat on the page.
+Now, as the lines between native apps and websites blur, this is becoming expected behavior. What
+was once cutting-edge tech is now standard-issue for a good user experience.
+
+See how **HashiCorp** made the UI for the cluster scheduler software Nomad realtime with Ember
+Concurrency, Ember Data, and the rendering layer we know and love.
+
+A UI engineer at HashiCorp with 4+ years of experience in Ember.
+
+---
+
+---
+
+Hi, I'm Michael. I'm a UI engineer at HashiCorp.
+
+---
+
+HashiCorp is a cloud infrastructure automation company.
+
+---
+
+We currently have six products in our product suite. [Vagrant](https://www.vagrantup.com/),
+[Packer](https://packer.io/), [Terraform](https://www.terraform.io/),
+[Vault](https://www.vaultproject.io/), [Nomad](https://www.nomadproject.io/), and
+[Consul](https://www.consul.io/).
+
+---
+
+The product I work on is Nomad.
+
+---
+
+Nomad is a cluster scheduler, or container orchestrator. It helps you easily deploy applications at
+any scale.
+
+---
+
+This isn't a Nomad talk so I'll keep this short, but it helps to know what we're building a UI for.
+Within Nomad, there are lots of things going on all the time. Most action is coming from the cluster
+itself, but users still want to stay informed. We can't wait on user action to update the state
+of the world.
+
+---
+
+One way to do this is to add a refresh button, but that's kind of clunky. Furthermore, it's dated.
+The seams are starting to show between the people who build websites and those who use websites.
+Any casual web user can look at this refresh button and have a simple questions.
+
+---
+
+Can't it just do that automatically? Twitter telle me about new tweets. My email clients pushes
+notifications. Lyft will at least attempt to show me where my ride is. And Spotify will tell me
+what my friends are listening to even though I never asked for that and I have never cared.
+
+So why doesn't _your_ web app do that?
+
+---
+
+Everything nodel and great eventually becomes commodity. Great becomes standard. Standard becomes
+dated.
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
