@@ -48,11 +48,11 @@ const Talk = ({ data: source }) => {
                 <a name={index + 1} href={`#${index + 1}`}>#{index + 1}</a>
               </div>
               <div className="figure">
-                <Img
+                <a href={sortedImages(images)[index].node.childImageSharp.original.src}><Img
                   fluid={sortedImages(images)[index].node.childImageSharp.fluid}
                   fadeIn={true}
                   alt={`Slide ${index + 1}`}
-                />
+                /></a>
               </div>
               <MarkdownArticle content={slide.html} />
             </div>
@@ -94,6 +94,9 @@ export const query = graphql`
           relativePath
           name
           childImageSharp {
+            original {
+              src
+            }
             fluid(maxWidth: 450) {
               ...GatsbyImageSharpFluid
             }
