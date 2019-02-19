@@ -41,6 +41,13 @@ module.exports = {
         path: path.join(__dirname, 'static', 'images'),
       },
     },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'slides',
+        path: path.join(__dirname, 'static', 'slides'),
+      },
+    },
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     'gatsby-plugin-twitter'
