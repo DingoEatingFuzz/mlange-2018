@@ -25,6 +25,11 @@
 
       h2 > a {
         text-decoration: none;
+        color: $primary;
+
+        &:visited {
+          color: $primary-200;
+        }
       }
 
       h3 {
