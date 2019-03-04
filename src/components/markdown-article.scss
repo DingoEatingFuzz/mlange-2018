@@ -76,15 +76,17 @@
     }
   }
 
-  .gatsby-highlight, img, hr {
-    max-width:50vw;
+  &:not(.flush) {
+    .gatsby-highlight, img, hr {
+      max-width:50vw;
 
-    @media (max-width:1500px) {
-      max-width:800px;
-    }
+      @media (max-width:1500px) {
+        max-width:800px;
+      }
 
-    @media (max-width:800px) {
-      max-width: 100%;
+      @media (max-width:800px) {
+        max-width: 100%;
+      }
     }
   }
 
@@ -167,13 +169,13 @@
   }
 
   .gatsby-highlight-code-line {
-    background-color: $orange-100;
+    background-color: $primary-600;
     display: block;
     margin-right: -1em;
     margin-left: -1em;
     padding-right: 1em;
     padding-left: 0.75em;
-    border-left: 0.25em solid $orange-400;
+    border-left: 0.25em solid $primary-400;
   }
 
   @media (max-width:1200px) {
