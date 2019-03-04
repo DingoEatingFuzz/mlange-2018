@@ -22,8 +22,20 @@ const srcPath = image => image.node.childImageSharp.fluid.src
 const meta = data => data.node.metadata
 
 const Talk = ({ data: source }) => {
-  const data = source.allSlidesMarkdown.edges[0]
+  const allTalks = source.allSlidesMarkdown
+  const data = allTalks && allTalks.edges && allTalks.edges[0]
   const images = source.allFile.edges
+
+  if (!data || !images) {
+    return (
+      <Layout>
+        <NarrowHeader link="/talks" noun ="talks" />
+        <main className="talk">
+          <h1>Wow, busted it.</h1>
+        </main>
+      </Layout>
+    )
+  }
   return (
     <Layout>
       <NarrowHeader link="/talks" noun="talks" />
@@ -54,7 +66,7 @@ const Talk = ({ data: source }) => {
                   alt={`Slide ${index + 1}`}
                 /></a>
               </div>
-              <MarkdownArticle content={slide.html} />
+              <MarkdownArticle content={slide.html} className="flush" />
             </div>
           ))}
         </article>
