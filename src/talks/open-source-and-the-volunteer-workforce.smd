@@ -15,308 +15,941 @@ and JavaScript!
 
 ---
 
+This talk ends on the topic of diversity and inclusion in the tech industry. As such, there will be
+discussions of racism, sexism, and other exclusionary behaviors.
+
+If you are not prepared to read about this right now, please save this for later. Alternatively,
+don't read past slide 116.
+
+---
+
 Hi I'm Michael
 
 ---
 
----
+I'm terrible at talking about myself, so I made this cutesy collage as a form of deflection. When
+I'm not at my computer I try to get outside and stay active. This includes activities like
+backpacking and bouldering. Also photography, I took these.
 
 ---
 
+But really, for the most part, I'm at my computer. By day I am a UI engineer at HashiCorp working on
+the Nomad product.
+
 ---
+
+And I'm also a volunteer!
 
 ---
 
+By night, I volunteer for CIVIC Software Foundation.
+
 ---
 
+At CIVIC, our goal is to make public information public knowledge. A lot of information is locked up
+but not because it's private, but because making it public is hard. Furthermore, simply making
+information public doesn't make it knowledge. It needs to be synthesized, workable, digestable.
+
 ---
+
+We're a registered 503c, not just some open source repos.
 
 ---
 
+And there are only two people on payroll.
+
 ---
 
+This is our process.
+
 ---
+
+For six to nine months&hellip;
 
 ---
 
+&hellip;100+ volunteers&hellip;
+
 ---
+
+&hellip;work on 5 projects&hellip;
 
 ---
 
+&hellip;each with an open API and web experience.
+
 ---
+
+So for the 2018 project season, just like every season, we had five projects to work on.
 
 ---
 
+Housing Affordability. Where we synthezied complex information to better understand affordable
+housing trends and policy dynamics.
+
 ---
 
+Neighborhood Development. We examined local patterns, movement, and our sense of place.
+
 ---
+
+Transportation Systems. Which focused on identifying opportunities for equitable mobility in cities.
 
 ---
 
+Disaster Resilience. Assessing risk and prioritizing action to strengthen resilience in the face of
+a natural disaster.
+
 ---
+
+Local Elections. Quantifying influence and understanding the impact of money in our political system.
 
+Except using a numbered list here gives a sense of order, but no one project was prioritized over
+another.
+
 ---
+
+A bulleted list helps, but this still makes it look like there was a sequence. We didn't do projects
+in serial, we had over 100 people working on these in parallel.
 
 ---
 
+There we go. That's more fitting.
+
 ---
 
+So you might immediately be thinking, "How in world? How do you pull this off? With volunteers? What?
+Who are these people?"
+
 ---
+
+These are good questions, welcome to the talk!
 
+I want to share my experiences with CIVIC Software Foundation and volunteering and open source as
+a set of lessons learned.
+
 ---
+
+The first lesson is to have an org chart.
 
 ---
+
+Maybe you don't think your organization or projects are serious business and therefore don't need an
+org chart. But org charts aren't just for business, they keep you and all contributors organized.
+
+Hack Oregon has 132 repos, 232 team members, and 33 teams. Without some sense of structure, this is
+chaos.
 
 ---
 
+Maybe you aren't coming from a non-profit that scales up to 100 or more volunteers. Maybe you have
+a project on the side you're trying to grow.
+
+Org charts are helpful here too. As a community and a project grows, it makes sense to scale your
+organizational structure along with it.
+
+I really like the way [Ember.js]() handles this. They have a steering committee and a core team as
+well as a collection of focused teams for different aspects of the framework. Such as the CLI, Ember
+Data, and the website, guides, and additional learning materials.
+
 ---
 
+This is important to do as you scale because people working together is a network. And networks are
+graphs.
+
 ---
+
+Graph complexity is measured by the edges. Once we get to even 50 nodes in a graph, or 50 people
+working together, there are 1225 connections if everyone is working directly with everyone else.
+
+This is clearly untenable.
 
 ---
 
+So we introduce structure with an org chart. This reduces graph complexity by eliminating edges.
+
 ---
 
+As you work through this exercise, please be warned that [Conway's Law]() is very real.
+
 ---
+
+It states that,
 
+> Organizations which design systems are constrainted to produce designs which are copies of the
+  communication structures of these organizations.
+
+  _&mdash; Melvin Conway_
+
 ---
+
+That's a bit of a mouthful. This is a JavaScript conference, let's look at what an implementation of
+Conway's Law might look like if it were written in JS.
+
+```js
+const organization = new Organization();
+let system = organization.produce();
 
+// system has issues
+system = system.changeThings();
+
+// system still has issues
+```
+
+So we have an organization. That organization produces a system. When the system has issues, we
+attempt to change the system directly, but this is ineffective.
+
 ---
 
+It's ineffective because the system is a product of the organization.
+
 ---
+
+So if we want to change the system&hellip;
 
 ---
+
+&hellip;we have to change the organization.
+
+I know I'm being pretty heavy-handed here, but this bi-directionality is really important to
+understand.
 
 ---
 
+I've been volunteering with CIVIC, formerly Hack Oregon, for a couple years now. Let's review how
+our org chart has changed and what led to those changes.
+
+In 2016, we had a very flat structure. A single founder, Cat Nikolovski, running five teams. Each
+team was responsible for the complete development of their project.
+
 ---
+
+This had great results! At the end of the season, there were five complete APIs and web experiences.
+Teams worked efficiently as units. Unfortunately, each project looked entirely different, as if five
+different organizations made five different projects. Furthermore, this put a heavy burden on the
+person in charge. It's a critical single point of failure.
 
 ---
 
+So in 2017, we shook things up.
+
+There was still a founder up top, Cat's not going anywhere, but in addition to the five project
+teams, there was an operations coordinator that could split the load with the founder. We also
+introduced a platform team this year. The Operations coordinator would work between the platform
+team and the project teams to get everyone using the same technologies, implementing consistent
+design patterns, and deploying to common infrastructure.
+
 ---
+
+Did this help?
+
+We had uniform results, so platform team was a good idea in this regard. We also had a good
+distribution of responsibilities. But there were inefficiencies to work out. If project teams had
+questions for the platform team, these could easily become blocking requests that required an
+answer before the team could move forward. And since the platform team was fairly thin and there
+were five teams that needed to ship code, heroes emerged and became single points of failure.
 
 ---
 
+So just like before, we shook things up in 2018.
+
+This time the founder had two reports: a CTO (yours truly) and a
+[Smart Cities](https://pages.nist.gov/GCTC/super-clusters/) Coordinator.
+
+Each of the five project teams still reported to the founder, but they also each had their own
+management structure. This included an
+
+  1. **Executive Producer**: responsible for leading the project and managing partnerships and
+    relationships with outside stakeholders.
+  2. **Project Manager**: responsible for making sure every team member was on track to keep the project
+    on schedule.
+  3. **Data Manager**: responsible for taking ownership over the data for the project and expected to be
+    the technical subject matter expert.
+
+On the other side of the house, there were now three teams within the platform organization that
+reported to the CTO, each with a designated team lead.
+
+  1. **DevOps**: responsible for managing infrastructure, site reliability, and security.
+  2. **Data Viz/Frontend**: responsible for building our frontend component library, charting primitives,
+    the final frontend experience, and all the data visualizations that came with it.
+  3. **Design**: responsibile for the style guide and design system that drove all the visual design,
+    interaction design, and accessibility of our product.
+
 ---
 
+On paper this looked pretty good, but did it hold up?
+
+We still had uniform results and a nice distribution of responsibilities. It's always nice to avoid
+backsliding. We were also more efficient. All those blocking requests were now load balanced since
+there were more people who had a wide view into different parts of the operation. A downside to this
+approach is there's a lot of management overhead. Maybe this is inevitable, but it makes one long
+for the days of 2016 when there was just a founder at the helm. Lastly, there was still repeated
+work being done on project teams. This was due to team siloing: since each team could more or less
+operate as an isolated unit, there was no incentive to see if other teams were doing the same work.
+
+This is just how it goes. I'm sure we will review this and come up with some modifications for the
+2019 project season.
+
 ---
 
+Maybe I should back up. I bet a lot of you are in the audience nodding along with this but in the
+back of your head you're thinking, "But how did you even get that many volunteers?"
+
 ---
+
+That leads us to lesson two. If you build it, they won't come.
 
 ---
 
+We're surrounded by wildly popular projects that look like they were born this way, but projects
+don't start out like this.
+
 ---
+
+I had to dig this old React web page out of the wayback machine from when I was first looking into
+it. First, the headline, "Why React?". The idea that React even has to explain itself anymore is
+amusing, but this Give it Five Minutes section is what's really great.
 
+> React challenges a lot of conventional wisdom, and at first glance some of the ideas may seem
+  crazy.
+
+That was true not too long ago, now it seems more absurd to not use React's ideas.
+
 ---
+
+Even Bezos had to sell books before he could sell the mere promise of jobs to the City of New York
+for billions of dollars.
 
 ---
 
+We all get caught up in the hindsight bias. We see success and assume that that's how it always was
+and that's how it was always meant to be.
+
+> Hindsight Bias.
+  The inclination, after an event has occurred, to see the event as having been predictable, despite
+  there having been little or no objective basis for predicting it.
+
 ---
 
+It's also important to note that stars don't mean success. This is our frontend project at CIVIC.
+We have more contributors (41) than stars (39). As it turns out, it's possible to get people
+interested in your project without going viral.
+
 ---
+
+> The best marketing is a great product.
 
+>  &mdash;Me (regrettably)
+
+This used to be how I thought. The best products inevitably become successful, but this isn't true.
+A bad product can't be saved by excellent marketing, but you can't rely on word of mouth to get your
+message out.
+
+When it comes to getting volunteers, it takes a special form of marketing. That form of marketing
+has its own word.
+
 ---
 
+Recruiting!
+
+I want to talk briefly about some of the tactics CIVIC has for getting volunteers.
+
 ---
 
+First, build your let work. We have a mailing list that we use to keep in touch with any one who has
+ever been so inclined to sign up.
+
 ---
+
+You can also leverage existing networks. We had a Hack Oregon meetup that helped get a lot of new
+people interested in our organization. Meetup, like a lot of platforms, has a built in content
+recommendation engine that got our meetup in front of a lot of new faces.
 
 ---
 
+Once someone is truly interested in being a team member, we try to gauge interest and skill level
+with a basic form.
+
 ---
 
+Lastly, we interview and pitch to people who are both interested and look like a good fit.
+
 ---
+
+And I really want to underline the pitch part because this is true of all job interviews. It's easy
+to get some tunnel-vision when interviewing candidates and forget that during an interview, a
+candidate is also evaluating you and the organization you represent. By pitching at the same time,
+you are going to get a candidate excited about the opportunities you offer.
 
 ---
 
+Speaking of what you can offer, that's lesson three: ask what your community offers the members.
+
 ---
 
+Dan Pink wrote a book called Drive that looked into human motivation. It concludes that there are
+three pillars to motivation: autonomy, mastery, and purpose. As long as your job or role can satisfy
+these three constraints, you will stay motivated.
+
 ---
+
+Something tells me Dan Pink is pretty well off, because it's been my experience that people will put
+up with a lot if they are being compensated well. Or if the alternative to this job is no income and
+hardships that come with that.
 
 ---
 
+Volunteering is in a fascinating place because there is no money component. Where a company gets a
+degree of forgiveness when it comes to Autonomy, Mastery, and Purpose, volunteer positions do not.
+
 ---
 
+Let's take another look at the org chart for 2018 again.
+
 ---
+
+This year we made a dedicated frontend team. As mentioned, this is because we wanted a unified web
+experience for all five projects. It makes great sense as an organization, but it suffers when it
+comes to volunteer motivation.
 
 ---
 
+Mastery? For apprentice engineers, sure. We're writing real, production code.
+
 ---
+
+Autonomy? Depends on how well I and others wrote tickets and defined goals.
 
 ---
 
+Purpose? Only indirectly. Working on React components is far removed from fixing Portland's civic
+issues.
+
 ---
+
+So you put this all together and volunteering as a frontend developer at CIVIC begins to look a lot
+like work. Except it's work done after hours with no paycheck.
 
 ---
 
+I don't have answers for this one. We saw a lot of attrition in our frontend team, so next year we
+will need to do better at providing purpose and autonomy to our frontend volunteers. This is also
+true for our develops team and any future team that is removed from our core projects.
+
 ---
 
+I don't have any slick transition into the next lesson, so, uh, here are my cats.
+
 ---
+
+Lesson five! Product management is for everyone.
 
+Much like marketing, early in my career I thought product management was unnecessary. Engineering is
+the real work, product management is just pretending to be an engineer.
+
 ---
+
+Turns out I was very wrong and product management is an expansive, difficult, and complex career
+path.
 
+If you don't take product management seriously, you are likely to run into one of two walls.
+
 ---
+
+The first wall is where things are just being added to your project haphazardly. This may be great
+for a sense of involvement among the community, but your vision gets lost and you will start to feel
+like you are losing control of what was once your baby.
 
 ---
 
+The other wall is the opposite. You never let go of control, your voice is final, and your rationale
+devolves into things like "it feels right", "it's just not good for this project". This can alienate
+contributors. Remember that a benevolent dictator is still a dictator.
+
 ---
+
+I ran head first into wall #2 this year when refactoring our frontend architecture. There was a plan
+in my head and I acted on it, but I didn't do a good job sharing my plan with others. Some people
+offered to help, but I rejected them saying that there was no place for anyone to help until I
+finished this initial refactor.
+
+Ultimately, the refactor was well-received and we were able to
+collaborate after the fact, but it would be wrong to call this a flat out success. I opened a 20,000
+line pull request with 90 commits with no documented issue of the problem beforehand.
 
+I had a lot to say in the PR to defend my choices, but ultimately I left all the eager contributors
+in the dark while I coded away in a corner.
+
 ---
+
+When discussing product management, people like to talk about roadmaps&hellip;
 
 ---
 
+&hellip;and north stars. Lots of wayfinding metaphors.
+
 ---
+
+The metaphor I like to use is a vanishing point.
 
 ---
 
+Objects that are close should be very clear, detailed, and understood. This is what requires
+immediate attention and focus. And as objects get farther away, they become blurrier. There's a
+rough idea of what's ahead, and that idea is shared amongst teams, but it also needs to be
+understood that a lot can happen between here and there. Maybe what seems obvious from our vantage
+point is actually a mirage or a trick of the light.
+
 ---
+
+My advice for how to embrace product management is to start off by spending time thinking about what
+it is you are building. Try to answer these questions.
+
+  - What is right for your project?
+  - What is wrong for your project?
+  - What are the current priorities?
+  - When is the timing right?
+  - Why are these things true?
 
 ---
 
+By doing this upfront thinking, you prevent Wall #1 by having a plan.
+
 ---
 
+And you prevent Wall #2 by being able to articulate your reasons for rejecting ideas or prioritizing
+some projects before others.
+
 ---
+
+Communication makes all the difference, and being able to articulate thoughts and motivations is key.
 
 ---
 
+No talk is complete without a pop culture reference, so here's a scene from Bojack Horeseman. If you
+aren't familiar with the show, Bojack is the horse man, naturally. He's also a depressing
+alcoholic/washed-up tv star that the show focuses on. Todd is the unlikely friend who here is
+finally venting his frustrations.
+
+> You can't keep doing this! You can't keep doing s💩y things and feel bad about yourself like that
+  makes it okay! YOU NEED TO BE BETTER!!
+
+> &mdash;Todd
+
+It's a super intense scene, if you have watched the show I'm sure you remember it. Particularly the
+line, "you need to be better" struck a chord with me. Mostly because it came from a friend. Our
+friends are our fans and our contributors are too. They want you and the project to succeed. Saying
+No isn't automatically a let down, but letting a project spiral or fizzle out is.
+
 ---
+
+On that low note, lesson five: lower your expectations.
 
+This sounds horrible, but I promise you it's not so bad. This is all about perspective.
+
 ---
+
+When working on a project, especially when it's new and exciting, ideas are going to come much more
+rapidly than implementation. Over time, you'll have a massive backlog of ideas while your
+implementation steadily trails behind.
 
+This is just how it goes, but how do you react?
+
 ---
 
+The optimist will say we can do it all.
+
 ---
+
+The pessimist will say there's no way it can all be done.
 
 ---
 
+Neither of these outlooks are particularly productive. The optimist will ultimately be disappointed
+and the pessimist will achieve less than they are capable of while bringing down everyone around
+them.
+
+There are other outlooks.
+
 ---
 
+The realist takes a more practical approach. Speaks the truth while avoiding being negative.
+
 ---
+
+The idealist stays positive but doesn't promise the world.
 
 ---
 
+So here's an unscientific chart that I made that proves that I'm right. Feel free to share it with
+your colleagues.
+
 ---
 
+Another aspect of lowering your expectations is to be realistic about what it means to be a
+volunteer. You need to stay tethered to the realities of an unpaid part-time gig.
+
 ---
+
+I personally want to be 💯 at volunteering.
 
 ---
 
+I also want to be 💯 at my day job.
+
 ---
+
+And I want to be there for my friends. I want to be 💯 at my friendships.
 
 ---
 
+Same story for with my family.
+
 ---
+
+And my personal relationship.
 
 ---
 
+And let's not forget about the general upkeep among the rest of it.
+
+I simply can't be 💯 at all these things. No one can. There isn't enough time.
+
 ---
+
+Instead, you have to be realistic about your ambitions, be mindful of the 24 hour day that we're all
+bound to, and take things at a healthy pace.
 
 ---
 
+Never forget that when you overbook yourself, you are also impacting the lives of all the people
+around you.
+
+This can be a hard pill to swallow. Who likes being told to slow down?
+
 ---
+
+Despite our volunteers not committing all imaginable time to the cause, we were still able to
+correlate poverty rates and access to food.
 
 ---
 
+We were able to share insights from publicly tracked campaign financing.
+
 ---
 
+We opened up and visualized [Harvard's State of the Nation Housing Report]().
+
 ---
+
+We analyzed TriMet ridership year over year with public yet closed-off data.
 
 ---
 
+And we personalized maps for citizens based on data from the Oregon Department of Geology and
+Mineral Industries' Cascadia Subduction Zone research.
+
 ---
+
+This is super obvious, but it needs to be said.
+
+Slow and steady is so much faster than not moving at all.
+
+There are also ways that we can work smarter instead of harder. One of those ways is to&hellip;
 
 ---
 
+&hellip;write the docs. Lesson six.
+
+An amazing effect of building on top of open source tools is we get to start projects with an
+incredible head start.
+
 ---
+
+We use React and Redux for the CIVIC frontend.
 
 ---
 
+And React and Redux both have amazing docs.
+
 ---
+
+But the Redux docs will never answer CIVIC questions, so what do we do about that?
 
 ---
+
+We write our own docs. This way we don't have to repeat explanations and volunteers don't have to
+rely on you to answer their questions. In-person explanations are also blocking requests while docs
+are asynchronous.
+
+Computers scale much better than humans do.
 
 ---
 
+So what do project-specific docs look like?
+
 ---
+
+It can be as simple as committing markdown files to your repo.
+
+As engineers, I think we are easily distracted by the machinery of docs and quickly end up in a
+rabbit hole of static site generators, templating options, and deployment pipelines. Argumnets about
+how my static site generator can beat up your static site generator are honestly a distraction.
 
 ---
 
+We forget that the most important part of docs are the words. Writing good docs is already a hard
+task that doesn't need further complication on day one.
+
 ---
+
+But, writing docs doesn't absolve you from your responsibilities as a mentor. Maybe your docs are
+bad, maybe your docs assume more expertise than a volunteer has. If books were all that were
+required to teach stuff, then we wouldn't need teachers.
 
+And we need teachers.
+
 ---
+
+Okay, Lesson Seven. Be Proactive with your diversity and inclusion. This isn't my area of expertise.
+Smarter people have said much more on this topic than I have the time or qualifications to do, but I
+do believe that the time is up for white men who assume this is someone else's problem.
 
+So I'll try to talk through some of my thinking on the matter.
+
 ---
 
+The first big question is why. Why even care about diversity and inclusion?
+
 ---
+
+I hear a couple common excuses for _not_ taking this seriously.
 
+  1. If all people are truly equal, then every individual must be hot-swappable.
+  2. I might be a white cis-het man, but I read about issues and I can be an ally for people with
+     different backgrounds.
+
 ---
 
+Excuse number 1 misses the point. People _aren't_ identical. No one is saying that. We are all
+individuals with unique experiences and perspectives.
+
 ---
+
+Equality means equal treatment and equal opportunities.
 
 ---
 
+For the second excuse, you may be a fantastic ally, but everyone suffers from unknown unknowns. We
+are all always learning, and even when we try our hardest to stand up for people from different
+backgrounds, it's not the same as representation.
+
+This chart is clearly unscientific, and it's not exactly possible to quantify how much we don't know
+we don't know, but there's plenty of evidence all around us.
+
 ---
+
+For instance, how photo labs were calibrated without dark skin tones in mind, and how that
+calibration managed to be carried over into digital photography.
 
 ---
 
+And this dark skin ton calibration problem keeps.
+
 ---
+
+Happening.
+
+These aren't acceptable problems to have, and this is especially important in civic tech. Your
+startup product may have a niche target audience you can truly represent well, but civic tech needs
+to work for everyone.
+
+If you don't have a great startup idea yet, maybe you should look into soap dispensers and hand
+dryers. There's clearly some room for disruption there.
 
 ---
 
+It's also important to note that this isn't only an issue for white cis-het men. White cis-het men
+happen to be the dominant demographic, which means we carry the most power and therefore
+responsibility in driving social change.
+
+Brett Kavanaugh is on the Supreme Court now, and it's not because women didn't try hard enough to
+keep him out. It's because the decision ultimately came down to a group that is
+[majority white men](https://www.senate.gov/CRSpubs/b8f6293e-c235-40fd-b895-6474d0f8e809.pdf).
+
 ---
+
+Individually, no one is diverse.
 
 ---
 
+A room full of white women will be biased towards women needs and white history.
+
 ---
+
+The same is true for any one demographic.
 
 ---
 
+A room of black men will also be biased in a different direction.
+
 ---
+
+Diversity is a group phenomenon.
 
 ---
 
+Only groups can be diverse, and this will change over time as the group grows or the composition
+changes.
+
 ---
 
+Since diversity is a group phenomenon, that also means rejection on the grounds of diversity
+shouldn't be taken personally.
+
 ---
+
+There's nothing wrong with you when this happens. The problem lies with what you add (or don't add)
+to a community.
 
+On the flip-side, when determining if an individual makes your community more diverse&hellip;
+
 ---
+
+&hellip;keep in mind that our differences are often invisible.
 
 ---
 
+So with all of this in mind, how can we expect D&I to solve itself? Someone needs to be paying
+attention to the composition of your community.
+
 ---
+
+And it's not enough to react once a community is homogenous. The issue compounds.
 
 ---
 
+Consider [Schelling's segregation model](http://nifty.stanford.edu/2014/mccown-schelling-model-segregation/).
+It's a very simple model meant to see if segregation in the U.S. is potentially the result of slight
+preference rather than intense deep-seated racism. It ignores mounds of historical evidence and
+caveats, so it's not the most accurate explanation of American neighborhoods, but the emergent
+behavior is still interesting.
+
 ---
+
+Over time, agents segregate based on just a slight preference.
+
+In this image, blue squares/agents have a slight preference to be next to other blue squares/agents.
+If it has too many red neighbors or not enough blue neighbors, it moves. This small influence is
+enough to impact the system in such a large way that the group in the left state eventually settle
+in the right state.
 
 ---
+
+The most fascinating observation to me is that nothing in the code says it has to be about race.
+
+It can be any preference. People have reasons for their preferences. I've worked with plenty of
+women in tech who look for companies that already have a good number of women working there because
+they are sick of being the token woman who suffers from token woman problems. Big things like
+stunted career growth and an increase risk of sexual assault. And small things like being cold all
+the time, expecting to conform to the "one of the guys" attitude, and being the de facto dish washer.
+
+I think this is a valid preference, and there are many like it, but the grand effect is that if you
+are already a decently sized homogenous culture, you have an uphill battle to fight for diversity.
 
 ---
 
+You need to take D&I seriously on day one. Be proactive in recruiting individuals who will make your
+group more diverse.
+
+To do this well, you need to have internalized why we even bother. It's not about having women on
+the team, it's about eliminating blind spots by having more representation.
+
 ---
+
+Being proactive in recruiting will help with the pipeline problem, but pipes have two ends.
 
 ---
 
+And we also have a D&I rentention issue in tech. Employee turnover is normal, and there is nothing
+inherently wrong with it, but in tech, turnover rates are higher among under-represented minorities.
+
+This means that even if you do an outstanding job recruiting a diverse group of volunteers, you will
+end up with a mostly homogenous group over time by way of attrition.
+
 ---
+
+You can be proactive about these skewed retention rates too.
+
+Entire talks can be given on this subject, but here's a starter kit.
 
 ---
 
+First, be open about your values. Culture add will usually mean something at a company, but if you
+can't articulate what it means, you are creating an opening for bias to creep in.
+
 ---
 
+Second, write rubrics for all assessments beforehand. This can be for candidate assessments,
+performance reviews, code review, or anything else. If you don't have a framework for your judgments,
+bias will creep in.
+
 ---
+
+Third, have one-on-one meetings with people and listen. The easiest way to get caught off-guard is
+to not pay attention. I know I personally like to avoid uncomfortable situations, so it's easy to
+not have these meetings because that's the path of lease resistance, but I assure you, that's a bad
+thing to do. It only leads to surprises, almost always bad ones.
 
 ---
 
+Fourth, this is ongoing work. Taking an unconscious bias training is great, but it doesn't mean you
+are now impervious to any potential misstep. It's about putting in place processes and best
+practices to reduce as much risk of missteps as possible.
+
 ---
+
+The last point I want to make on this subject is for my fellow white guys trying our best. I have
+talked to many white guys in tech who feel like they are walking on eggshells, constantly on edge
+and fearful of lady social justice coming down and smiting them into oblivion.
 
+That's a bit dramatic, but I get it. There's a lot to be mindful of and so many ways to screw up,
+but I personally find salace in knowing that&hellip;
+
 ---
+
+No one is asking you to be perfect! A micro-aggression isn't going to melt your coworker. It turns
+out underrepresented people in tech are seriously tough. They deal with this every day, and it's
+quite easy to tell the difference between an honest mistake and disinterest or adversarial protest.
 
 ---
 
+This isn't to say, "do whatever you want without thinking first." There is so much you can learn
+about others by just spending a few hours on the internet. It's senseless to expect underrepresented
+people to correct you on things you could have looked up on your own.
+
 ---
 
+But when you mess up, and you're going to mess up, here's a three step guide to recovery.
+
 ---
+
+Apologize for your mistake. Reflect on why your mistake was taken the way it was. Use this new
+knowledge to be better in the future.
 
+And although I called out white guys, this is good advice for everyone. We all have baggage and it's
+often invisible. We all benefit from taking the time to understand one another.
+
 ---
+
+Okay, that was a lot of content in a short amount of time. To wrap things up, growing and managing a
+community is hard work, and it's easy to be blindsided by the responsibilities required when you're
+an engineer who just wants to write code and be helpful. But if you commit to these responsibilities,
+you will ultimately build something that is much more helpful than it would be if you went at it
+alone.
 
 ---
+
+Thank you.
+
+Michael Lange, [@DingoEatingFuzz](https://twitter.com/DingoEatingFuzz)
