@@ -278,3 +278,38 @@ caption = """
 This was the quick and dirty "installation" page. A user interested in this augmentation to the Songs We Love 2014 app would drag these links
 into their bookmark bar. The trick being that they aren't your typical link. They take the form of <code>javascript:&lt;insert-lots-of-javascript-here&gt;</code>.
 """
+
+[[images]]
+project = "nomad-web-ui"
+url = "/images/nomad-ui-jobs.png"
+alt = "Nomad UI jobs list"
+caption = """
+The Jobs List page serves as the home page for developers interacting with Nomad. It represents all software known to the cluster.
+"""
+
+[[images]]
+project = "nomad-web-ui"
+url = "/images/nomad-ui-deployments.png"
+alt = "Nomad UI job deployments"
+caption = """
+Nomad supports automatic rolling and green/blue deployments as well as optional canary deployments. All of this is represented in the UI
+and kept up to date in realtime.
+"""
+
+[[images]]
+project = "nomad-web-ui"
+url = "/images/nomad-ui-logs.png"
+alt = "Nomad UI stdout log streaming"
+caption = """
+Nomad also has a streaming HTTP API for tailing logs for allocations. The UI lets any privileged user see these logs using fetch and streaming
+requests when possible and falling back to polling otherwise.
+"""
+
+[[images]]
+project = "nomad-web-ui"
+url = "/images/nomad-ui-stats.png"
+alt = "Nomad UI metrics over time"
+caption = """
+Stats in Nomad are not stored, but the UI makes a best effort attempt at tracking data over time by storing previous values in memory,
+accounting for skipped data, and persisting historical data (up to a limit) between page views.
+"""
