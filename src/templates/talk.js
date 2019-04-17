@@ -51,6 +51,9 @@ const Talk = ({ data: source }) => {
               {most(meta(data).conferences).length ? <span>, and </span> : null}
               <strong>{last(meta(data).conferences)}</strong>.
             </h3>
+            {!meta(data).video ? null : (
+              <a className="video-link" href={meta(data).video} rel="noreferrer noopener" target="_blank">Watch the Video</a>
+            )}
           </div>
         </div>
         <article className="slides">
@@ -92,6 +95,7 @@ export const query = graphql`
             date
             primary
             secondary
+            video
           }
           slides {
             markdown

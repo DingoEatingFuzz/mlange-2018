@@ -136,6 +136,55 @@
         color: var(--text-primary);
       }
     }
+
+    .video-link {
+      text-align: right;
+      border: 1px solid var(--text-primary);
+      color: var(--text-primary);
+      background: rgba($white, 0.3);
+      padding: 0.7em;
+      padding-left: 2.9em;
+      border-radius: 3px;
+      text-decoration: none;
+      position: relative;
+      margin:auto;
+      transform: translateY(100%) scale(1.0);
+      text-shadow: none;
+      font-size: 0.8em;
+      transition: transform 0.2s;
+
+      &:hover {
+        transform: translateY(100%) scale(1.1);
+      }
+
+      &::before {
+        content: ' ';
+        position: absolute;
+        left: 0.7em;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 1.5em;
+        height: 1.5em;
+        border-radius: 100%;
+        background: var(--text-primary);
+        opacity: 0.3;
+      }
+
+      &::after {
+        content: ' ';
+        position: absolute;
+        left: 1.3em;
+        top: 50%;
+        transform: translateY(-50%);
+        border-width: 10px;
+        border-style: solid;
+        border-top-color: transparent;
+        border-bottom-color: transparent;
+        border-left-color: var(--text-primary);
+        border-right: none;
+        opacity: 0.6;
+      }
+    }
   }
 
   .slides {
