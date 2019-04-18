@@ -18,7 +18,7 @@ const sortedImages = images => _sortedImages || images.sort((a, b) => {
   return parseInt(a.node.name, 10) - parseInt(b.node.name, 10)
 })
 
-const srcPath = image => image.node.childImageSharp.fluid.src
+const srcPath = image => image.node.childImageSharp.fixed.src
 const meta = data => data.node.metadata
 
 const Talk = ({ data: source }) => {
@@ -64,7 +64,7 @@ const Talk = ({ data: source }) => {
               </div>
               <div className="figure">
                 <a href={sortedImages(images)[index].node.childImageSharp.original.src}><Img
-                  fluid={sortedImages(images)[index].node.childImageSharp.fluid}
+                  fixed={sortedImages(images)[index].node.childImageSharp.fixed}
                   fadeIn={true}
                   alt={`Slide ${index + 1}`}
                 /></a>
@@ -113,8 +113,8 @@ export const query = graphql`
             original {
               src
             }
-            fluid(maxWidth: 450) {
-              ...GatsbyImageSharpFluid
+            fixed(width: 450) {
+              ...GatsbyImageSharpFixed_noBase64
             }
           }
         }
