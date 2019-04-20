@@ -230,10 +230,16 @@
     }
 
     .figure {
+      box-sizing: content-box;
       min-height: 200px;
       width: 450px;
       background: $gray-100;
       border: 1px solid $gray-100;
+      display: block;
+
+      a {
+        display: block;
+      }
     }
   }
 }

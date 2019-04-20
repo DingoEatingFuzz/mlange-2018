@@ -85,6 +85,7 @@ const Talk = ({ data: source }) => {
                   fixed={sortedImages(images)[index].node.childImageSharp.fixed}
                   fadeIn={true}
                   alt={`Slide ${index + 1}`}
+                  style={{ display: 'block' }}
                 /></a>
               </div>
               <MarkdownArticle content={slide.html} className="flush" />
