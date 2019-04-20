@@ -11,6 +11,7 @@ import '../pages/blog.scss'
 export default ({ data }) => {
   const post = data.markdownRemark
   const thumbnail = post.frontmatter.thumbnail && post.frontmatter.thumbnail.childImageSharp;
+  const fullThumbnailUrl = thumbnail && 'https://' + data.site.siteMetadata.host + thumbnail.original.src;
   return (
     <Layout>
       <Helmet>
@@ -18,14 +19,14 @@ export default ({ data }) => {
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:site" content="Michael Lange" />
         <meta name="twitter:title" content={post.frontmatter.title} />
-        <meta name="twitter:description" content={post.frontmatter.description} />
-        <meta name="twitter:image" content={thumbnail && thumbnail.original.src} />
+        <meta name="twitter:description" content={post.excerpt} />
+        <meta name="twitter:image" content={fullThumbnailUrl} />
 
         <meta property="og:title" content={post.frontmatter.title} />
         <meta property="og:site_name" content="Michael Lange" />
         <meta property="og:type" content="article" />
         <meta property="og:locale" content="en_US" />
-        <meta property="og:image" content={thumbnail && thumbnail.original.src} />
+        <meta property="og:image" content={fullThumbnailUrl} />
       </Helmet>
 
       <NarrowHeader link="/blog" noun="posts" />
@@ -47,8 +48,14 @@ export default ({ data }) => {
 
 export const query = graphql`
   query BlogPostQuery($slug: String!) {
+    site {
+      siteMetadata {
+        host
+      }
+    }
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
+      excerpt
       frontmatter {
         title
         date

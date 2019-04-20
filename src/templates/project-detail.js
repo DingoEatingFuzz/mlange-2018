@@ -16,6 +16,7 @@ export default ({ data }) => {
   const images = data.dataProjectsToml.images.filter(
     p => p.project === post.fields.id
   )
+  const fullThumbnailUrl = images && images.length && 'https://' + data.site.siteMetadata.host + images[0].url;
   return (
     <Layout>
       <NarrowHeader link="/projects" noun="projects" />
@@ -26,13 +27,13 @@ export default ({ data }) => {
           <meta name="twitter:site" content="Michael Lange" />
           <meta name="twitter:title" content={meta.name} />
           <meta name="twitter:description" content={meta.description} />
-          <meta name="twitter:image" content={images && images.length && images[0].url} />
+          <meta name="twitter:image" content={fullThumbnailUrl} />
 
           <meta property="og:title" content={meta.name} />
           <meta property="og:site_name" content="Michael Lange" />
           <meta property="og:type" content="article" />
           <meta property="og:locale" content="en_US" />
-          <meta property="og:image" content={images && images.length && images[0].url} />
+          <meta property="og:image" content={fullThumbnailUrl} />
         </Helmet>
 
         <MarkdownArticle content={post.html}>
@@ -74,6 +75,11 @@ export default ({ data }) => {
 
 export const query = graphql`
   query ProjectQuery($slug: String!) {
+    site {
+      siteMetadata {
+        host
+      }
+    }
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       fields {

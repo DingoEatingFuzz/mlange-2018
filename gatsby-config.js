@@ -3,6 +3,7 @@ const path = require('path')
 module.exports = {
   siteMetadata: {
     title: `Michael Lange`,
+    host: process.env.GATSBY_HOST || 'localhost:8000',
   },
   plugins: [
     'gatsby-plugin-react-helmet',

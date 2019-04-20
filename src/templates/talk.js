@@ -28,6 +28,7 @@ const Talk = ({ data: source }) => {
   const conferenceList = most(meta(data).conferences).length
     ? `${most(meta(data).conferences).join(', ')}, and ${last(meta(data).conferences)}`
     : last(meta(data).conferences);
+  const fullThumbnailUrl = srcPath(sortedImages(images)[0]) && 'https://' + source.site.siteMetadata.host + srcPath(sortedImages(images)[0]);
 
   if (!data || !images) {
     return (
@@ -47,13 +48,13 @@ const Talk = ({ data: source }) => {
         <meta name="twitter:site" content="Michael Lange" />
         <meta name="twitter:title" content={meta(data).title} />
         <meta name="twitter:description" content={`Presented by Michael Lange at ${conferenceList}`} />
-        <meta name="twitter:image" content={srcPath(sortedImages(images)[0])} />
+        <meta name="twitter:image" content={fullThumbnailUrl} />
 
         <meta property="og:title" content={meta(data).title} />
         <meta property="og:site_name" content="Michael Lange" />
         <meta property="og:type" content="article" />
         <meta property="og:locale" content="en_US" />
-        <meta property="og:image" content={srcPath(sortedImages(images)[0])} />
+        <meta property="og:image" content={fullThumbnailUrl} />
       </Helmet>
       <NarrowHeader link="/talks" noun="talks" />
       <main className="talk">
@@ -100,6 +101,11 @@ export default Talk
 
 export const query = graphql`
   query TalkQuery($slug: String!, $slides: String!) {
+    site {
+      siteMetadata {
+        host
+      }
+    }
     allSlidesMarkdown(filter: {slug: { eq: $slug }}) {
       edges {
         node {
