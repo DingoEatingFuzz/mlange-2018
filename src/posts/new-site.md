@@ -1,9 +1,8 @@
 ---
 title: "New Site"
 date: "2019-04-18"
+thumbnail: ./thumbnails/default.png
 ---
-
-# New Site
 
 This is the obligatory "I made a new site!" post. It's not gonna be very long, but I wanted to at least
 list the major tech pillars and why I chose them.
@@ -42,7 +41,7 @@ adopted standards. JSON is too verbose, YAML is too surprising and clunky, anyth
 ## 5. [Slides MD](https://github.com/DingoEatingFuzz/mlange-2018/blob/master/transformers/slides-md.js)
 
 **What is it:** A specialized Markdown superset for documenting slide decks.
-**Why I ~chose~ wrote it**: I needed a way to author talk pages that satisfied the design I wanted. Markdown + frontmatter almost checked all the boxes, but I wanted to separate each slide so I could think of slide content as data that got treated in the template. [MDX](https://mdxjs.com/) almost worked, since it would let me wrap each slide in a component, but that isn't treating content as data, that's embedded the templating within the data. Then I found [MDX Slides](https://github.com/jxnblk/mdx-deck) which inspired me to look into making my own Gatsby transformer and my own syntax for splitting sections of a markdown file. I'll write more about this later too.
+**Why I ~~chose~~ wrote it**: I needed a way to author talk pages that satisfied the design I wanted. Markdown + frontmatter almost checked all the boxes, but I wanted to separate each slide so I could think of slide content as data that got treated in the template. [MDX](https://mdxjs.com/) almost worked, since it would let me wrap each slide in a component, but that isn't treating content as data, that's embedded the templating within the data. Then I found [MDX Slides](https://github.com/jxnblk/mdx-deck) which inspired me to look into making my own Gatsby transformer and my own syntax for splitting sections of a markdown file. I'll write more about this later too.
 
 ## The End
 

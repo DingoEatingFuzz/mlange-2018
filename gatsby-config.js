@@ -48,8 +48,8 @@ module.exports = {
         path: path.join(__dirname, 'static', 'slides'),
       },
     },
-    'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp',
     'gatsby-plugin-twitter'
   ],
 }

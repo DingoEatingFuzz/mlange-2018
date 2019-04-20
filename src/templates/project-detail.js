@@ -20,7 +20,21 @@ export default ({ data }) => {
     <Layout>
       <NarrowHeader link="/projects" noun="projects" />
       <div className={`project-detail ${images && images.length ? 'with-gallery' : ''}`}>
-        <Helmet title={meta.name} description={meta.description || meta.name} />
+        <Helmet>
+          <title>{meta.name}</title>
+          <meta name="twitter:card" content="summary" />
+          <meta name="twitter:site" content="Michael Lange" />
+          <meta name="twitter:title" content={meta.name} />
+          <meta name="twitter:description" content={meta.description} />
+          <meta name="twitter:image" content={images && images.length && images[0].url} />
+
+          <meta property="og:title" content={meta.name} />
+          <meta property="og:site_name" content="Michael Lange" />
+          <meta property="og:type" content="article" />
+          <meta property="og:locale" content="en_US" />
+          <meta property="og:image" content={images && images.length && images[0].url} />
+        </Helmet>
+
         <MarkdownArticle content={post.html}>
           <h1 className="title">{meta.name}</h1>
           <dl>
@@ -39,6 +53,7 @@ export default ({ data }) => {
             </div>
           ) : ''}
         </MarkdownArticle>
+
         {images && images.length ? (
           <ul className="gallery">
             {images.map(img => (

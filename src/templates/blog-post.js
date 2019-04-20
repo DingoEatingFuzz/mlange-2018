@@ -10,15 +10,23 @@ import '../pages/blog.scss'
 
 export default ({ data }) => {
   const post = data.markdownRemark
+  const thumbnail = post.frontmatter.thumbnail && post.frontmatter.thumbnail.childImageSharp;
   return (
     <Layout>
-      <Helmet
-        title={post.frontmatter.title}
-        description={
-          post.frontmatter.description ||
-          `Blog post posted on ${post.frontmatter.date}`
-        }
-      />
+      <Helmet>
+        <title>{post.frontmatter.title}</title>
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="Michael Lange" />
+        <meta name="twitter:title" content={post.frontmatter.title} />
+        <meta name="twitter:description" content={post.frontmatter.description} />
+        <meta name="twitter:image" content={thumbnail && thumbnail.original.src} />
+
+        <meta property="og:title" content={post.frontmatter.title} />
+        <meta property="og:site_name" content="Michael Lange" />
+        <meta property="og:type" content="article" />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:image" content={thumbnail && thumbnail.original.src} />
+      </Helmet>
 
       <NarrowHeader link="/blog" noun="posts" />
 
@@ -44,6 +52,16 @@ export const query = graphql`
       frontmatter {
         title
         date
+        thumbnail {
+          childImageSharp {
+            original {
+              src
+            }
+          }
+        }
+      }
+      fields {
+        id
       }
     }
   }

@@ -25,6 +25,9 @@ const Talk = ({ data: source }) => {
   const allTalks = source.allSlidesMarkdown
   const data = allTalks && allTalks.edges && allTalks.edges[0]
   const images = source.allFile.edges
+  const conferenceList = most(meta(data).conferences).length
+    ? `${most(meta(data).conferences).join(', ')}, and ${last(meta(data).conferences)}`
+    : last(meta(data).conferences);
 
   if (!data || !images) {
     return (
@@ -38,6 +41,20 @@ const Talk = ({ data: source }) => {
   }
   return (
     <Layout>
+      <Helmet>
+        <title>{meta(data).title}</title>
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="Michael Lange" />
+        <meta name="twitter:title" content={meta(data).title} />
+        <meta name="twitter:description" content={`Presented by Michael Lange at ${conferenceList}`} />
+        <meta name="twitter:image" content={srcPath(sortedImages(images)[0])} />
+
+        <meta property="og:title" content={meta(data).title} />
+        <meta property="og:site_name" content="Michael Lange" />
+        <meta property="og:type" content="article" />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:image" content={srcPath(sortedImages(images)[0])} />
+      </Helmet>
       <NarrowHeader link="/talks" noun="talks" />
       <main className="talk">
         <div className="hero" style={{ '--bg': `url(${srcPath(sortedImages(images)[0])})` }}>
