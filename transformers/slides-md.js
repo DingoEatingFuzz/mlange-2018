@@ -21,7 +21,6 @@ module.exports = async ({
 }) => {
   if (node.extension !== 'smd') return;
 
-  console.log(`--- generating slides for ${node.name}`)
   // Turn an HTML AST into HTML
   async function getHTML(source) {
     const ast = await getHTMLAst(source)
@@ -86,8 +85,6 @@ const { createNode, createParentChildLink } = actions
       type: 'SlidesMarkdown'
     }
   }
-
-  console.log(`--- generated slides for ${node.name}`)
 
   createNode(smdNode)
   createParentChildLink({ parent: node, child: smdNode })
