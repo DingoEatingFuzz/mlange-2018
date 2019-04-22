@@ -23,7 +23,7 @@ export default ({ data }) => {
       <div className={`project-detail ${images && images.length ? 'with-gallery' : ''}`}>
         <Helmet>
           <title>{meta.name}</title>
-          <meta name="twitter:card" content="summary" />
+          <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:site" content="Michael Lange" />
           <meta name="twitter:title" content={meta.name} />
           <meta name="twitter:description" content={meta.description} />

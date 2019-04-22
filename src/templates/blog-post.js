@@ -16,7 +16,7 @@ export default ({ data }) => {
     <Layout>
       <Helmet>
         <title>{post.frontmatter.title}</title>
-        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="Michael Lange" />
         <meta name="twitter:title" content={post.frontmatter.title} />
         <meta name="twitter:description" content={post.excerpt} />

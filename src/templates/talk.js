@@ -44,7 +44,7 @@ const Talk = ({ data: source }) => {
     <Layout>
       <Helmet>
         <title>{meta(data).title}</title>
-        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="Michael Lange" />
         <meta name="twitter:title" content={meta(data).title} />
         <meta name="twitter:description" content={`Presented by Michael Lange at ${conferenceList}`} />
