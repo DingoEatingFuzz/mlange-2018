@@ -8,7 +8,7 @@ module.exports = async ({
   const { createNodeField } = actions
 
   if (node.internal.type === 'MarkdownRemark') {
-    const [,sourceDirectory] = node.fileAbsolutePath.split('/').reverse();
+    const [,sourceDirectory] = node.fileAbsolutePath.match(/src\/(.+?)\//);
 
     let slug, type, id;
 
