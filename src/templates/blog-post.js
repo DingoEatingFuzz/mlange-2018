@@ -1,17 +1,20 @@
-import React from 'react'
-import Helmet from 'react-helmet'
-import { graphql } from 'gatsby'
+import React from "react";
+import Helmet from "react-helmet";
+import { graphql } from "gatsby";
 
-import NarrowHeader from '../components/narrow-header'
-import MarkdownArticle from '../components/markdown-article'
-import CommonFooter from '../components/common-footer';
-import Layout from '../components/layout'
-import '../pages/blog.scss'
+import NarrowHeader from "../components/narrow-header";
+import MarkdownArticle from "../components/markdown-article";
+import CommonFooter from "../components/common-footer";
+import Layout from "../components/layout";
+import "../pages/blog.scss";
 
 export default ({ data }) => {
-  const post = data.markdownRemark
-  const thumbnail = post.frontmatter.thumbnail && post.frontmatter.thumbnail.childImageSharp;
-  const fullThumbnailUrl = thumbnail && 'https://' + data.site.siteMetadata.host + thumbnail.original.src;
+  const post = data.markdownRemark;
+  const thumbnail =
+    post.frontmatter.thumbnail && post.frontmatter.thumbnail.childImageSharp;
+  const fullThumbnailUrl =
+    thumbnail &&
+    "https://" + data.site.siteMetadata.host + thumbnail.original.src;
   return (
     <Layout>
       <Helmet>
@@ -43,8 +46,8 @@ export default ({ data }) => {
       </div>
       <CommonFooter />
     </Layout>
-  )
-}
+  );
+};
 
 export const query = graphql`
   query BlogPostQuery($slug: String!) {
@@ -72,4 +75,33 @@ export const query = graphql`
       }
     }
   }
-`
+`;
+
+// MDX Query is slightly different. Also body is a react component I think?
+// export const query = graphql`
+//   query BlogPostQuery($slug: String!) {
+//     site {
+//       siteMetadata {
+//         host
+//       }
+//     }
+//     markdownRemark(fields: { slug: { eq: $slug } }) {
+//       body
+//       excerpt
+//       frontmatter {
+//         title
+//         date
+//         thumbnail {
+//           childImageSharp {
+//             original {
+//               src
+//             }
+//           }
+//         }
+//       }
+//       fields {
+//         id
+//       }
+//     }
+//   }
+// `
