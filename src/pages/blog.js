@@ -1,12 +1,12 @@
-import React from 'react'
-import Helmet from 'react-helmet'
-import CommonHeader from '../components/common-header'
-import Link from 'gatsby-link'
-import { graphql } from 'gatsby'
+import React from "react";
+import Helmet from "react-helmet";
+import CommonHeader from "../components/common-header";
+import Link from "gatsby-link";
+import { graphql } from "gatsby";
 
-import Layout from '../components/layout'
-import CommonFooter from '../components/common-footer';
-import './blog.scss'
+import Layout from "../components/layout";
+import CommonFooter from "../components/common-footer";
+import "./blog.scss";
 
 const BlogPage = ({ data }) => (
   <Layout>
@@ -19,7 +19,7 @@ const BlogPage = ({ data }) => (
 
       <main>
         <ol className="post-list">
-          {data.allMarkdownRemark.edges.map(post => (
+          {data.allMdx.edges.map(post => (
             <li key={post.node.id}>
               <h2>
                 <Link to={post.node.fields.slug}>
@@ -28,7 +28,7 @@ const BlogPage = ({ data }) => (
               </h2>
               <h3>{post.node.frontmatter.date}</h3>
               <h4>
-                {post.node.timeToRead} minute read ({post.node.wordCount.words}{' '}
+                {post.node.timeToRead} minute read ({post.node.wordCount.words}{" "}
                 words)
               </h4>
               <p>{post.node.excerpt}</p>
@@ -39,13 +39,13 @@ const BlogPage = ({ data }) => (
       <CommonFooter />
     </div>
   </Layout>
-)
+);
 
-export default BlogPage
+export default BlogPage;
 
 export const query = graphql`
   query BlogPosts {
-    allMarkdownRemark(
+    allMdx(
       filter: { fields: { type: { eq: "blog" } } }
       sort: { fields: [frontmatter___date], order: DESC }
     ) {
@@ -68,4 +68,4 @@ export const query = graphql`
       }
     }
   }
-`
+`;

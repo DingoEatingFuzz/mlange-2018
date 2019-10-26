@@ -3,13 +3,13 @@ import Helmet from "react-helmet";
 import { graphql } from "gatsby";
 
 import NarrowHeader from "../components/narrow-header";
-import MarkdownArticle from "../components/markdown-article";
+import MDXArticle from "../components/mdx-article";
 import CommonFooter from "../components/common-footer";
 import Layout from "../components/layout";
 import "../pages/blog.scss";
 
 export default ({ data }) => {
-  const post = data.markdownRemark;
+  const post = data.mdx;
   const thumbnail =
     post.frontmatter.thumbnail && post.frontmatter.thumbnail.childImageSharp;
   const fullThumbnailUrl =
@@ -35,14 +35,14 @@ export default ({ data }) => {
       <NarrowHeader link="/blog" noun="posts" />
 
       <div className="blog-post">
-        <MarkdownArticle content={post.html}>
+        <MDXArticle content={post.body}>
           <h1 className="title">{post.frontmatter.title}</h1>
           <dl>
             <dd>
               Posted <strong>{post.frontmatter.date}</strong>
             </dd>
           </dl>
-        </MarkdownArticle>
+        </MDXArticle>
       </div>
       <CommonFooter />
     </Layout>
@@ -56,8 +56,8 @@ export const query = graphql`
         host
       }
     }
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      html
+    mdx(fields: { slug: { eq: $slug } }) {
+      body
       excerpt
       frontmatter {
         title
@@ -70,38 +70,6 @@ export const query = graphql`
           }
         }
       }
-      fields {
-        id
-      }
     }
   }
 `;
-
-// MDX Query is slightly different. Also body is a react component I think?
-// export const query = graphql`
-//   query BlogPostQuery($slug: String!) {
-//     site {
-//       siteMetadata {
-//         host
-//       }
-//     }
-//     markdownRemark(fields: { slug: { eq: $slug } }) {
-//       body
-//       excerpt
-//       frontmatter {
-//         title
-//         date
-//         thumbnail {
-//           childImageSharp {
-//             original {
-//               src
-//             }
-//           }
-//         }
-//       }
-//       fields {
-//         id
-//       }
-//     }
-//   }
-// `
