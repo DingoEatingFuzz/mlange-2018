@@ -42,6 +42,12 @@
     left: var(--x);
     top: var(--y);
     transform: translate(-50%, -50%);
+    cursor: pointer;
+
+    &:hover,
+    &.active {
+      background: $orange-600;
+    }
   }
 
   & > figcaption {
