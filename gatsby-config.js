@@ -21,7 +21,6 @@ module.exports = {
             options: {
               maxWidth: 1200,
               linkImagesToOriginal: true,
-              sizeByPixelDensity: true,
               wrapperStyle: () => "margin-left:-10%;", // Pretty gross, but there's no way to remove the existing inline styles
               quality: 100
             }
@@ -42,7 +41,6 @@ module.exports = {
             options: {
               maxWidth: 1200,
               linkImagesToOriginal: true,
-              sizeByPixelDensity: true,
               wrapperStyle: () => "margin-left:-10%;", // Pretty gross, but there's no way to remove the existing inline styles
               quality: 100
             }
