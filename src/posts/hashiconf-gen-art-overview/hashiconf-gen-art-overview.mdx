@@ -4,6 +4,9 @@ date: "2019-10-20"
 thumbnail: ./hashiconf-19-plot-1.jpg
 ---
 
+import AnnotatedImage from "../../components/annotated-image";
+import plotterSetup from "./plotter-setup.jpg";
+
 Last month I had the incredible privilege of bringing an art installation to [HashiConf 2019]() in Seattle. This marked the second year I got to [expose the attendees of this cloud infrastructure conference to modern art](), which meant I had to outdo expectations.
 
 The basics of this year's installation were the same as last year's: using an [AxiDraw plotter](), create unique pieces of art that attendees get to take home. However, after piloting the concept last year, I had plenty of ideas on how to improve everything.
@@ -33,7 +36,19 @@ And that's all. No big deal, right?
 
 ## High-level Overview
 
-Here's what the installation looked like. Click or hover over the annotations to read about specific components.
+Here's what the installation looked like. Click/tap the annotations to read about specific components.
+
+<AnnotatedImage
+  img={plotterSetup}
+  mapping="1:20,37 2:12,47 3:50,65 4:25,64 5:15,87 6:41,76 7:52,58 8:83,38 9:85,20 10:75,35"
+>
+  {Annotation => (
+    <>
+      <Annotation id="1">This is the first annotation.</Annotation>
+      <Annotation id="2">This is the second annotation.</Annotation>
+    </>
+  )}
+</AnnotatedImage>
 
 ![The generative art installation on-site](./plotter-setup.jpg)
 
