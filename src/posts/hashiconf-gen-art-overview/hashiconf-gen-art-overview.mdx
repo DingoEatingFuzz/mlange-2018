@@ -7,9 +7,9 @@ thumbnail: ./hashiconf-19-plot-1.jpg
 import AnnotatedImage from "../../components/annotated-image";
 import plotterSetup from "./plotter-setup.jpg";
 
-Last month I had the incredible privilege of bringing an art installation to [HashiConf 2019]() in Seattle. This marked the second year I got to [expose the attendees of this cloud infrastructure conference to modern art](), which meant I had to outdo expectations.
+Last month I had the incredible privilege of bringing an art installation to [HashiConf 2019](https://hashiconf.com/us/schedule) in Seattle. This marked the second year I got to [expose the attendees of this cloud infrastructure conference to modern art](/project/hashiconf-genart-plotter), which meant I had to outdo expectations.
 
-The basics of this year's installation were the same as last year's: using an [AxiDraw plotter](), create unique pieces of art that attendees get to take home. However, after piloting the concept last year, I had plenty of ideas on how to improve everything.
+The basics of this year's installation were the same as last year's: using an [AxiDraw plotter](https://shop.evilmadscientist.com/productsmenu/890), create unique pieces of art that attendees get to take home. However, after piloting the concept last year, I had plenty of ideas on how to improve everything.
 
 Ultimately, the take-home art ended up looking like this:
 
@@ -40,37 +40,62 @@ Here's what the installation looked like. Click/tap the annotations to read abou
 
 <AnnotatedImage
   img={plotterSetup}
+  alt="The generative art installation on-site"
   mapping="1:20,37 2:12,47 3:50,65 4:25,64 5:15,87 6:41,76 7:52,58 8:83,38 9:85,20 10:75,35"
 >
   {Annotation => (
     <>
-      <Annotation id="1">This is the first annotation.</Annotation>
-      <Annotation id="2">This is the second annotation.</Annotation>
+      <Annotation id="1" title="Local computer">
+        This is the computer the AxiDraw plotters were plugged into. It runs the
+        local web service that tells the AxiDraws when and what to draw as well
+        as maintaining the state machines for each plotter. It is controlled
+        through webhooks made accessible via an{" "}
+        <a href="https://ngrok.com/">ngrok tunnel</a>.
+      </Annotation>
+      <Annotation id="2" title="Preview tablets">
+        One tablet per plotter with a webpage open that shows what is being
+        plotted. The page automatically updates when the next plot starts. Since
+        what is being plotted is a single perspective of a 3D form, the preview
+        shows the 3D form rotating.
+      </Annotation>
+      <Annotation id="3" title="Axidraw Plotters">
+        Two-axis plotters made by{" "}
+        <a href="https://www.evilmadscientist.com/">Evil Mad Scientist</a> that
+        hold pens and draw on paper.
+      </Annotation>
+      <Annotation id="4" title="Magnets">
+        Each piece of paper is pinned down with magnets latching onto sheet
+        metal under the cutting mats. This makes it really easy to switch out
+        paper when a plot is finished. The grid on the cutting mats also helps
+        ensure that each plot comes out straight.
+      </Annotation>
+      <Annotation id="5" title="Flic IoT buttons">
+        A button per plotter that sends web requests to the webhooks service to
+        queue plotter jobs and operate the plotters, (i.e., lift/lower the pen
+        and release motors if necessary).
+      </Annotation>
+      <Annotation id="6" title="Gallery placards">
+        Little descriptions of each piece with technical details for passive
+        consumption of the installation.
+      </Annotation>
+      <Annotation id="7" title="Finished plots">
+        A stash of plots ready for attendees to take home. They are also helpful
+        for explaining that each plot is unique.
+      </Annotation>
+      <Annotation id="8" title="Framed plot">
+        The first plot, framed. It now lives on my mantle.
+      </Annotation>
+      <Annotation id="9" title="UI computer">
+        A computer and giant display for showing the web UIs of the Nomad and
+        Consul clusters powering the installation. It's meant to be used by
+        attendees to make the installation more interactive.
+      </Annotation>
+      <Annotation id="10" title="Pens and paper">
+        A whole bunch of pens and paper for future plots.
+      </Annotation>
     </>
   )}
 </AnnotatedImage>
-
-![The generative art installation on-site](./plotter-setup.jpg)
-
-1. **Local computer:** This is the computer the AxiDraw plotters were plugged into. It runs the local web service that tells the AxiDraws when and what to draw as well as maintaining the state machines for each plotter. It is controlled through webhooks made accessible via an [ngrok tunnel]().
-
-2. **Preview tablets:** One tablet per plotter with a webpage open that shows what is being plotted. The page automatically updates when the next plot starts. Since what is being plotted is a single perspective of a 3D form, the preview shows the 3D form rotating.
-
-3. **Axidraw Plotters:** Two-axis plotters made by [Evil Mad Scientist] that hold pens and draw on paper.
-
-4. **Magnets:** Each piece of paper is pinned down with magnets latching onto sheet metal under the cutting mats. This makes it really easy to switch out paper when a plot is finished. The grid on the cutting mats also helps ensure that each plot comes out straight.
-
-5. **Flic IoT buttons:** A button per plotter that sends web requests to the webhooks service to queue plotter jobs and operate the plotters, (i.e., lift/lower the pen and release motors if necessary).
-
-6. **Gallery placards:** Little descriptions of each piece with technical details for passive consumption of the installation.
-
-7. **Finished plots:** A stash of plots ready for attendees to take home. They are also helpful for explaining that each plot is unique.
-
-8. **Framed plot:** The first plot, framed. It now lives on my mantle.
-
-9. **UI computer:** A computer and giant display for showing the web UIs of the Nomad and Consul clusters powering the installation. It's meant to be used by attendees to make the installation more interactive.
-
-10. **Pens and paper:** A whole bunch of pens and paper for future plots.
 
 ## Where to now
 
