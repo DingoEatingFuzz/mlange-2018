@@ -4,7 +4,7 @@
 .markdown-article {
   box-sizing: border-box;
   font-size: calc(16px + 0.25vw);
-  line-height: 1.8;
+  line-height: 1.6;
   font-family: $sans-stack;
   font-weight: lighter;
 
@@ -54,7 +54,7 @@
     font-weight: bold;
 
     + * {
-      margin-top: 0.25em;
+      margin-top: 0.5em;
     }
   }
 
