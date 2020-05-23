@@ -1,7 +1,7 @@
 ---
 title: "HashiConf 2019 Gen Art: Infrastructure"
-date: "2020-05-16"
-thumbnail: ./abstract-infrastructure.png
+date: "2020-05-22"
+thumbnail: ./abstract-infrastructure@2x.png
 ---
 
 Since this wasn't any generative art project, it was an installation, and it wasn't just any installation, it was for [HashiConf 2019](https://hashiconf.com/us/schedule), I knew infrastructure would have to play a major role.
@@ -23,8 +23,6 @@ Of this suite of tools, this installation used four. I love Vagrant, but since a
 
 Before digging into the details, I think it's important to present what the architecture ultimately ended up being. I think this is important for a couple reasons. First, it can be really hard to see the forest from the trees when talking about cloud architecture. Second, this design is completely excessive for what I built, so it would be easy to doubletake and reject what I'm saying in order to feel better about the choices I made.
 
-_[Diagram of Architecture, including gcp services, local machine, lines of communication]_
-![Infrastructure diagram including axidraw plotters, preview screens, IoT buttons, local laptop, and cloud resources](./abstract-infrastructure.png)
 ![Infrastructure diagram including axidraw plotters, preview screens, IoT buttons, local laptop, and cloud resources](./abstract-infrastructure.svg)
 
 The flow of operations here goes something like
@@ -42,6 +40,7 @@ The flow of operations here goes something like
 How can this be built using HashiCorp tools?
 
 _[Diagram of Architecture, this time with tools denoted]_
+![Infrastructure diagram overlayed with how Packer, Terraform, Nomad, Consul, Fabio, and Ngrok are incorporated](./hashicorp-infrastructure.svg)
 
 ## Using Nomad to orchestrate services
 
