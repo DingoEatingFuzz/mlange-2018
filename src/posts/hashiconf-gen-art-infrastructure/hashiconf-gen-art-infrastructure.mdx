@@ -273,7 +273,7 @@ The actual Packer configuration and related scripts are mostly uninteresting, bu
   "builders": [
     {
       "type": "googlecompute",
-      "account_file": "../terraform/account.json",
+      esaccount_file": "../terraform/account.json",
       "source_image": "ubuntu-1804-bionic-v20190722a",
       "ssh_username": "ubuntu",
       "project_id": "hashiconf19",
@@ -327,6 +327,69 @@ module "hashistack" {
 ```
 
 Like I said, it's a little heavy-handed to destroy and recreate the world every time a provisioner script is changed, but for a small fleet of servers, this is tolerable. It also guarantees no accidental "pet" servers that end up in irreproducible states.
+
+## Hold on a second
+
+The careful reader may have noticed this post is missing something crucial. Sure the images that come out of Packer may have Nomad and Consul starting at startup, but how do they talk to each other? It seems like this would just result in N servers all running Consul and Nomad independent of each other.
+
+I mentioned earlier that Nomad and Consul can both automatically bootstrap, but I didn't explain how.
+
+Here is what the Consul configuration looks like:
+
+```json
+{
+  "log_level": "INFO",
+  "server": true,
+  "ui": true,
+  "data_dir": "/opt/consul/data",
+  "bind_addr": "0.0.0.0",
+  "client_addr": "0.0.0.0",
+  "advertise_addr": "IP_ADDRESS",
+  "bootstrap_expect": SERVER_COUNT,
+  "service": {
+    "name": "consul"
+  },
+  "retry_join": [
+    "RETRY_JOIN"
+  ],
+  "http_config": {
+    "response_headers": {
+      "Access-Control-Allow-Origin": "*"
+    }
+  }
+}
+```
+
+This is invalid JSON because `SERVER_COUNT` and `RETRY_JOIN` are both replaced by dynamically by a script that is invoked at startup. That script is configured and copied by Terraform. Terraform has variables for both of these dynamic bits. `RETRY_JOIN` is used to configure how Consul should automatically bootstrap using a process called [Cloud Auto-join](https://www.consul.io/docs/agent/cloud-auto-join.html). The process is pretty simple and incredibly convenient. You tell Consul what cloud you're using and what tag all the Consul VMs have in common. Then Consul, using [go-discover](https://github.com/hashicorp/go-discover), will use GCP APIs to find the addresses for all VMs with that tag (in this case `auto-join`). Each of these Consul agents will communicate with one another to establish quorum and get things started.
+
+```hcl
+variable "retry_join" {
+  type = "map"
+
+  default = {
+    provider  = "gce"
+    tag_value = "auto-join"
+  }
+}
+```
+
+Nomad also supports Cloud Auto-join, but since the Consul cluster is already auto-joining, Nomad can instead use Consul to bootstrap. This is all explained better than I could [in the Nomad clustering guide](https://learn.hashicorp.com/nomad/operating-nomad/clustering).
+
+This is the entirety of the Nomad configuration that results in bootstrapping:
+
+```hcl
+# Enable the server
+server {
+  enabled = true
+  bootstrap_expect = SERVER_COUNT
+}
+
+consul {
+  address = "127.0.0.1:8500"
+}
+```
+
+There's more to bootstrapping than this. Nomad uses a technique similar to both Fabio and Cloud Auto-join where Nomad servers and clients register themselves in Consul with a specific tag and then use Consul's service registry to find one another. Since Nomad is so frequently deployed alongside Consul, this automatic bootstrapping configuration is the default.
 
 ## That's it!
 
