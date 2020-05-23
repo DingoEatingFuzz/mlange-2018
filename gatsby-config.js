@@ -24,6 +24,9 @@ module.exports = {
               wrapperStyle: () => "margin-left:-10%;", // Pretty gross, but there's no way to remove the existing inline styles
               quality: 100
             }
+          },
+          {
+            resolve: "gatsby-remark-copy-linked-files"
           }
         ]
       }
@@ -44,6 +47,9 @@ module.exports = {
               wrapperStyle: () => "margin-left:-10%;", // Pretty gross, but there's no way to remove the existing inline styles
               quality: 100
             }
+          },
+          {
+            resolve: "gatsby-remark-copy-linked-files"
           }
         ]
       }
