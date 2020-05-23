@@ -39,7 +39,6 @@ The flow of operations here goes something like
 
 How can this be built using HashiCorp tools?
 
-_[Diagram of Architecture, this time with tools denoted]_
 ![Infrastructure diagram overlayed with how Packer, Terraform, Nomad, Consul, Fabio, and Ngrok are incorporated](./hashicorp-infrastructure.svg)
 
 ## Using Nomad to orchestrate services
@@ -48,7 +47,7 @@ This installation is comprised of four different microservices: an axidraw servi
 
 Of these services, only one _has_ to run locally, and that's the axidraw service. Why? Because the plotter is a physical thing that needs to be plugged in.
 
-Theoretically, the hard requirement of the axidraw service needing to run locally doesn't mean it can't be run with Nomad. A nomad agent could be running on the local machine, and the Nomad job for the axidraw service can be configured to constrain the service to only be able to run on the local machine. The tricky part is getting the local machine to join the rest of the Nomad cluster running in the cloud. Nomad makes this type of configuration about as simple as it gets, but it still requires admin access to the local network. Since this was running on spotty WiFi in a Hotel, this wasn't a practical option.
+Theoretically, the hard requirement of the axidraw service needing to run locally doesn't mean it can't be run with Nomad. A nomad agent could be running on the local machine, and the Nomad job for the axidraw service can be configured to constrain the service to only be able to run on the local machine. The tricky part is getting the local machine to join the rest of the Nomad cluster running in the cloud. Nomad makes this type of configuration about as simple as it gets, but it still requires admin access to the local network. Since this was running on spotty WiFi in a hotel, this wasn't a practical option.
 
 So the axidraw service gets to run on its own outside of the Nomad cluster. The other three services all run in the Nomad cluster. This means super simple environment configuration, deployments, and scaling all without having to think too hard about the underlying hardware.
 
@@ -143,13 +142,13 @@ With all these architectural details ironed out, all that's left to do is spin t
 
 After Vagrant, Terraform is HashiCorp's most widely used product. An overview seems unnecessary at this point, but it only takes a sentence. Terraform lets you write infrastructure as code which means configurations are version controlled, changes to infrastructure become changes to code, and reconciling how to go from State A to State B is abstracted as a problem for Terraform and not for operators.
 
-Terraform uses HCL as its configuration language, which is intentionally low-powered language. A complete programming language like python or ruby means losing the declarative safety that allows Terraform to calculate state diffs. A typical configuration language like JSON or YAML means tedious copy/pasting and difficult refactoring at scale. Like any programming language and any framework, HCL and Terraform has their own best practices.
+Terraform uses HCL as its configuration language, which is intentionally a low-powered language. A complete programming language like python or ruby means losing the declarative safety that allows Terraform to calculate state diffs. A typical configuration language like JSON or YAML means tedious copy/pasting and difficult refactoring at scale. Like any programming language and any framework, HCL and Terraform has their own best practices.
 
 The number one best practice is to identity your variables. What values are most likely to change as your infrastructure grows? The machine image used for certain servers? The count of servers? The size of servers? DNS? Firewall settings? Volume sizes?
 
 The second (in my opinion at least) is to stay organized by using modules. The Terraform configuration I used is modeled after the configuration found in the Nomad repo. I had to change just about all of it to use GCP's idea of how infrastructure is provisioned, and I extended it to also include networking configuration for my specific application of Nomad.
 
-A neat aspect of Google's compute instance groups and automatic bootstrapping, is that scaling a cluster up and down can be reduced to single Terraform variable. Changing the count of client nodes and running `terraform apply` will provision more instances of client nodes, the new client nodes will automatically join the Consul and Nomad clusters, and then they will be ready to receive jobs from Nomad. Not quite autoscaling, but it's the next best thing (arguably better if you're afraid of a volatile cloud bill).
+A neat aspect of Google's compute instance groups and Consul and Nomads' automatic bootstrapping is that scaling a cluster up and down can be reduced to single Terraform variable. Changing the count of client nodes and running `terraform apply` will provision more instances of client nodes, the new client nodes will automatically join the Consul and Nomad clusters, and then they will be ready to receive jobs from Nomad. Not quite autoscaling, but it's the next best thing (arguably better if you're afraid of a volatile cloud bill).
 
 ```hcl
 resource "google_compute_instance_group_manager" "client_group" {
@@ -172,7 +171,7 @@ resource "google_compute_instance_group_manager" "client_group" {
 
 This workflow of edit configuration, plan changes, push code changes, apply changes is made even easier with Terraform Cloud. It's basically Travis/Circle for infrastructure. Pushes are automatically picked up by Terraform Cloud which will immediately perform `terraform plan` for you. Then with a click of a button, a plan can be approved, triggering the `terraform apply`.
 
-This was especially handy when during the event I had to make infrastructure changes. Given how distracted I was trying to run the installation while change it, I'm sure I would have made a mistake if I had to make infrastructure changes by hand. Since all I had to do was modify a couple variables (first I tried bumping up the node count, then I tried provisioning larger boxes) and push my changes, I managed just fine.
+This was especially handy when during the event I had to make infrastructure changes. Given how distracted I was trying to run the installation while changing it, I'm sure I would have made a mistake if I had to make infrastructure changes by hand. Since all I had to do was modify a couple variables (first I tried bumping up the node count, then I tried provisioning larger boxes) and push my changes, I managed just fine.
 
 The observed problem was plot jobs failing over half of the time. I didn't know why that was, but when in doubt, make more machines. Typically I would try to assess root cause, but now wasn't the time.
 
@@ -267,7 +266,7 @@ With Packer, machine images can be built off of base images and provisioned with
 
 For this installation, there is only one machine image type. Two seems like the likely number considering there are server and client machines, but since Consul and Nomad are both one binary that can be ran in either mode, the machine image for the two modes can be identical and started in different ways.
 
-The actual Packer configuration and related scripts are mostly uninteresting, but I think there is beauty in that. A lot is happening under the surface but it's concealed from the perspective of authoring the image.
+The actual Packer configuration and related scripts are mostly uninteresting, but I think there is beauty in that. A lot is happening under the surface, but it's concealed from the perspective of authoring the image.
 
 ```json
 {
@@ -306,7 +305,7 @@ The actual Packer configuration and related scripts are mostly uninteresting, bu
 
 This is the entire Packer script. A base image, a GCP account to build into, and some provisioners that are mostly copying start up scripts.
 
-Running this with `packer builder <file>.json` creates a new image in the GCP account and emits an image ID that then gets saved as a Terraform variable. This way the next time the infrastructure gets created, it uses the new image.
+Running this with `packer build <file>.json` creates a new image in the GCP account and emits an image ID that then gets saved as a Terraform variable. This way the next time the infrastructure gets created, it uses the new image.
 
 ```hcl{15}
 module "hashistack" {
