@@ -47,7 +47,7 @@ This installation is comprised of four different microservices: an axidraw servi
 
 Of these services, only one _has_ to run locally, and that's the axidraw service. Why? Because the plotter is a physical thing that needs to be plugged in.
 
-Theoretically, the hard requirement of the axidraw service needing to run locally doesn't mean it can't be run with Nomad. A nomad agent could be running on the local machine, and the Nomad job for the axidraw service can be configured to constrain the service to only be able to run on the local machine. The tricky part is getting the local machine to join the rest of the Nomad cluster running in the cloud. Nomad makes this type of configuration about as simple as it gets, but it still requires admin access to the local network. Since this was running on spotty WiFi in a hotel, this wasn't a practical option.
+Theoretically, the hard requirement of the axidraw service needing to run locally doesn't mean it can't be run with Nomad. A Nomad agent could be running on the local machine, and the Nomad job for the axidraw service can be configured to constrain the service to only be able to run on the local machine. The tricky part is getting the local machine to join the rest of the Nomad cluster running in the cloud. Nomad makes this type of configuration about as simple as it gets, but it still requires admin access to the local network. Since this was running on spotty WiFi in a hotel, this wasn't a practical option.
 
 So the axidraw service gets to run on its own outside of the Nomad cluster. The other three services all run in the Nomad cluster. This means super simple environment configuration, deployments, and scaling all without having to think too hard about the underlying hardware.
 
@@ -360,7 +360,7 @@ Here is what the Consul configuration looks like:
 }
 ```
 
-This is invalid JSON because `SERVER_COUNT` and `RETRY_JOIN` are both replaced by dynamically by a script that is invoked at startup. That script is configured and copied by Terraform. Terraform has variables for both of these dynamic bits. `RETRY_JOIN` is used to configure how Consul should automatically bootstrap using a process called [Cloud Auto-join](https://www.consul.io/docs/agent/cloud-auto-join.html). The process is pretty simple and incredibly convenient. You tell Consul what cloud you're using and what tag all the Consul VMs have in common. Then Consul, using [go-discover](https://github.com/hashicorp/go-discover), will use GCP APIs to find the addresses for all VMs with that tag (in this case `auto-join`). Each of these Consul agents will communicate with one another to establish quorum and get things started.
+This is invalid JSON because `SERVER_COUNT` and `RETRY_JOIN` are both replaced by dynamically by a script that is invoked at startup. That script is configured and copied by Terraform. Terraform has variables for both of these dynamic bits. `RETRY_JOIN` is used to configure how Consul should automatically bootstrap using a process called [cloud auto-join](https://www.consul.io/docs/agent/cloud-auto-join.html). The process is pretty simple and incredibly convenient. You tell Consul what cloud you're using and what tag all the Consul VMs have in common. Then Consul, using [go-discover](https://github.com/hashicorp/go-discover), will use GCP APIs to find the addresses for all VMs with that tag (in this case `auto-join`). Each of these Consul agents will communicate with one another to establish quorum and get things started.
 
 ```hcl
 variable "retry_join" {
@@ -373,7 +373,7 @@ variable "retry_join" {
 }
 ```
 
-Nomad also supports Cloud Auto-join, but since the Consul cluster is already auto-joining, Nomad can instead use Consul to bootstrap. This is all explained better than I could [in the Nomad clustering guide](https://learn.hashicorp.com/nomad/operating-nomad/clustering).
+Nomad also supports cloud auto-join, but since the Consul cluster is already auto-joining, Nomad can instead use Consul to bootstrap. This is all explained better than I could [in the Nomad clustering guide](https://learn.hashicorp.com/nomad/operating-nomad/clustering).
 
 This is the entirety of the Nomad configuration that results in bootstrapping:
 
@@ -389,7 +389,7 @@ consul {
 }
 ```
 
-There's more to bootstrapping than this. Nomad uses a technique similar to both Fabio and Cloud Auto-join where Nomad servers and clients register themselves in Consul with a specific tag and then use Consul's service registry to find one another. Since Nomad is so frequently deployed alongside Consul, this automatic bootstrapping configuration is the default.
+There's more to bootstrapping than this. Nomad uses a technique similar to both Fabio and cloud auto-join where Nomad servers and clients register themselves in Consul with a specific tag and then use Consul's service registry to find one another. Since Nomad is so frequently deployed alongside Consul, this automatic bootstrapping configuration is the default.
 
 ## That's it!
 
