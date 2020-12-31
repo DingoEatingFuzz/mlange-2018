@@ -1,0 +1,354 @@
+---
+title: "Remembering Flash"
+date: "2021-01-01"
+---
+
+> Flash Player will no longer be supported after December 2020.
+>
+> --Google Chrome Web Browser, circa late 2020
+
+This is a personal story that happens to also be about the open web, new media, how the Internet has changed, and how we keep memories alive.
+
+I wasn't much of a computer person before 2004. I even had a college professor that looked at me like I just left daycare when I said the first operating system I really used was Windows XP. Sure I touched some old macs in school but only to learn how to type. I vaguely remember using Netscape for research projects, but I couldn't tell you the difference between IE and Netscape. I couldn't even tell you they were both web browsers.
+
+It wasn't until I got my own laptop as a combination birthday and middle school graduation gift that I got into what would eventually define me more than I could have anticipated. My story is so common it's boring: kid who is good at school also likes video games. Kid receives computer because those seem pretty important.
+
+My memories of this period of time are hazy by now, but I remember almost immediately using this computer to make stuff. This was before computers had replaced TVs as consumption devices. I didn't have any games, and I didn't have any money, but I could at least look stuff up. Somehow I found out about 3DS Max and later Rhino and Bryce and Maya. Playing with these tools and learning how to model stuff made me feel like I was at least getting closer to making video games. Again, so common it's boring. And then my uncle introduced me to Flash. It's probably worth mentioning that my uncle works construction. There are people my age who are second generation software engineers, and that concept is so foreign to me. Aside from my savvy uncle, no one in my family cared for computers, the Internet, or even cable set-top boxes with too many options. This is the same uncle who told me that XML was going to enable us to make phone calls over the TV with real-time video. So, uh, there was some right, some wrong, and some misdirected in that. Even though he was no expert, he knew that Flash was showing up in more places on the web.
+
+So I played with it.
+
+At first I made animations. Some motion tweens, some shape tweens, a few dancing stick figures, and flashing shapes. Set that all to music. Reduce the FPS to 12 so I had fewer frames to animate to fill the full track. And that's A Thing. A truly terrible thing. The equivalent of a poorly baked cake that has a lot of heart and nothing else. At this point anything I made was exciting to me because I made it.
+
+I progressed from abstract animations of nothingness to animations with something of a plot. My first meaningful animation was for health class sophomore year. We were studying diseases and were tasked to make an ad for an imaginary medicine for real diseases. Or at least that's how I remember the assignment. I saw an opportunity to use Flash to make a full-blown commercial complete with side effects mumbled too quickly. A recurring theme throughout high school was finding ways to incorporate Flash into assignments. I wrote a script, I recorded a voice over, and I animated everything. It again wasn't actually good by industry standards, but I was definitely the only student who turned in an animation.
+
+This was around the time a friend told me about Newgrounds. I already knew about classics such as AlbinoBlackSheep, Miniclip, and AddictingGames, but I hadn't yet been introduced to Newgrounds. Turns out this was _the_ place to go for Flash hobbyists and it would become my home (and my homepage, remember when homepages were a thing?) for the next few years.
+
+I uploaded my animated commercial for the imaginary product Ebola-b-Gone and it survived the blam process.
+
+I had contributed to the Internet.
+
+Although animations were fun, the goal was still to make video games. Flash's integrated programming language was ActionScript. It could be used to do all sorts of things including interacting with objects created within a Flash file. It was technically a derivative of ECMAScript (more on that later), but this was a detail I didn't even know to find interesting at my complete novice level of programming experience. What was most interesting to me was how scripts blended with  art assets and both blended with a timeline. You could put code on any arbitrary frame in a timeline. You could also put Movie Clips on timelines. In turn, Movie Clips had their own timelines which could naturally also have code attached. This type of composition enabled a person to offset their lack of programming experience with Flash experience and general cleverness. Looking back at it with my "professional programmer" eyes I just see an unmaintainable house of cards in every .fla file, but I can't deny that all sorts of people made all sorts of stuff this way and the world kept turning.
+
+My first ever Flash program was three buttons, each with their own behavior. I followed a tutorial and I still screwed it all up. I remember thinking it was impossible. I followed the instructions and it didn't work. I was being lied to. The Internet was wrong. This was sorcery. It turns out I didn't follow the instructions quite literally enough and I missed some string quotations or had a file with a different name or something. Syntax and specifics are so jarring to learn at first. Programming is much more literal than speaking.
+
+But I did it: I had three buttons. One added a MovieClip to the scene. One changed the button color, or something. The third I remember the clearest: it played Prowler by Iron Maiden. I was in disbelief. _I did that_. Seriously, I was stunned. _I programmed the computer_. It was exhilarating.
+
+Shortly after that, I made my first game. It had maybe 300 lines of code and no arrays. I didn't know what an array was yet. There was array-like logic, but arrays could be emulated with timelines (arrays of frames, if you will) without even knowing it. This level of accessibility is still astounding to me.
+
+This game was terrible, by the way. You drove a tank, things flew by, you shot at them. If you didn't shoot them, they'd decrement your health until you died. But just like how Ebola-b-gone was a terrible animation that was still an actual animation with a for real plot, this was an actual game with for real mechanics. There are still no words to describe this feeling. If you too have written code, maybe you remember it. If you don't write code, it's worth dabbling in just for this feeling.
+
+Within three years of this first game, I would have published over 10 along with countless experiments and noodlings. I bought lunches my senior year of high school with sponsorship money I earned from those games. Within two years after that, I will have also used Flash to create websites for myself, generative art, artificial life simulations, and cryptography basics for school, and e-learning software and internal tools professionally. And then Flash will have fallen out of favor and I wouldn't make anything new in it.
+
+Ever.
+
+10 years later, Flash has reached the end of its life and I am writing this.
+
+I have known I was going to someday write this for years now. And yet, I still have no words to describe what it was like to graduate from college, effectively completing life's tutorial and starting the open-world campaign, at the same that everything I had been professionally building towards for six years suddenly closed.
+
+Feel free to skip ahead and read more about my personal projects and contributions, but I need to take a break now and talk about the open web.
+
+## The Open Web
+
+Today it's pretty clear there is a web platform. We've got TC39, W3C, WHATWG, and all sorts of working groups within these larger groups. It hasn't always been this way. At one point there wasn't even JavaScript.
+
+Other people, including Brendan Eich himself, have told this story better than I can, but here's the gist of it:
+
+1. (1995) Netscape decides the web needs scripting
+2. Brendan Eich is recruited to make a little language, it gets branded JavaScript and is vaguely C-like to ride the Java wave
+3. Microsoft near-perfectly recreates it with JScript
+4. To avoid fragmentation of languages and implementations across browsers, Netscape approaches ECMA to standardize the language
+5. ES2 is an ISO standard
+6. ES3 is the first big evolution of the language
+7. (1999) An ECMAScript 4 proposal comes out of Netscape
+
+So at this point, JavaScript is now a standard, but the web is still a mess. It won't be for another five years that we have WHATWG steering standards of the web platform, including all the browser APIs we use JavaScript for. This is a period of time when we had a Windows Media Player plugin, a Quicktime plugin, even a RealPlayer plugin. And on the interactive side, we had Java applets, Shockwave Player, Flash Player, and a half dozen others. There was also an unmentionable thing called ActiveX. These weren't an affront to web standards, there were no web standards yet. These were what we would now call "userland" solutions to problems the platform had no solution for.
+
+Eventually Flash would get its own scripting language. Macromedia may have not been in the middle of the browser wars, but they were astute enough to base ActionScript on ES3. Since there was no "the web" as we know today, Flash Player was as much "the web" as anything else, and ES3 was the scripting standard of "the web". This was 2000.
+
+In 2003, ActionScript 2.0 came out. Macromedia needed to balance a desire to color within the lines of the stagnant ECMAScript standard while also meeting user demands for more language features with which to express more complex programs. Fortunately there was an ES4 proposal to draw inspiration from.
+
+Mozilla, maybe more specifically Brendan Eich, sees a possible ally in Macromedia (and then Adobe since all of this tech stuff happened on a stormy sea of business stuff) and they work together with a community of other contributors to put forth ECMAScript For XML, a.k.a. E4X. Remember what my uncle said? XML was a big deal back in the day.
+
+So in 2006, ActionScript 3.0 comes out. This is probably equal parts driven by user demand and by Adobe wanting to make a splash about Flash's future (see what I did there?). It is based on E4X (which implies complete conformance of ES4), has hardware acceleration, has shader support, has namespaces and lower-level datatypes (as part of E4X), and of course has a top-level XML type. It's hard to imagine what an XML datatype looks like so here are a couple code snippets from around 2010.
+
+```actionscript
+// Writing XML (from a logging script by gskinner)
+public function XMLLog(performanceTest:PerformanceTest=null,name:String=null) {
+  xml = <TestCollection
+  	playerVersion={Capabilities.version}
+  	isDebugger={Capabilities.isDebugger}
+  	playerType={Capabilities.playerType}
+  	os={Capabilities.os}
+  	manufacturer={Capabilities.manufacturer} />;
+
+  // 10.1 and higher
+  if ("cpuArchitecture" in Capabilities) {
+  	xml.@cpuArchitecture = Capabilities["cpuArchitecture"];
+  }
+
+  if (name) { xml.@name = name; }
+
+  this.performanceTest = performanceTest ? performanceTest : PerformanceTest.getInstance();
+  this.performanceTest.addEventListener(Event.COMPLETE,handleComplete);
+  this.performanceTest.addEventListener(Event.CLOSE,handleComplete);
+}
+```
+
+```actionscript
+// Reading XML (from a Flash-based website I made that used XML as a "cms")
+// load thumbnails
+SiteMain.loadImg(contain.oneC.thumb.img, SiteMain.mainXML.nav.link[0].img.@path);
+SiteMain.loadImg(contain.twoC.thumb.img, SiteMain.mainXML.nav.link[1].img.@path);
+
+// load logo
+SiteMain.loadImg(contain.logoClip, SiteMain.mainXML.logo.@path);
+
+// set text
+contain.oneC.titleTxt.text = SiteMain.mainXML.nav.link[0].title;
+contain.oneC.bodyTxt.text = SiteMain.mainXML.nav.link[0].description;
+contain.twoC.titleTxt.text = SiteMain.mainXML.nav.link[1].title;
+contain.twoC.bodyTxt.text = SiteMain.mainXML.nav.link[1].description;
+```
+
+It seem strange and even dated for a language to have first-class support for XML, but please tell me what's stranger: a language having great support for the prevalent data interchange format of the time or Douglas Crockford convincing everyone that the prevalent data interchange format should actually be a subset of JavaScript objects?
+
+Since you're all reading this in 2021 or later, you know there's a train wreck coming, so what happened next? Remember that ES4 was never anything other than a proposal, and E4X had names behind it, but it wasn't official either. This energy was enough to get the TC39 band back together, but naturally there was conflict. Some people weren't a fan of the "enterprise" direction E4X went. They formed a splinter group and came up with ES3.1. This was a language much truer to ES3 that still sought to close some of the code organization gaps that were in the standard. Remember there were no modules at this point. You had a global object, script elements, and an eventing system. For everything else, you were on your own.
+
+ES5 honestly isn't too different from ES3, and that was kind of the point. It introduced strict mode, a top-level JSON object (sound familiar now?), and patched up some top-level objects (including Object) to pave the way higher-level language features that could desugar into lambdas and closures.
+
+In this same grand moment for the language, Brendan Eich talked about the vision of ES going forward, now that the standards committee was back on track. It was codenamed "harmony". The abusive irony.
+
+So if I wrote that well enough, you're upset and rooting for ActionScript. They followed the rules! They played nice! How could they get shut out and end up with a language that is suddenly noncompliant? Macromedia (and later Adobe) pursued a volatile standard and ultimately made a bad bet. This was clearly before Brendan Eich was telling everyone to always bet on JavaScript.
+
+But what happened with that standard? JavaScript was cruising, how is it that ES4 could be up in the air for 9 years? Mind you during those 9 years all three versions of ActionScript were released. The better question to ask is what happened with Netscape during that time.
+
+First, they were fighting in the browser wars, and then they were not existing.
+
+That first ES4 proposal from February 1999 was sent out a month before the AOL acquisition of Netscape closed and almost a year into the Microsoft antitrust trial, which focused on how Microsoft's monopoly in Windows on PCs made it impossible for Netscape or other non-IE browsers to compete. In hindsight, that ES4 proposal looks more like a distress signal than the beginning of a technical exploration.
+
+These were latchkey years and Flash filled the gaps. People wanted to use the web to share music and videos and push the boundaries on user interaction. There was no way to do this by the book (although I guess some old Neopets games were implemented entirely with forms and full page reloads). Using Flash was the best way to get consistent rich media across browsers.
+
+This went beyond games too. Flash was used for fancy navbars, fancy banners, animations, full-blown immersive websites, and, of course, ads.
+
+While the web stood still, Flash kept innovation alive.
+
+Eventually, high-speed internet had broad market share and we got streaming video platforms. Youtube used Flash, Hulu used Flash (as well as some slick CSS, remember their first theater mode that dimmed everything but the video player? That was so cool at the time), and the Olympics used the short-lived Silverlight. Presumably for partnership and DRM reasons.
+
+Eventually, the web also grew more sophisticated and we got social media. Myspace music players, Facebook flair boards and Farmville. All Flash.
+
+Admittedly, a lot of things were made in Flash when it wasn't necessary. It's just that making websites using HTML, CSS, and JS in the early 2000s was not fun. We didn't even get debugging until Firebug in 2006. Anyone who was writing JavaScript during this period of time has a war story about how they lost hours to a missing semi-colon. In addition to syntax blunders, every line of code was a browser compatibility landmine that got smoothed over by Prototype and Dojo in 2005 and eventually jQuery in 2006 and beyond. And if you wanted rounded corners? You needed to fire up Photoshop and get a 9-slice going. There were also weird invisible gifs in mysterious places and even more CSS tricks than we have today.
+
+But eventually things got better and Flash had fewer gaps left to fill.
+
+Once the dust settled and ES5 was accepted as the future, the spec still needed to be finalized and published. It was published on December 15th 2009. Just four months before Steve Jobs' infamous "Thoughts on Flash".
+
+## Thoughts on Thoughts on Flash
+
+Now that it's been over 10 years since this softly spoken letter was penned by the CEO of the big stick company, the specifics are out of conversation but the impact remains. What I believe to be the generally agreed upon effect of this letter (from my biased perspective as a former Flash developer) is that Apple really didn't want to support Flash on iOS. So, with the help of some generally true words about HTML5, Steve Jobs killed Flash. The influence of Apple and Steve Jobs himself was strong enough that they could bend the future of the web towards an anti-Flash sentiment. Flash, which had pushed the web so much, was now to be seen as the "ok boomer" technology. A stick in the mud and a security nightmare slowing down the march towards an HTML5 utopia.
+
+Since this letter can be seen as the first death of Flash, and the end of life of Flash Player as the second, I think it's fitting to dissect some of the arguments from this [original eulogy](https://web.archive.org/web/20100501010616/https://www.apple.com/hotnews/thoughts-on-flash/).
+
+The letter opens with some general fluffy amicable language, but it gets to the heart of the argument quickly.
+
+> Adobe has characterized our decision as being primarily business driven – they say we want to protect our App Store – but in reality it is based on technology issues.
+
+If you were already on team Apple, this was all you needed to read. Apple has better tech, Adobe is in the past! Anyone who has been in tech long enough knows that it's actually always business driven.
+
+> Adobe claims that we are a closed system, and that Flash is open, but in fact the opposite is true. Let me explain.
+
+A nice false dichotomy. Go on, Steve.
+
+> First, there’s “Open”.
+>
+> Adobe’s Flash products are 100% proprietary. They are only available from Adobe, and Adobe has sole authority as to their future enhancement, pricing, etc. While Adobe’s Flash products are widely available, this does not mean they are open, since they are controlled entirely by Adobe and available only from Adobe. By almost any definition, Flash is a closed system.
+
+Although Flash Player was and is closed source and proprietary, as mentioned, Adobe and the former Macromedia were involved in standards. They even went as far as donating Tamarin (the ActionScript 3 engine) to the Mozilla Foundation. This proved to not be a very good move since Mozilla has completely neglected it and now their site only contains dead links to mercurial repositories. Fortunately there are forks on GitHub.
+
+> Apple has many proprietary products too. Though the operating system for the iPhone, iPod and iPad is proprietary, we strongly believe that all standards pertaining to the web should be open. Rather than use Flash, Apple has adopted HTML5, CSS and JavaScript – all open standards.
+
+Note that masterfully the topic has changed from the business motive (the App Store being a closed system that Apple maintains total control over) to the open web, which both Apple and Adobe have participated in. Also note the clever use of language above, accusing Flash of being a closed system. Unlike the App Store, Flash isn't a platform. It's a creation tool that exports to a format that is proprietary. There are actually all sorts of standards in the open web that fit this bill that Jobs fails to mention here and Apple was notoriously bad actors in.
+
+First, there is WOFF. The open web font format that Apple just never cared to do anything with. Why? Licensing. Then there's WebP and WebM (and the related open codecs), the open image and movie formats that Apple also ignored. Why? Licensing again. It's not like Apple didn't care about video, as we'll get to later in this letter. Apple even authored the HTTP Live Streaming (HLS) standard, but it requires h.264, which in turn requires license fees to the MPEG LA group, of which Apple is a member of. Someone who is truly on the side of tech and open standards doesn't do these things.
+
+> HTML5, the new web standard that has been adopted by Apple, Google and many others, lets web developers create advanced graphics, typography, animations and transitions without relying on third party browser plug-ins (like Flash). HTML5 is completely open and controlled by a standards committee, of which Apple is a member.
+
+Again, mind the date on this. This was simply not true at the time. These were ideas that would eventually be realized, but on May 1st, 2010, this was not true. Meanwhile, Adobe--being a company that makes media creation tools--was also playing in the HTML5 space. Flex and Air were both abstractions over the Flash/ActionScript/MXML ecosystem and supported HTML5 too.
+
+> Apple even creates open standards for the web. For example, Apple began with a small open source project and created WebKit, a complete open-source HTML5 rendering engine that is the heart of the Safari web browser used in all our products. WebKit has been widely adopted. Google uses it for Android’s browser, Palm uses it, Nokia uses it, and RIM (Blackberry) has announced they will use it too. Almost every smartphone web browser other than Microsoft’s uses WebKit. By making its WebKit technology open, Apple has set the standard for mobile web browsers.
+
+More clever writing here. By omitting Adobe's active participation in open standards, the reader is left to assume that Adobe isn't also doing these things. Plus we now know the fate of WebKit: it was so slow in picking up the HTML5 features Jobs uses here to dig Flash's grave with that Google forked it to make Blink, which is now everywhere.
+
+> Second, there’s the “full web”.
+>
+> Adobe has repeatedly said that Apple mobile devices cannot access “the full web” because 75% of video on the web is in Flash.
+
+Seriously, Jobs' ability to spin words is frighteningly good. The full web would include _all_ Flash content, not just the videos. Flash has always been much larger than video, since it comes from a time when Internet connections were too slow to stream video to begin with. The manipulation of the point here to center video only serves Apple's interests.
+
+> What they don’t say is that almost all this video is also available in a more modern format, H.264, and viewable on iPhones, iPods and iPads. YouTube, with an estimated 40% of the web’s video, shines in an app bundled on all Apple mobile devices, with the iPad offering perhaps the best YouTube discovery and viewing experience ever. Add to this video from Vimeo, Netflix, Facebook, ABC, CBS, CNN, MSNBC, Fox News, ESPN, NPR, Time, The New York Times, The Wall Street Journal, Sports Illustrated, People, National Geographic, and many, many others. iPhone, iPod and iPad users aren’t missing much video.
+
+Ah, h.264 again. The closed codec that evidently powers "the full web". Glad to see that iOS users get to watch stuff, but the web is much fuller than video consumption.
+
+> Another Adobe claim is that Apple devices cannot play Flash games. This is true. Fortunately, there are over 50,000 games and entertainment titles on the App Store, and many of them are free. There are more games and entertainment titles available for iPhone, iPod and iPad than for any other platform in the world.
+
+Except for the web platform and it's many many many more Flash games? What about that platform?? The full web, remember, you were just talking about it??? Within the span of five paragraphs, the App Store is now a touted platform and not the closed system Jobs accused Flash of being.
+
+> Third, there’s reliability, security and performance.
+>
+> Symantec recently highlighted Flash for having one of the worst security records in 2009. We also know first hand that Flash is the number one reason Macs crash. We have been working with Adobe to fix these problems, but they have persisted for several years now. We don’t want to reduce the reliability and security of our iPhones, iPods and iPads by adding Flash.
+
+Lots of citation needed here. As I recall, Adobe was quick to patch any security vulnerabilities, and all platforms have security vulnerabilities. There is definitely something to be said about the time delta between a patch being published and that patch being distributed, but this is also not a Flash-specific problem (in 2010 IE6 still had 10% market share, for frame of reference).
+
+> In addition, Flash has not performed well on mobile devices. We have routinely asked Adobe to show us Flash performing well on a mobile device, any mobile device, for a few years now. We have never seen it. Adobe publicly said that Flash would ship on a smartphone in early 2009, then the second half of 2009, then the first half of 2010, and now they say the second half of 2010. We think it will eventually ship, but we’re glad we didn’t hold our breath. Who knows how it will perform?
+
+Flash support was added to Android 2.2, released 21 days after this letter. The whole phrasing of this paragraph is also clearly not about openness. The argument we're supposed to buy into here is that if Flash can't perform well on a mobile device then it's reasonable for Apple to ban us from using it at all. To this day, this is the kind of authority Apple assumes over their app store, but how is this open? The open answer would be to support Flash and pressure Adobe to make it better. Or take the drastic step to disable it by default or ship without it installed by default since it doesn't have a good experience. But to completely ban it from the operating system can in no way be explained as a move inline with a spirit of openness.
+
+> Fourth, there’s battery life.
+>
+> To achieve long battery life when playing video, mobile devices must decode the video in hardware; decoding it in software uses too much power. Many of the chips used in modern mobile devices contain a decoder called H.264 – an industry standard that is used in every Blu-ray DVD player and has been adopted by Apple, Google (YouTube), Vimeo, Netflix and many other companies.
+
+This one makes my head spin. There's a lot to unpack here. First, note the timing of this note on battery life: the latest iPhone is the 3GS, the successor to the second iPhone, the iPhone 3G. The iPhone 3G was notorious for poor battery life. Some reports had the battery life at under 5 hours a charge with 3G on. So here Jobs manages to aim that visceral pain iPhone users have felt at Flash, a tool that isn't even on iOS. Truly masterful manipulation.
+
+Speaking of manipulation, at this point Flash is synonymous with playing video, apparently.
+
+And then, with the fervor of an Instagram influencer, he plugs h.264 once more. Why only fight Adobe when you can also fight WebM and the open codecs movement. Writing a letter that is loudly in favor of open systems while quietly combatting open systems sounds like the kind of marketing challenge Jobs was made for.
+
+> Fifth, there’s Touch.
+>
+> Flash was designed for PCs using mice, not for touch screens using fingers. For example, many Flash websites rely on “rollovers”, which pop up menus or other elements when the mouse arrow hovers over a specific spot. Apple’s revolutionary multi-touch interface doesn’t use a mouse, and there is no concept of a rollover.
+
+Everything up to this point was designed for PCs using mice except for the older software that was designed for PCs without mice. Including "the open web". This argument is so flawed. Again, Flash was the heart of innovation on the web. It was where all the new media designers played because they couldn't get enough interaction design. There was so much experimentation to be done. People made Flash games for the Wii and they hacked the Kinect to make augmented reality installations. They wrote their own multitouch libraries before there was a first-party one. Apple's revolutionary multi-touch interface didn't make anyone flinch. It was just another exciting opportunity to try new things. Unfortunately, this new thing meant learning a new language and developing in a much less mature ecosystem.
+
+> If developers need to rewrite their Flash websites, why not use modern technologies like HTML5, CSS and JavaScript?
+
+I have two strong issues with this quip. The first is that any engineer will tell you that redesigns and refactors are much cheaper and safer than complete rewrites. The second is that _we aren't supposed to break the web._ The bigger issue at hand was that swaths of old Flash websites weren't going to be rewritten. They were going to be left behind. And that's what has happened.
+
+> Even if iPhones, iPods and iPads ran Flash, it would not solve the problem that most Flash websites need to be rewritten to support touch-based devices.
+
+This also ignores the early mobile browser innovations that bridged this gap. iOS and Android both went to great lengths to make the web work as well as possible on touch. Smart zooming based on content dimensions, input magnification on tap, hover emulation, etc. There also continue to be all sorts of emulation and remote desktop apps that may not be the most usable, but they still unlock all sorts of use cases that many people would rather do poorly than not do at all.
+
+> Sixth, the most important reason.
+>
+> Besides the fact that Flash is closed and proprietary, has major technical drawbacks, and doesn’t support touch based devices, there is an even more important reason we do not allow Flash on iPhones, iPods and iPads. We have discussed the downsides of using Flash to play video and interactive content from websites, but Adobe also wants developers to adopt Flash to create apps that run on our mobile devices.
+
+And finally, the most important reason, iOS must remain a closed platform. Fortunately, Apple went on to back away from this argument a little bit. Now we can at least get games authored in Unity, Unreal, and the like. We just have to deal with the authoritarian approval process.
+
+> This becomes even worse if the third party is supplying a cross platform development tool. The third party may not adopt enhancements from one platform unless they are available on all of their supported platforms. Hence developers only have access to the lowest common denominator set of features. Again, we cannot accept an outcome where developers are blocked from using our innovations and enhancements because they are not available on our competitor’s platforms.
+
+The counter-argument here is history. I just want to give everyone a chance to read it again.
+
+> Perhaps Adobe should focus more on creating great HTML5 tools for the future, and less on criticizing Apple for leaving the past behind.
+
+The last sentence is the most painful one. Adobe was already creating HTML5 tools. As discussed, Adobe was also integral to getting the standards bodies back on track with the reforming of TC39, ES4, and E4X. And to sign off this way was clearly a call to arms for all the Apple fans. They were all given permission to see Flash as a dinosaur. The effects of this were astounding, by the way. Talk to anyone who was working in Flash in 2011 or later, they'll tell you how unwanted they were. In the worst cases, people removed Flash from their resumes because having it there could get you automatically filtered out of an applicant pool. Or an interview would oddly be about Flash and how it's dead now instead of about what the responsibilities of the job would actually be.
+
+Reliving this history stings. It stings even more with experienced eyes I didn't have when I was 19. Tech trends come and go for squishy human reasons and under the heavy influence of capitalism.
+
+## History Repeats
+
+These last two sections probably sound oddly familiar. None of the macro forces have changed.
+
+Microsoft's monopoly being the indirect adversary of web standards? All the tech giants are once again in the situation where they are the marketplace and also the product.
+
+Apple playing innocent while quietly throwing developers under the bus and making decisions based purely on their own desires for control and dominance? See Epic v. Apple.
+
+Developing for the web being a minefield of inconsistencies? Well, this has actually gotten a lot better, but the pendulum might be swinging too far in the other direction. We're continuing to sink into a Chromium monoculture.
+
+In the same way that democracy doesn't work unless the people make it work, we can't let the open web become the PR-friendly branding of a tech oligopoly's grander, very much not open, motives.
+
+## The Most Creative Period of the Web
+
+The web has always been a creative place. From the early days of posting textfiles, to webrings, to Flash, to Youtube and MySpace, and to the current trends of social media, much of which is livestreamed and real-time.
+
+I think the root of this creativity has always been accessibility. Never before has there been a planet-scale way to both consume and publish media. Picking a most creative period is futile since the medium has changed so much over the course of this history, but I don't think there can be an argument against the Flash era being the period in which the medium changed the most.
+
+At first, creativity was confined in a small box of technical limitations. Then, as computing power multiplied, operating systems and display technology improved, and the web gained expanded capabilities including plugins, there was creativity in expanding the box.
+
+This was followed by a period of contraction. The web has moved on from being the thing that was exciting to becoming the substrate on which exciting things are hosted. There's no denying there's a near infinite depth of creative videos on TikTok, Instagram, the late Vine, Twitter, Vimeo, Youtube, and elsewhere, but they are all video. Sometimes the video becomes interactive by way of annotations or fourth-wall breaking instructions, but it's still video.
+
+During the peak of Flash, there were no rules--or at least no one cared to follow them. There was also little to no fame chasing (outside of a relatively small circle of Flash professionals making big name websites for big name companies at least). People were just making stuff to make stuff.
+
+In fact, people were making stuff because it was _easy_ to make stuff. It was intoxicatingly easy to make stuff. Making quality stuff was a different story, but the ability to quickly add shapes and keyframes and audio and interactivity, and then see it all come to life upon hitting ctrl+enter was a feedback loop we still haven't recreated in the web platform world of today. And as for quality? Who cares! There was no publishing industry gatekeeping your garbage. Upload it just for fun!
+
+This was also a golden period of time when humans had decades of experience with video but video wasn't an option. We had to have preloaders for content that was only 5MB. Any video was obscenely compressed. We took to vector-based animation instead.
+
+Flash capitalized on this, but it also enabled it. IDEs don't mean the same thing to me as other software engineers. It's hard to consider any environment for development integrated when I still have to bounce around between my "IDE", my web browser, and any number of graphics, video, and audio tools. As mentioned, there was a gap in time between Flash being considered legacy and the web catching up. There has been in even larger gap in the ecosystem of tooling. The closest thing we have is Unity, which in many ways has surpassed Flash in this feedback loop, but it doesn't export websites in the way we expect Flash replacements to. It also isn't the tool you use to make your artwork, but I digress.
+
+I also don't think the loss in tooling alone is what stifled creativity in the web as a medium. Technology changes required a change in how we approached UI. The advent of smart phones and tablets ushered in the responsive web, and the responsive web encouraged immense simplification of form.
+
+This happened at the same time as the semantic web really took off in the wake of HTML5. We collectively revisited the mantra "Don't Make Me Think" and we embraced new ones as well, such as "Content is King". Marshall McLuhan rolls in his grave every time someone preaches this without recognizing that the medium is also content. Just look at Black Mirror: Bandersnatch or the entire discipline of data visualization.
+
+Not that the semantic web has been all bad. With it came more attention to a11y (which Flash supported) and a healthier approach to SEO (which Flash also attempted to support). Maybe it is the fault of tooling that in order to support a11y and SEO properly we often fall back on the safest designs.
+
+There is an argument to be made that the problem is actually deeper than tooling, though. Maybe the platform itself is too restrictive. It's one thing for the platform to have recommendations and good defaults, but the platform can often limit expression. Look at CSS. You can do many wonderful things with it, but isn't it strange that it's a finite set of properties with a finite set of values? Until Houdini, there has been no extensibility of the language. Instead, people have had to resort to tricks, SVG, and canvas. This friction causes people to just not do any of that instead.
+
+The playful culture of experimentation at the heart of the Flash era has largely died out. From time to time we still see some fun portfolio sites or product launch sites, but for the most part we can model the web in markdown; truly the polo shirt and khakis of the interactive web wardrobe.
+
+It doesn't help that publishing on the web has also changed dramatically in the last 15 years. RSS is all but dead, Google will penalize your page rank if you don't hit their bar of usability, Facebook and Google both want to take your content and publish it in their own way on your behalf on their platforms, Safari has a built-in reader mode modeled after services like Readability and Pocket, and the bulk of content consumption happens through the form of social media posts anyway.
+
+What was once the place for new media has because the new medium old media is placed on.
+
+But it's not like the web has lost the ability to support immersive interactive experiences, we have just collectively lost steam. A lot of this energy lives on in art installations, indie games, virtual reality, and related fields. To bring this back to the web, we're going to need to broaden our definition of user experience (and stop listening to all those Google developer advocates that keep trying to convince us that performance is the end all be all of UX), and we're going to need to follow Bret Victor's lead and build better tools.
+
+## Preservation
+
+Clearly I have a lot to say about all of this, but what I haven't stopped to admit is that I am okay with Flash going away. I mean, let's be honest, Flash has been gone for a long time now. I have already moved on both professionally and personally. What I am not okay with is losing so much of the Internet all at once. Especially so much independent creation made for no reason other than personal passion. If the last ten years had an overture of Flash archival to it, then this would be happy finale. Unfortunately, I'm not seeing it, or at least not enough of it.
+
+We have already lost so much.
+
+A bulk of Flash was full site experiences that are inaccessible in any archive and no longer hosted. They are just gone, or at least destined to rot away on the forgotten spinning disks of their makers.
+
+There is also little to no community. So many people in the web today have given heartfelt talks and rants about how we must not break the web. How URLs need to be permanent. How tragic it is that articles from even five years ago have broken links. These same people are ready for the ticker tape parade now that Flash is gone forever. We all broke the web when we let this happen. Flash, proprietary or not, web standard or not, was a substantial part of the web.
+
+Fortunately, it's not too late for the bulk of Flash animations, games, and any interactive experience that falls somewhere in between. These were all typically uploaded to online portals. As long as these portals preserve the original swf files, the data isn't lost.
+
+A record is useless without a record player, so what good does a swf file do without Flash Player? At bare minimum, people could download swf files and run them locally with a standalone Flash Player. This is the concept behind [Flashpoint](https://bluemaxima.org/flashpoint/), which includes [all sorts of other plugins too](https://bluemaxima.org/flashpoint/platforms/). This is a heroic act, but it's also not the web. It's a standalone program with downloadable archives.
+
+People can also record footage of these swfs and upload something that resembles the original. I have done this for all of my games, but this isn't true to the originals. It's better than losing everything, but to lose interactivity can at best be described as extremely lossy archiving.
+
+Flash isn't the first ancient tech, and it won't be the last. Perhaps the best way to preserve the authenticity of the content and the nature of the web is through emulation.
+
+There have been Flash emulators in the past: Mozilla had [Shumway](https://github.com/mozilla/shumway) and Google had [Swiffy](https://developers.google.com/swiffy). Both projects unsurprisingly came from browser vendors. To their credit, Mozilla and Google were interested in bridging the old web with the new open web. Neither of these emulators ever achieved complete coverage of AVM1 or AVM2 (the runtimes underneath AS1/2 and AS3 respectively). To their distinct discredit, both emulators quietly died once the bulk of the ad industry--publishing, creative, and operations--transitioned to HTML5. Some things can be so predictable and still be incredibly heartbreaking.
+
+Today there are a few emulators outside of big tech. There is the enterprise emulator [CheerpX For Flash](https://www.leaningtech.com/pages/cheerpxflash.html), but they seem most interested in providing life support to all the enterprises that bet on Flex in the late 00s. [Lightspark](http://lightspark.github.io/), which shares a common author with CheerpX, is the most mature open source Flash emulator, but it is distributed as either a standalone application or a browser plugin.
+
+Our best hope is probably [Ruffle](https://ruffle.rs/), which will play original swf files as a canvas using WebAssembly for both performance and as a secure sandbox. The project is maintained by [Mike Welsh](http://tilde.town/~herschel/) of Newgrounds, and I can't imagine better stewards of Flash preservation. Ruffle is still [a long way from complete AVM1 and AVM2 coverage](https://ruffle.rs/#compatibility), but in my opinion they are taking the right approach. This is the opinion of the Internet Archive too, [which has chosen Ruffle as their emulator of choice](http://blog.archive.org/2020/11/19/flash-animations-live-forever-at-the-internet-archive/) for their meta-emulator project [Emularity](https://github.com/db48x/emularity).
+
+> **Why We Emulate Flash**
+>
+> The Internet Archive has moved aggressively in making a whole range of older software run in the browser over the past decade. We’ve done this project, The Emularity, because one of our fundamental tenets is *Access Drives Preservation*; being able to immediately experience a version of the software in your browser, while not perfect or universal, makes it many times more likely that support will arrive to preserve these items.
+
+Well said, Internet Archive.
+
+If you're looking to contribute, the Ruffle project is accepting donations as well as code contributions (the bulk of it is in Rust, so that's fun!). I personally did some tire-kicking and found it to be pretty magical for animations but not quite there yet for even AS2 games.
+
+The good news here is that Web Assembly isn't going away anytime soon so Ruffle should only get better with time. We may have a few dark years ahead, but as long as swf files are preserved, continued "Flash" support through emulation will only improve.
+
+The bad news is that there will be dark years. And this is where I have to call out Adobe. I've been so kind to Adobe up until this point because seriously they made some great things and they took care of Flash when they acquired Macromedia.
+
+But that was 10 years ago.
+
+What has been their contribution to Flash and Flash Player since? They turned Flash Pro into Animate and tried to get everyone on the HTML5 wagon, which is fine. They then did nothing for years? And then they announced an end of life for Flash Player?? How is it that Adobe (~$240B market cap, btw) is not a part of the Flash preservation story? I mean, at least throw us a bone and open source the player now. As much as I accused Steve Jobs of being a typical capitalist only interested in power and control, so it seems the same of Adobe. With Flash Player out of browsers, there isn't even the security risk of newly discovered vulnerabilities causing broad issues. The risk is still present in some enterprise scenarios where Adobe is extending support, but that risk seems so minor when set next to the opportunity of having the original Flash Player source code available to reference for emulation.
+
+## The Future
+
+Everything around us will have an end of life. Sometimes by old age and sometimes violently taken too soon. Technology expires faster than almost anything humans have created. It's our duty to celebrate everything we have ever held dear and to make sure we preserve all that's worth remembering.
+
+## Further Reading
+
+## My Own Archive
+
+## 2006
+
+## 2007
+
+## 2008
+
+## 2009
+
+## 2010
+
+## 2011?
+
+
+
+
+
