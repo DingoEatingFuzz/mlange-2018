@@ -104,14 +104,16 @@ function mdxPages(graphql, { createPage }) {
     `)
       .then(result => {
         result.data.allMdx.edges.forEach(({ node }) => {
-          createPage({
-            path: node.fields.slug,
-            component: path.resolve(typeToTemplate[node.fields.type]),
-            context: {
-              slug: node.fields.slug,
-              id: node.fields.id
-            }
-          });
+          if (typeToTemplate[node.fields.type]) {
+            createPage({
+              path: node.fields.slug,
+              component: path.resolve(typeToTemplate[node.fields.type]),
+              context: {
+                slug: node.fields.slug,
+                id: node.fields.id
+              }
+            });
+          }
         });
         resolve();
       })

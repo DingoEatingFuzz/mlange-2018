@@ -19,6 +19,11 @@ module.exports = async ({ node, getNode, actions }) => {
         slug = "/blog" + id;
         type = "blog";
         break;
+      default:
+        id = createFilePath({ node, getNode, basePath: sourceDirectory });
+        slug = id;
+        type = "writing";
+        break;
     }
 
     createNodeField({
