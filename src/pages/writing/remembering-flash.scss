@@ -304,10 +304,11 @@ $line-height: 1.9;
   &::before {
     position: absolute;
     width: 150%;
-    height: 600px;
-    left: -300px;
-    top: -303px;
+    height: calc(100vw * 0.6);
+    left: -260px;
+    top: 0;
     background: #faf4f0;
+    transform-origin: top left;
     transform: rotate(-15deg);
     content: " ";
   }
