@@ -146,16 +146,17 @@ const TestPiece = ({ data }) => {
         </ShowMoreDialog>
         <MDXArticle
           reset={true}
-          className="thoughts thoughts-ext"
+          className="thoughts thoughts-ext thoughts-last"
           content={thoughtsEnd.node.body}
         />
 
-        <h2>History Repeats</h2>
         <MDXArticle
           reset={true}
           className="history"
           content={history.node.body}
-        />
+        >
+          <h2>History Repeats</h2>
+        </MDXArticle>
 
         <h2>The Most Creative Period of the Web</h2>
         <MDXArticle
