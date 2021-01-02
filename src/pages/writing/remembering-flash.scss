@@ -15,6 +15,11 @@ $intro-accent: #e4f1f0;
 $margin-tan: #fcf7e7;
 $line-height: 1.9;
 
+.flash {
+  width: 100%;
+  overflow: hidden;
+}
+
 .extra-space {
   margin-top: 3em;
   margin-bottom: 3em;
@@ -44,10 +49,16 @@ $line-height: 1.9;
 
 .kinda-loud {
   font-size: 24px;
+  line-height: 1.5;
 }
 
 .barely-loud {
   font-size: 18px;
+  line-height: 1.5;
+}
+
+.raised-voice {
+  font-size: 16px;
   line-height: 1.5;
 }
 
@@ -298,7 +309,6 @@ $line-height: 1.9;
   background: #faf4f0;
   position: relative;
   font-family: $open-stack;
-  overflow: visible;
   padding-bottom: 100px;
 
   &::before {
@@ -666,5 +676,84 @@ $line-height: 1.9;
   dd {
     width: 50%;
     margin-left: 20px;
+  }
+}
+
+.creativity-banner {
+  position: relative;
+  font-family: $open-stack;
+  z-index: 4;
+  background: #794a66;
+  margin-top: -100px;
+
+  .wave {
+    background: url("./remembering-flash/creativity-bg.svg");
+    background-size: 2800px;
+    background-position: -100px 0;
+    background-repeat: none;
+    height: 530px;
+    padding-top: 50px;
+
+    h2 {
+      color: transparent;
+      background: url("./remembering-flash/creative-period-of-the-web.svg");
+      width: 1200px;
+      height: 500px;
+      background-repeat: no-repeat;
+      background-size: 1000px 500px;
+      background-position: top left;
+      margin-top: 0;
+      margin-left: 130px;
+      transform: rotate(10deg);
+    }
+  }
+}
+
+.creativity {
+  padding: 50px 0;
+  background: #3c2d3f;
+  color: #fdf2ff;
+  position: relative;
+  font-family: $open-stack;
+  z-index: 5;
+  margin-top: -15px;
+  margin-bottom: -15px;
+
+  > article,
+  > h2 {
+    position: relative;
+    z-index: 6;
+    max-width: 700px;
+    margin-left: 100px;
+    font-size: 14px;
+    line-height: $line-height;
+
+    & > *:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.preservation {
+  padding: 50px 0;
+  background: #f4f4f4;
+  position: relative;
+  font-family: $serif-stack;
+  z-index: 5;
+  margin-top: -15px;
+  margin-bottom: -15px;
+
+  > article,
+  > h2 {
+    position: relative;
+    z-index: 6;
+    max-width: 700px;
+    margin-left: 100px;
+    font-size: 14px;
+    line-height: $line-height;
+
+    & > *:last-child {
+      margin-bottom: 0;
+    }
   }
 }

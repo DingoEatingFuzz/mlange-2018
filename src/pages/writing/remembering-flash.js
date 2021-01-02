@@ -158,7 +158,11 @@ const TestPiece = ({ data }) => {
           <h2>History Repeats</h2>
         </MDXArticle>
 
-        <h2>The Most Creative Period of the Web</h2>
+        <div className="creativity-banner">
+          <div className="wave">
+            <h2>The Most Creative Period of the Web</h2>
+          </div>
+        </div>
         <MDXArticle
           reset={true}
           className="creativity"
