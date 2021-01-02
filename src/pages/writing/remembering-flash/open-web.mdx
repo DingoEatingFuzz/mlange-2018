@@ -1,0 +1,93 @@
+At one point there wasn't even JavaScript.
+
+Other people, including Brendan Eich himself, have told this story better than I can, but here's the gist of it:
+
+1. (1995) Netscape decides the web needs scripting
+2. Brendan Eich is recruited to make a little language, it gets branded JavaScript and is vaguely C-like to ride the Java wave
+3. Microsoft near-perfectly recreates it with JScript
+4. To avoid fragmentation of languages and implementations across browsers, Netscape approaches ECMA to standardize the language
+5. ES2 is an ISO standard
+6. ES3 is the first big evolution of the language
+7. (1999) An ECMAScript 4 proposal comes out of Netscape
+
+So at this point, JavaScript is now a standard, but the web is still a mess. It won't be for another five years that we have WHATWG steering standards of the web platform, including all the browser APIs we use JavaScript for. This is a period of time when we had a Windows Media Player plugin, a Quicktime plugin, even a RealPlayer plugin. And on the interactive side, we had Java applets, Shockwave Player, Flash Player, and a half dozen others. There was also an unmentionable thing called ActiveX. These weren't an affront to web standards, there were no web standards yet. These were what we would now call "userland" solutions to problems the platform had no solution for.
+
+Eventually Flash would get its own scripting language. Macromedia may have not been in the middle of the browser wars, but they were astute enough to base ActionScript on ES3. Since there was no "the web" as we know today, Flash Player was as much "the web" as anything else, and ES3 was the scripting standard of "the web". This was 2000.
+
+In 2003, ActionScript 2.0 came out. Macromedia needed to balance a desire to color within the lines of the stagnant ECMAScript standard while also meeting user demands for more language features with which to express more complex programs. Fortunately there was an ES4 proposal to draw inspiration from.
+
+Mozilla, maybe more specifically Brendan Eich, sees a possible ally in Macromedia (and then Adobe since all of this tech stuff happened on a stormy sea of business stuff) and they work together with a community of other contributors to put forth ECMAScript For XML, a.k.a. E4X. Remember what my uncle said? XML was a big deal back in the day.
+
+So in 2006, ActionScript 3.0 comes out. This is probably equal parts driven by user demand and by Adobe wanting to make a splash about Flash's future (see what I did there?). It is based on E4X (which implies complete conformance of ES4), has hardware acceleration, has shader support, has namespaces and lower-level datatypes (as part of E4X), and of course has a top-level XML type. It's hard to imagine what an XML datatype looks like so here are a couple code snippets from around 2010.
+
+```actionscript
+// Writing XML (from a logging script by gskinner)
+public function XMLLog(performanceTest:PerformanceTest=null,name:String=null) {
+  xml = <TestCollection
+  	playerVersion={Capabilities.version}
+  	isDebugger={Capabilities.isDebugger}
+  	playerType={Capabilities.playerType}
+  	os={Capabilities.os}
+  	manufacturer={Capabilities.manufacturer} />;
+
+  // 10.1 and higher
+  if ("cpuArchitecture" in Capabilities) {
+  	xml.@cpuArchitecture = Capabilities["cpuArchitecture"];
+  }
+
+  if (name) { xml.@name = name; }
+
+  this.performanceTest = performanceTest ? performanceTest : PerformanceTest.getInstance();
+  this.performanceTest.addEventListener(Event.COMPLETE,handleComplete);
+  this.performanceTest.addEventListener(Event.CLOSE,handleComplete);
+}
+```
+
+```actionscript
+// Reading XML (from a Flash-based website I made that used XML as a "cms")
+// load thumbnails
+SiteMain.loadImg(contain.oneC.thumb.img, SiteMain.mainXML.nav.link[0].img.@path);
+SiteMain.loadImg(contain.twoC.thumb.img, SiteMain.mainXML.nav.link[1].img.@path);
+
+// load logo
+SiteMain.loadImg(contain.logoClip, SiteMain.mainXML.logo.@path);
+
+// set text
+contain.oneC.titleTxt.text = SiteMain.mainXML.nav.link[0].title;
+contain.oneC.bodyTxt.text = SiteMain.mainXML.nav.link[0].description;
+contain.twoC.titleTxt.text = SiteMain.mainXML.nav.link[1].title;
+contain.twoC.bodyTxt.text = SiteMain.mainXML.nav.link[1].description;
+```
+
+It seem strange and even dated for a language to have first-class support for XML, but please tell me what's stranger: a language having great support for the prevalent data interchange format of the time or Douglas Crockford convincing everyone that the prevalent data interchange format should actually be a subset of JavaScript objects?
+
+Since you're all reading this in 2021 or later, you know there's a train wreck coming, so what happened next? Remember that ES4 was never anything other than a proposal, and E4X had names behind it, but it wasn't official either. This energy was enough to get the TC39 band back together, but naturally there was conflict. Some people weren't a fan of the "enterprise" direction E4X went. They formed a splinter group and came up with ES3.1. This was a language much truer to ES3 that still sought to close some of the code organization gaps that were in the standard. Remember there were no modules at this point. You had a global object, script elements, and an eventing system. For everything else, you were on your own.
+
+ES5 honestly isn't too different from ES3, and that was kind of the point. It introduced strict mode, a top-level JSON object (sound familiar now?), and patched up some top-level objects (including Object) to pave the way higher-level language features that could desugar into lambdas and closures.
+
+In this same grand moment for the language, Brendan Eich talked about the vision of ES going forward, now that the standards committee was back on track. It was codenamed "harmony". The abusive irony.
+
+So if I wrote that well enough, you're upset and rooting for ActionScript. They followed the rules! They played nice! How could they get shut out and end up with a language that is suddenly noncompliant? Macromedia (and later Adobe) pursued a volatile standard and ultimately made a bad bet. This was clearly before Brendan Eich was telling everyone to always bet on JavaScript.
+
+But what happened with that standard? JavaScript was cruising, how is it that ES4 could be up in the air for 9 years? Mind you during those 9 years all three versions of ActionScript were released. The better question to ask is what happened with Netscape during that time.
+
+First, they were fighting in the browser wars, and then they were not existing.
+
+That first ES4 proposal from February 1999 was sent out a month before the AOL acquisition of Netscape closed and almost a year into the Microsoft antitrust trial, which focused on how Microsoft's monopoly in Windows on PCs made it impossible for Netscape or other non-IE browsers to compete. In hindsight, that ES4 proposal looks more like a distress signal than the beginning of a technical exploration.
+
+These were latchkey years and Flash filled the gaps. People wanted to use the web to share music and videos and push the boundaries on user interaction. There was no way to do this by the book (although I guess some old Neopets games were implemented entirely with forms and full page reloads). Using Flash was the best way to get consistent rich media across browsers.
+
+This went beyond games too. Flash was used for fancy navbars, fancy banners, animations, full-blown immersive websites, and, of course, ads.
+
+While the web stood still, Flash kept innovation alive.
+
+Eventually, high-speed internet had broad market share and we got streaming video platforms. Youtube used Flash, Hulu used Flash (as well as some slick CSS, remember their first theater mode that dimmed everything but the video player? That was so cool at the time), and the Olympics used the short-lived Silverlight. Presumably for partnership and DRM reasons.
+
+Eventually, the web also grew more sophisticated and we got social media. Myspace music players, Facebook flair boards and Farmville. All Flash.
+
+Admittedly, a lot of things were made in Flash when it wasn't necessary. It's just that making websites using HTML, CSS, and JS in the early 2000s was not fun. We didn't even get debugging until Firebug in 2006. Anyone who was writing JavaScript during this period of time has a war story about how they lost hours to a missing semi-colon. In addition to syntax blunders, every line of code was a browser compatibility landmine that got smoothed over by Prototype and Dojo in 2005 and eventually jQuery in 2006 and beyond. And if you wanted rounded corners? You needed to fire up Photoshop and get a 9-slice going. There were also weird invisible gifs in mysterious places and even more CSS tricks than we have today.
+
+But eventually things got better and Flash had fewer gaps left to fill.
+
+Once the dust settled and ES5 was accepted as the future, the spec still needed to be finalized and published. It was published on December 15th 2009. Just four months before Steve Jobs' infamous "Thoughts on Flash".
+
