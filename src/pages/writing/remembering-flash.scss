@@ -11,6 +11,7 @@ $serif-stack: "Source Serif Pro", serif;
 $flash-gray: #6f7b7b;
 $flash-red: #c51118;
 $intro-accent: #e4f1f0;
+$margin-tan: #fcf7e7;
 
 .extra-space {
   margin-top: 3em;
@@ -132,6 +133,8 @@ $intro-accent: #e4f1f0;
 
 .intro {
   > article {
+    position: relative;
+    z-index: 5;
     max-width: 700px;
     margin-left: 100px;
     font-size: 14px;
@@ -175,4 +178,47 @@ $intro-accent: #e4f1f0;
 .margin-note {
   font-weight: 600;
   color: #cd7b1a;
+}
+
+// TODO: mobile styles
+#margins {
+  position: absolute;
+  left: 900px;
+  top: 0;
+
+  .margin-container {
+    position: relative;
+    svg {
+      overflow: visible;
+      pointer-events: none;
+      position: absolute;
+      z-index: 1;
+
+      line {
+        stroke-width: 3;
+        stroke: $margin-tan;
+      }
+    }
+  }
+
+  .margin-note-note {
+    background: $margin-tan;
+    color: #3a3a3a;
+    padding: 15px;
+    font-size: 12px;
+    font-family: $open-stack;
+    width: 200px;
+    margin-bottom: 1em;
+    line-height: 1.7;
+    position: absolute;
+    z-index: 10;
+
+    > *:first-child {
+      margin-top: 0;
+    }
+
+    > *:last-child {
+      margin-bottom: 0;
+    }
+  }
 }
