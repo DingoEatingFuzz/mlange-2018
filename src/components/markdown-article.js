@@ -1,10 +1,10 @@
-import React from 'react'
+import React from "react";
 
-import './markdown-article.scss'
+import "./markdown-article.scss";
 
-export default ({ content = '', className = '', children }) => (
-  <div className={`markdown-article ${className}`}>
+export default ({ content = "", className = "", reset = false, children }) => (
+  <div className={`${reset ? "" : "markdown-article "}${className}`}>
     {children}
     <article dangerouslySetInnerHTML={{ __html: content }} />
   </div>
-)
+);
