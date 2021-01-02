@@ -169,7 +169,14 @@ const TestPiece = ({ data }) => {
           content={creativity.node.body}
         />
 
-        <h2>Preservation</h2>
+        <div className="preservation-banner">
+          <h2>Preservation</h2>
+          <div className="mask">
+            <p aria-hidden="true">
+              <span>Preservation</span>
+            </p>
+          </div>
+        </div>
         <MDXArticle
           reset={true}
           className="preservation"

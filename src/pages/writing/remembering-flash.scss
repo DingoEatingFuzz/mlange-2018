@@ -1,3 +1,5 @@
+@use "sass:math";
+
 @import url("https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Open+Sans:wght@300;400;600;700;800&family=Raleway:wght@400;700&family=Source+Serif+Pro:wght@400;700&display=swap");
 
 @import "../../styles/fonts";
@@ -34,11 +36,11 @@ $line-height: 1.9;
   margin-top: 3em;
 }
 
-.tight-line {
+.flash article .tight-line {
   margin-bottom: 0;
 }
 
-.tight-line + .tight-line {
+.flash article .tight-line + .tight-line {
   margin-top: 0;
 }
 
@@ -734,14 +736,66 @@ $line-height: 1.9;
   }
 }
 
+.preservation-banner {
+  background: #3c2d3f;
+  font-family: $serif-stack;
+  position: relative;
+  z-index: 5;
+  padding: 100px 0;
+
+  h2 {
+    margin: 0 0 0 100px;
+    font-family: $serif-stack;
+    font-size: 64px;
+    font-weight: normal;
+    color: #d6b2dd;
+  }
+
+  .mask {
+    overflow: hidden;
+    background: #f4f4f4;
+    //opacity: 0.5;
+    height: 200px;
+    transform-origin: top left;
+    transform: rotate(-15deg);
+
+    width: 150%;
+    height: calc(100vw * 0.6);
+    left: -100px;
+    top: 248px;
+    position: absolute;
+
+    p {
+      margin-left: 202px;
+    }
+    span {
+      display: block;
+      transform-origin: top left;
+      font-size: 64px;
+      transform: rotate(15deg);
+      color: #7b6b5b;
+
+      $offset: 112px;
+      margin-top: -$offset * math.cos(15deg);
+      margin-left: $offset * math.sin(15deg);
+
+      user-select: none;
+    }
+  }
+}
+
 .preservation {
-  padding: 50px 0;
+  padding: 0;
   background: #f4f4f4;
   position: relative;
   font-family: $serif-stack;
   z-index: 5;
   margin-top: -15px;
   margin-bottom: -15px;
+
+  p {
+    margin-bottom: 1.5em;
+  }
 
   > article,
   > h2 {
@@ -754,6 +808,25 @@ $line-height: 1.9;
 
     & > *:last-child {
       margin-bottom: 0;
+    }
+  }
+
+  blockquote {
+    font-size: 16px;
+    position: relative;
+
+    &::before {
+      position: absolute;
+      display: block;
+      content: "“";
+      font-size: 72px;
+      left: -35px;
+      top: -35px;
+      color: #dfdbd0;
+    }
+
+    p {
+      margin-bottom: 1em;
     }
   }
 }
