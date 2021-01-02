@@ -9,9 +9,36 @@ $handwriting-stack: "Caveat Brush", cursive;
 $serif-stack: "Source Serif Pro", serif;
 
 $flash-gray: #6f7b7b;
-//$flash-red: #f31019;
 $flash-red: #c51118;
 $intro-accent: #e4f1f0;
+
+.extra-space {
+  margin-top: 3em;
+  margin-bottom: 3em;
+
+  &.mega {
+    margin-top: 6em;
+    margin-bottom: 6em;
+  }
+}
+
+.extra-space-top {
+  margin-top: 3em;
+}
+
+.tight-line {
+  margin-bottom: 0;
+}
+
+.tight-line + .tight-line {
+  margin-top: 0;
+}
+
+@for $i from 1 through 7 {
+  .indent-#{$i} {
+    margin-left: 30px * $i;
+  }
+}
 
 .flash-title {
   position: fixed;
@@ -108,7 +135,7 @@ $intro-accent: #e4f1f0;
     max-width: 700px;
     margin-left: 100px;
     font-size: 14px;
-    line-height: 1.7;
+    line-height: 1.9;
   }
 
   .lede {
@@ -118,4 +145,34 @@ $intro-accent: #e4f1f0;
       font-weight: 600;
     }
   }
+
+  .loud {
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .timeline {
+    margin-top: 40px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .bg-label {
+    font-size: 48px;
+    font-weight: bold;
+    color: $intro-accent;
+    position: absolute;
+    top: calc(-1em + 6px);
+    left: -2ch;
+    z-index: -1;
+  }
+
+  .subnote {
+    font-size: 12px;
+  }
+}
+
+.margin-note {
+  font-weight: 600;
+  color: #cd7b1a;
 }
