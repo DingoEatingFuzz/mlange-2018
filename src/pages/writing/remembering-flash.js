@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Helmet from "react-helmet";
 import { graphql } from "gatsby";
 import NarrowHeader from "../../components/narrow-header";
@@ -6,6 +6,60 @@ import MDXArticle from "../../components/mdx-article";
 import CommonFooter from "../../components/common-footer";
 import Layout from "../../components/layout";
 import "./remembering-flash.scss";
+import bonziBuddy from "./remembering-flash/bonzi-buddy.svg";
+
+const ShowMoreDialog = ({ children }) => {
+  const [visibilityState, setVisibilityState] = useState(null);
+
+  const dismissed = visibilityState === false;
+  const visible = visibilityState === true;
+
+  const dismissedMessage = <p>I don't blame you.</p>;
+  const visibleMessage = null;
+  const promptMessage = (
+    <div>
+      <p className="heading">
+        Hmm. I had a lot to say about this letter&hellip;
+      </p>
+      <p>
+        It felt good to write it all out, but maybe it's not important to read.
+        Do you want to see all of my thoughts here?
+      </p>
+      <div className="actions">
+        <button
+          className="web-two-point-oh-btn"
+          onClick={() => setVisibilityState(true)}
+        >
+          Yes, more ranting please.
+        </button>
+        <button
+          className="web-two-point-oh-btn"
+          onClick={() => setVisibilityState(false)}
+        >
+          No, I've seen enough, thanks.
+        </button>
+      </div>
+      <img
+        src={bonziBuddy}
+        alt="Bonzi buddy, from the olden times"
+        width="300px"
+      />
+    </div>
+  );
+
+  return (
+    <div className={visible ? "show-more-dialog accepted" : "show-more-dialog"}>
+      <div className="dialog">
+        {dismissed
+          ? dismissedMessage
+          : visible
+          ? visibleMessage
+          : promptMessage}
+      </div>
+      <div className={visible ? "is-visible" : "is-hidden"}>{children}</div>
+    </div>
+  );
+};
 
 const TestPiece = ({ data }) => {
   const fragmentFor = slug =>
@@ -14,6 +68,8 @@ const TestPiece = ({ data }) => {
   const intro = fragmentFor("intro");
   const openWeb = fragmentFor("open-web");
   const thoughts = fragmentFor("thoughts-on-thoughts-on-flash");
+  const thoughtsMid = fragmentFor("thoughts-middle");
+  const thoughtsEnd = fragmentFor("thoughts-end");
   const history = fragmentFor("history-repeats");
   const creativity = fragmentFor("the-most-creative-period-of-the-web");
   const preservation = fragmentFor("preservation");
@@ -80,6 +136,18 @@ const TestPiece = ({ data }) => {
           reset={true}
           className="thoughts"
           content={thoughts.node.body}
+        />
+        <ShowMoreDialog>
+          <MDXArticle
+            reset={true}
+            className="thoughts thoughts-ext"
+            content={thoughtsMid.node.body}
+          />
+        </ShowMoreDialog>
+        <MDXArticle
+          reset={true}
+          className="thoughts thoughts-ext"
+          content={thoughtsEnd.node.body}
         />
 
         <h2>History Repeats</h2>

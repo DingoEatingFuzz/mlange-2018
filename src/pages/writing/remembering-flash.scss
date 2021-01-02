@@ -46,6 +46,11 @@ $line-height: 1.9;
   font-size: 24px;
 }
 
+.barely-loud {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
 .timeline {
   margin-top: 40px;
   position: relative;
@@ -359,6 +364,8 @@ $line-height: 1.9;
 .thoughts-on-flash-banner {
   height: 0px;
   overflow: visible;
+  position: relative;
+  z-index: 5;
 
   h2 {
     font-family: Helvetica, sans-serif;
@@ -393,4 +400,198 @@ $line-height: 1.9;
 .thoughts {
   background: #fff;
   padding-top: 100px;
+  position: relative;
+  font-family: $open-stack;
+
+  &.thoughts-ext {
+    padding-top: 1em;
+  }
+
+  > article {
+    position: relative;
+    z-index: 5;
+    max-width: 700px;
+    margin-left: 100px;
+    font-size: 14px;
+    line-height: $line-height;
+
+    & > *:last-child {
+      margin-bottom: 0;
+    }
+
+    blockquote {
+      color: #a47836;
+      font-family: $handwriting-stack;
+      font-size: 16px;
+      line-height: 20px;
+      margin: 0;
+      margin-left: -50px;
+      margin-right: -50px;
+      padding: 15px 50px;
+      position: relative;
+
+      p {
+        margin-bottom: 20px;
+        margin-top: 20px;
+        z-index: 1;
+        position: relative;
+      }
+
+      background: linear-gradient(to bottom, #fffee3, #fffdb4);
+
+      &::after {
+        border-left: 1px solid #ac593b;
+        border-right: 1px solid #ac593b;
+        width: 2px;
+        top: 0;
+        bottom: 0;
+        left: 30px;
+        content: " ";
+        display: block;
+        position: absolute;
+      }
+
+      &::before {
+        position: absolute;
+        display: block;
+        content: " ";
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 30px;
+
+        $line-color: #ccc;
+        background: repeating-linear-gradient(
+          $line-color,
+          $line-color 1px,
+          transparent 1px,
+          transparent 20px
+        );
+      }
+
+      > *:first-child {
+        margin-top: 0;
+      }
+
+      > *:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.show-more-dialog {
+  background: white;
+  font-family: $open-stack;
+  font-size: 18px;
+  line-height: 1.5;
+  box-shadow: 0 0 20px 20px #fff;
+  position: relative;
+  z-index: 10;
+
+  &.accepted {
+    box-shadow: none;
+    .dialog {
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  .dialog {
+    margin-left: 50px;
+    width: 800px;
+    padding: 25px 75px;
+    margin-bottom: -2em;
+  }
+
+  .heading {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 0.3em;
+
+    + p {
+      margin-top: 0.3em;
+    }
+  }
+
+  .is-hidden {
+    display: none;
+  }
+
+  .actions {
+    margin-bottom: 50px;
+
+    button {
+      margin-right: 15px;
+      position: relative;
+
+      border-radius: 50px;
+      font-size: 16px;
+      padding: 8px 20px;
+      border: 1px solid #bebebe;
+
+      background: linear-gradient(to bottom, #f8f8f8, #d6d6d6);
+      cursor: pointer;
+
+      &::after {
+        position: absolute;
+        display: block;
+        left: 3px;
+        top: 2px;
+        right: 3px;
+        bottom: 3px;
+        border-radius: 50px;
+        background: linear-gradient(to bottom, rgba(#fff, 0.9), transparent);
+        content: " ";
+        pointer-events: none;
+      }
+
+      &::before {
+        position: absolute;
+        display: block;
+        left: 0;
+        right: 0;
+        top: calc(100% + 2px);
+        height: 20px;
+        border-top-left-radius: 50px;
+        border-top-right-radius: 50px;
+        background: linear-gradient(
+          rgba(#bebebe, 0.8),
+          rgba(#bebebe, 0.6) 1px,
+          rgba(#d6d6d6, 0.6) 1px,
+          transparent 70%
+        );
+        content: " ";
+      }
+
+      &:hover {
+        background: linear-gradient(to bottom, #d0eeff, #56aaf8);
+
+        &::after {
+          background: linear-gradient(
+            to bottom,
+            rgba(#c6ffff, 0.9),
+            transparent
+          );
+        }
+
+        &::before {
+          background: linear-gradient(
+            rgba(#bebebe, 0.8),
+            rgba(#bebebe, 0.8) 1px,
+            rgba(#56aaf8, 0.4) 1px,
+            transparent 70%
+          );
+        }
+      }
+    }
+  }
+
+  img {
+    user-select: none;
+    position: absolute;
+    left: 725px;
+    top: -70px;
+    width: 300px;
+  }
 }
