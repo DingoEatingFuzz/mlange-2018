@@ -8,6 +8,15 @@ const typeToTemplate = {
   blog: "./src/templates/blog-post.js"
 };
 
+// Creepy hack to make components et. al top level making mdx authoring easier
+exports.onCreateWebpackConfig = ({ actions }) => {
+  actions.setWebpackConfig({
+    resolve: {
+      modules: [path.resolve(__dirname, "src"), "node_modules"]
+    }
+  });
+};
+
 exports.onCreateNode = async args => {
   await markdownAugmentationsTransformer(args);
   await mdxAugmentationsTransformer(args);
