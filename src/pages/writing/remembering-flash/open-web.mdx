@@ -1,27 +1,28 @@
-At one point there wasn't even JavaScript.
+<p class="kinda-loud">At one point there wasn't even JavaScript.</p>
 
 Other people, including Brendan Eich himself, have told this story better than I can, but here's the gist of it:
 
-1. (1995) Netscape decides the web needs scripting
-2. Brendan Eich is recruited to make a little language, it gets branded JavaScript and is vaguely C-like to ride the Java wave
-3. Microsoft near-perfectly recreates it with JScript
-4. To avoid fragmentation of languages and implementations across browsers, Netscape approaches ECMA to standardize the language
-5. ES2 is an ISO standard
-6. ES3 is the first big evolution of the language
-7. (1999) An ECMAScript 4 proposal comes out of Netscape
+<p class="timeline tight-line"><span class="bg-label">1995</span>Netscape decides the web needs scripting</p>
+<p class="tight-line">Brendan Eich is recruited to make a little language, it gets branded JavaScript and is vaguely C-like to ride the Java wave</p>
+<p class="timeline"><span class="bg-label">1996</span>Microsoft near-perfectly recreates it with JScript</p>
+<p class="timeline"><span class="bg-label">1997</span>To avoid fragmentation of languages and implementations across browsers, Netscape approaches ECMA to standardize the language</p>
+<p class="timeline"><span class="bg-label">1998</span>ES2 is an ISO standard</p>
+<p class="timeline tight-line"><span class="bg-label">1999</span>ES3 is the first big evolution of the language</p>
+<p class="tight-line">An ECMAScript 4 proposal comes out of Netscape</p>
 
-So at this point, JavaScript is now a standard, but the web is still a mess. It won't be for another five years that we have WHATWG steering standards of the web platform, including all the browser APIs we use JavaScript for. This is a period of time when we had a Windows Media Player plugin, a Quicktime plugin, even a RealPlayer plugin. And on the interactive side, we had Java applets, Shockwave Player, Flash Player, and a half dozen others. There was also an unmentionable thing called ActiveX. These weren't an affront to web standards, there were no web standards yet. These were what we would now call "userland" solutions to problems the platform had no solution for.
+<p class="extra-space-top">So at this point, JavaScript is now a standard, but the web is still a mess. It won't be for <span class="bg-anchor"><span class="bg-label">2004</span>another five years</span> that we have WHATWG steering standards of the web platform, including all the browser APIs we use JavaScript for. This is a period of time when we had a Windows Media Player plugin, a Quicktime plugin, even a RealPlayer plugin. And on the interactive side, we had Java applets, Shockwave Player, Flash Player, and a half dozen others. There was also an unmentionable thing called ActiveX. These weren't an affront to web standards, there were no web standards yet. These were what we would now call "userland" solutions to problems the platform had no solution for.</p>
 
-Eventually Flash would get its own scripting language. Macromedia may have not been in the middle of the browser wars, but they were astute enough to base ActionScript on ES3. Since there was no "the web" as we know today, Flash Player was as much "the web" as anything else, and ES3 was the scripting standard of "the web". This was 2000.
+Eventually Flash would get its own scripting language. Macromedia may have not been in the middle of the browser wars, but they were astute enough to base ActionScript on ES3. Since there was no "the web" as we know today, Flash Player was as much "the web" as anything else, and ES3 was the scripting standard of "the web". <span class="bg-anchor"><span class="bg-label">2000</span>This was 2000.</span>
 
-In 2003, ActionScript 2.0 came out. Macromedia needed to balance a desire to color within the lines of the stagnant ECMAScript standard while also meeting user demands for more language features with which to express more complex programs. Fortunately there was an ES4 proposal to draw inspiration from.
+<p class="timeline"><span class="bg-label">2003</span>In 2003, ActionScript 2.0 came out. Macromedia needed to balance a desire to color within the lines of the stagnant ECMAScript standard while also meeting user demands for more language features with which to express more complex programs. Fortunately there was an ES4 proposal to draw inspiration from.</p>
 
-Mozilla, maybe more specifically Brendan Eich, sees a possible ally in Macromedia (and then Adobe since all of this tech stuff happened on a stormy sea of business stuff) and they work together with a community of other contributors to put forth ECMAScript For XML, a.k.a. E4X. Remember what my uncle said? XML was a big deal back in the day.
+Mozilla, maybe more specifically Brendan Eich, sees a possible ally in Macromedia (and then Adobe since all of this tech stuff happened on a stormy sea of business stuff) and they work together with a community of other contributors to put forth <span class="bg-anchor"><span class="bg-label">2004</span>ECMAScript For XML</span>, a.k.a. E4X. Remember what my uncle said? XML was a big deal back in the day.
 
-So in 2006, ActionScript 3.0 comes out. This is probably equal parts driven by user demand and by Adobe wanting to make a splash about Flash's future (see what I did there?). It is based on E4X (which implies complete conformance of ES4), has hardware acceleration, has shader support, has namespaces and lower-level datatypes (as part of E4X), and of course has a top-level XML type. It's hard to imagine what an XML datatype looks like so here are a couple code snippets from around 2010.
+<p class="timeline"><span class="bg-label">2006</span>So in 2006, ActionScript 3.0 comes out. This is probably equal parts driven by user demand and by Adobe wanting to make a splash about Flash's future (see what I did there?). It is based on E4X (which implies complete conformance of ES4), has hardware acceleration, has shader support, has namespaces and lower-level datatypes (as part of E4X), and of course has a top-level XML type. It's hard to imagine what an XML datatype looks like so here are a couple code snippets from around 2010.</p>
+
+Creating an XML object to use as a data structure. Taken from some logging script GSkinner wrote at some point. I dunno, it was on my hard drive.
 
 ```actionscript
-// Writing XML (from a logging script by gskinner)
 public function XMLLog(performanceTest:PerformanceTest=null,name:String=null) {
   xml = <TestCollection
   	playerVersion={Capabilities.version}
@@ -43,8 +44,10 @@ public function XMLLog(performanceTest:PerformanceTest=null,name:String=null) {
 }
 ```
 
+Reading XML for a Flash-based website I made that used XML as a "cms". This was what we would now call a single-page application, except instead of a JSON API it had an XML one. Except instead of it being an API it was static files (not that it makes a difference from the client perspective).
+
+
 ```actionscript
-// Reading XML (from a Flash-based website I made that used XML as a "cms")
 // load thumbnails
 SiteMain.loadImg(contain.oneC.thumb.img, SiteMain.mainXML.nav.link[0].img.@path);
 SiteMain.loadImg(contain.twoC.thumb.img, SiteMain.mainXML.nav.link[1].img.@path);
@@ -59,9 +62,18 @@ contain.twoC.titleTxt.text = SiteMain.mainXML.nav.link[1].title;
 contain.twoC.bodyTxt.text = SiteMain.mainXML.nav.link[1].description;
 ```
 
-It seem strange and even dated for a language to have first-class support for XML, but please tell me what's stranger: a language having great support for the prevalent data interchange format of the time or Douglas Crockford convincing everyone that the prevalent data interchange format should actually be a subset of JavaScript objects?
+It may seem strange and even dated for a language to have first-class support for XML, but please tell me what's stranger:
 
-Since you're all reading this in 2021 or later, you know there's a train wreck coming, so what happened next? Remember that ES4 was never anything other than a proposal, and E4X had names behind it, but it wasn't official either. This energy was enough to get the TC39 band back together, but naturally there was conflict. Some people weren't a fan of the "enterprise" direction E4X went. They formed a splinter group and came up with ES3.1. This was a language much truer to ES3 that still sought to close some of the code organization gaps that were in the standard. Remember there were no modules at this point. You had a global object, script elements, and an eventing system. For everything else, you were on your own.
+1. A language having great support for the prevalent data interchange format of the time.
+2. Douglas Crockford convincing everyone that the prevalent data interchange format should actually be a subset of JavaScript objects.
+
+Since you're all reading this in 2021 or later, you know there's a train wreck coming, so what happened next?
+
+<p class="tight-line">Remember that ES4 was never anything other than a proposal......</p>
+<p class="tight-line indent-1">And E4X had names behind it, but it wasn't official either............</p>
+<p class="tight-line indent-2">This energy got the TC39 band back together, but naturally there was conflict..................</p>
+
+<p class="timeline"><span class="bg-label">2008</span>Some people weren't a fan of the "enterprise" direction E4X went. They formed a splinter group and came up with ES3.1. This was a language much truer to ES3 that still sought to close some of the code organization gaps that were in the standard. Remember there were no modules at this point. You had a global object, script elements, and an eventing system. For everything else, you were on your own.</p>
 
 ES5 honestly isn't too different from ES3, and that was kind of the point. It introduced strict mode, a top-level JSON object (sound familiar now?), and patched up some top-level objects (including Object) to pave the way higher-level language features that could desugar into lambdas and closures.
 
@@ -71,15 +83,16 @@ So if I wrote that well enough, you're upset and rooting for ActionScript. They 
 
 But what happened with that standard? JavaScript was cruising, how is it that ES4 could be up in the air for 9 years? Mind you during those 9 years all three versions of ActionScript were released. The better question to ask is what happened with Netscape during that time.
 
-First, they were fighting in the browser wars, and then they were not existing.
+<p class="tight-line">First, they were fighting in the browser wars, and then</p>
+<p class="tight-line right">they <span class="fade">were <span class="fade">not <span class="fade">existing.</span></span></span></p>
 
 That first ES4 proposal from February 1999 was sent out a month before the AOL acquisition of Netscape closed and almost a year into the Microsoft antitrust trial, which focused on how Microsoft's monopoly in Windows on PCs made it impossible for Netscape or other non-IE browsers to compete. In hindsight, that ES4 proposal looks more like a distress signal than the beginning of a technical exploration.
 
-These were latchkey years and Flash filled the gaps. People wanted to use the web to share music and videos and push the boundaries on user interaction. There was no way to do this by the book (although I guess some old Neopets games were implemented entirely with forms and full page reloads). Using Flash was the best way to get consistent rich media across browsers.
+**These were latchkey years and Flash filled the gaps.** People wanted to use the web to share music and videos and push the boundaries on user interaction. There was no way to do this by the book (although I guess some old Neopets games were implemented entirely with forms and full page reloads). Using Flash was the best way to get consistent rich media across browsers.
 
 This went beyond games too. Flash was used for fancy navbars, fancy banners, animations, full-blown immersive websites, and, of course, ads.
 
-While the web stood still, Flash kept innovation alive.
+<p class="loud">While the web stood still, Flash kept innovation alive.</p>
 
 Eventually, high-speed internet had broad market share and we got streaming video platforms. Youtube used Flash, Hulu used Flash (as well as some slick CSS, remember their first theater mode that dimmed everything but the video player? That was so cool at the time), and the Olympics used the short-lived Silverlight. Presumably for partnership and DRM reasons.
 

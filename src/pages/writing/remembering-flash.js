@@ -50,20 +50,58 @@ const TestPiece = ({ data }) => {
 
         <MDXArticle className="intro" reset={true} content={intro.node.body} />
 
-        <h2>The Open Web</h2>
-        <MDXArticle className="open-web" content={openWeb.node.body} />
+        <section className="open-web-banner">
+          <div>
+            <h2>The Open Web</h2>
+            <p>
+              Today it's pretty clear there is a web platform. We've got TC39,
+              W3C, WHATWG, and all sorts of working groups within these larger
+              groups. It hasn't always been this way.
+            </p>
+          </div>
+        </section>
 
-        <h2>Thoughts on Thoughts on Flash</h2>
-        <MDXArticle className="thoughts" content={thoughts.node.body} />
+        <MDXArticle
+          className="open-web"
+          reset={true}
+          content={openWeb.node.body}
+        ></MDXArticle>
+
+        <section className="thoughts-on-flash-banner">
+          <h2 className="thoughts-on-flash-heading">
+            <span className="beginning">
+              <span className="inner-shadow">Thoughts on</span>
+            </span>
+            Thoughts on Flash
+          </h2>
+        </section>
+
+        <MDXArticle
+          reset={true}
+          className="thoughts"
+          content={thoughts.node.body}
+        />
 
         <h2>History Repeats</h2>
-        <MDXArticle className="history" content={history.node.body} />
+        <MDXArticle
+          reset={true}
+          className="history"
+          content={history.node.body}
+        />
 
         <h2>The Most Creative Period of the Web</h2>
-        <MDXArticle className="creativity" content={creativity.node.body} />
+        <MDXArticle
+          reset={true}
+          className="creativity"
+          content={creativity.node.body}
+        />
 
         <h2>Preservation</h2>
-        <MDXArticle className="preservation" content={preservation.node.body} />
+        <MDXArticle
+          reset={true}
+          className="preservation"
+          content={preservation.node.body}
+        />
 
         <h2>The Future</h2>
 
