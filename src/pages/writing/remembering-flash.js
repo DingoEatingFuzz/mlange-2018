@@ -75,6 +75,8 @@ const TestPiece = ({ data }) => {
   const creativity = fragmentFor("the-most-creative-period-of-the-web");
   const preservation = fragmentFor("preservation");
 
+  const links = data.pagesWritingRememberingFlashLinksToml.link;
+
   return (
     <Layout>
       <div className="flash">
@@ -91,7 +93,7 @@ const TestPiece = ({ data }) => {
             <span className="secondary"> Flash</span>
           </h1>
           <dl>
-            <dd>Jan. 2nd 2021</dd>
+            <dd>Jan. 3rd 2021</dd>
           </dl>
           <figure>
             <blockquote>
@@ -209,8 +211,15 @@ const TestPiece = ({ data }) => {
 
           <p>
             Here is an incomplete collection of how other people remember Flash.
-            If you have written your own piece or recorded your own video,
-            please contact me; I’d love to include it here.
+            If you have written your own piece or recorded your own video,{" "}
+            <a
+              href="https://twitter.com/dingoeatingfuzz"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              please contact me
+            </a>
+            ; I’d love to include it here.
           </p>
 
           <p>
@@ -219,6 +228,20 @@ const TestPiece = ({ data }) => {
             generative art, or making indie games, I bet they have memories to
             share.
           </p>
+
+          <ol className="further-reading-links">
+            {links.map(link => (
+              <li>
+                <p>
+                  <a href={link.link} target="_blank" rel="noopener noreferrer">
+                    {link.name}
+                  </a>{" "}
+                  by {link.author}
+                </p>
+                <p>{link.commentary}</p>
+              </li>
+            ))}
+          </ol>
         </div>
 
         <div className="archive">
@@ -252,6 +275,15 @@ export const query = graphql`
             slug
           }
         }
+      }
+    }
+
+    pagesWritingRememberingFlashLinksToml {
+      link {
+        author
+        commentary
+        link
+        name
       }
     }
   }

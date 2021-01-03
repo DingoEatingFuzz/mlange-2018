@@ -27,6 +27,7 @@ $line-height: 1.9;
   --thoughts-gutter-big: 60px;
   --thoughts-size: 36px;
   --graphic-scale: 1;
+  --margin-visibility: block;
 }
 
 @media (max-width: 700px) {
@@ -40,6 +41,7 @@ $line-height: 1.9;
     --thoughts-gutter-big: 20px;
     --thoughts-size: 24px;
     --graphic-scale: 0.5;
+    --margin-visibility: none;
   }
 }
 
@@ -143,7 +145,7 @@ body {
 
 // TODO: mobile styles
 #margins {
-  display: none;
+  display: var(--margin-visibility);
   position: absolute;
   left: 900px;
   top: 0;
@@ -970,6 +972,38 @@ body {
 
   p {
     max-width: 700px;
+  }
+
+  .further-reading-links {
+    margin-top: 50px;
+    list-style: none;
+    padding-left: 0;
+
+    a {
+      text-decoration: none;
+      color: #368199;
+      color: $bg-blue;
+      font-weight: bold;
+
+      &:hover {
+        color: #1aaf7a;
+      }
+    }
+
+    li {
+      margin-bottom: 2em;
+    }
+
+    li > p:first-child {
+      font-size: 18px;
+      line-height: 1.2;
+      margin-bottom: 0;
+
+      + p {
+        margin-top: 0.3em;
+        color: #333;
+      }
+    }
   }
 }
 

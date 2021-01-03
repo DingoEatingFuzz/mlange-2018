@@ -8,6 +8,8 @@ const typeToTemplate = {
   blog: "./src/templates/blog-post.js"
 };
 
+// lol
+
 // Creepy hack to make components et. al top level making mdx authoring easier
 exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
