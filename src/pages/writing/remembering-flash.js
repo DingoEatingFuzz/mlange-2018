@@ -7,6 +7,7 @@ import CommonFooter from "../../components/common-footer";
 import Layout from "../../components/layout";
 import "./remembering-flash.scss";
 import bonziBuddy from "./remembering-flash/bonzi-buddy.svg";
+import GoldenNoise from "../../components/visualizations/gold-noise";
 
 const ShowMoreDialog = ({ children }) => {
   const [visibilityState, setVisibilityState] = useState(null);
@@ -159,6 +160,9 @@ const TestPiece = ({ data }) => {
         </MDXArticle>
 
         <div className="creativity-banner">
+          <div className="noise-container">
+            <GoldenNoise />
+          </div>
           <div className="wave">
             <h2>The Most Creative Period of the Web</h2>
           </div>

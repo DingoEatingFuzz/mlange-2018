@@ -727,13 +727,23 @@ body {
   background: #794a66;
   margin-top: -100px;
 
+  .noise-container {
+    position: absolute;
+    background: #794a66;
+    height: calc(600px * var(--graphic-scale));
+    width: 100%;
+    z-index: 5;
+  }
+
   .wave {
     background: url("./remembering-flash/creativity-bg.svg");
     background-size: calc(2800px * var(--graphic-scale));
     background-position: calc(-100px * var(--graphic-scale)) 0;
-    background-repeat: none;
+    background-repeat: no-repeat;
     height: calc(530px * var(--graphic-scale));
     padding-top: 50px;
+    position: relative;
+    z-index: 6;
 
     h2 {
       color: transparent;
