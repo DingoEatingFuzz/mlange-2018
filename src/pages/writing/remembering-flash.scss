@@ -17,6 +17,37 @@ $intro-accent: #e4f1f0;
 $margin-tan: #fcf7e7;
 $line-height: 1.9;
 
+:root {
+  --gutter: 100px;
+  --gutter-small: 50px;
+  --interstitial-padding: 75px;
+  --headroom: 250px;
+  --label-offset: -2ch;
+  --thoughts-gutter: 40px;
+  --thoughts-gutter-big: 60px;
+  --thoughts-size: 36px;
+  --graphic-scale: 1;
+}
+
+@media (max-width: 700px) {
+  :root {
+    --gutter: 25px;
+    --gutter-small: 0;
+    --interstitial-padding: 25px;
+    --headroom: 150px;
+    --label-offset: -13px;
+    --thoughts-gutter: 15px;
+    --thoughts-gutter-big: 20px;
+    --thoughts-size: 24px;
+    --graphic-scale: 0.5;
+  }
+}
+
+html,
+body {
+  width: 100%;
+}
+
 .flash {
   width: 100%;
   overflow: hidden;
@@ -85,7 +116,7 @@ $line-height: 1.9;
   color: $intro-accent;
   position: absolute;
   top: calc(-1em + 2px);
-  left: -2ch;
+  left: var(--label-offset);
   z-index: -1;
 }
 
@@ -112,6 +143,7 @@ $line-height: 1.9;
 
 // TODO: mobile styles
 #margins {
+  display: none;
   position: absolute;
   left: 900px;
   top: 0;
@@ -158,8 +190,10 @@ $line-height: 1.9;
   top: 30px;
   left: 0;
   right: 0;
-  padding-top: 250px;
-  padding-left: 100px;
+  box-sizing: border-box;
+  padding-top: var(--headroom);
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
   padding-bottom: 100px;
 
   box-shadow: inset 0 0 30px 15px rgba(#c1cabc, 0.23);
@@ -248,7 +282,8 @@ $line-height: 1.9;
     position: relative;
     z-index: 5;
     max-width: 700px;
-    margin-left: 100px;
+    margin-left: var(--gutter);
+    margin-right: var(--gutter);
     font-size: 14px;
     line-height: $line-height;
 
@@ -329,7 +364,8 @@ $line-height: 1.9;
     position: relative;
     z-index: 5;
     max-width: 700px;
-    margin-left: 100px;
+    margin-left: var(--gutter);
+    margin-right: var(--gutter);
     font-size: 14px;
     line-height: $line-height;
 
@@ -382,19 +418,19 @@ $line-height: 1.9;
 
   h2 {
     font-family: Helvetica, sans-serif;
-    font-size: 36px;
+    font-size: var(--thoughts-size);
     padding-top: 1em;
     padding-bottom: 1em;
     border-radius: 5px;
     background: linear-gradient(to bottom, #c6c6c6, #868686);
-    margin: 0 40px;
+    margin: 0 var(--thoughts-gutter);
     transform: translateY(-50%);
     color: #393939;
     text-shadow: 0 1.5px 1px rgba(#fff, 0.5);
 
     .beginning {
-      padding: 1em 40px 1em 60px;
-      margin-right: 40px;
+      padding: 1em var(--thoughts-gutter) 1em var(--thoughts-gutter-big);
+      margin-right: var(--thoughts-gutter);
       border-top-left-radius: 5px;
       border-bottom-left-radius: 5px;
       background: linear-gradient(to bottom, #929292, #555);
@@ -428,7 +464,8 @@ $line-height: 1.9;
     position: relative;
     z-index: 5;
     max-width: 700px;
-    margin-left: 100px;
+    margin-left: var(--gutter);
+    margin-right: var(--gutter);
     font-size: 14px;
     line-height: $line-height;
 
@@ -515,9 +552,10 @@ $line-height: 1.9;
   }
 
   .dialog {
-    margin-left: 50px;
-    width: 800px;
-    padding: 25px 75px;
+    margin-left: var(--gutter-small);
+    width: 100%;
+    max-width: 800px;
+    padding: 25px var(--interstitial-padding);
     margin-bottom: -2em;
   }
 
@@ -645,7 +683,8 @@ $line-height: 1.9;
     position: relative;
     z-index: 6;
     max-width: 700px;
-    margin-left: 100px;
+    margin-left: var(--gutter);
+    margin-right: var(--gutter);
     font-size: 14px;
     line-height: $line-height;
 
@@ -690,22 +729,23 @@ $line-height: 1.9;
 
   .wave {
     background: url("./remembering-flash/creativity-bg.svg");
-    background-size: 2800px;
-    background-position: -100px 0;
+    background-size: calc(2800px * var(--graphic-scale));
+    background-position: calc(-100px * var(--graphic-scale)) 0;
     background-repeat: none;
-    height: 530px;
+    height: calc(530px * var(--graphic-scale));
     padding-top: 50px;
 
     h2 {
       color: transparent;
       background: url("./remembering-flash/creative-period-of-the-web.svg");
-      width: 1200px;
-      height: 500px;
+      width: calc(1200px * var(--graphic-scale));
+      height: calc(500px * var(--graphic-scale));
       background-repeat: no-repeat;
-      background-size: 1000px 500px;
+      background-size: calc(1000px * var(--graphic-scale))
+        calc(500px * var(--graphic-scale));
       background-position: top left;
       margin-top: 0;
-      margin-left: 130px;
+      margin-left: calc(130px * var(--graphic-scale));
       transform: rotate(10deg);
     }
   }
@@ -726,7 +766,8 @@ $line-height: 1.9;
     position: relative;
     z-index: 6;
     max-width: 700px;
-    margin-left: 100px;
+    margin-left: var(--gutter);
+    margin-right: var(--gutter);
     font-size: 14px;
     line-height: $line-height;
 
@@ -814,7 +855,8 @@ $line-height: 1.9;
     position: relative;
     z-index: 6;
     max-width: 700px;
-    margin-left: 100px;
+    margin-left: var(--gutter);
+    margin-right: var(--gutter);
     font-size: 14px;
     line-height: $line-height;
 
@@ -844,7 +886,7 @@ $line-height: 1.9;
 }
 
 .future {
-  padding: 100px;
+  padding: 100px var(--gutter);
   font-family: $open-stack;
   background: #fff;
   box-shadow: 0 -30px 30px #fff;
@@ -878,7 +920,7 @@ $line-height: 1.9;
 }
 
 .further {
-  padding: 75px 100px 150px;
+  padding: 75px var(--gutter) 150px;
   font-family: $open-stack;
   position: relative;
   z-index: 5;
@@ -922,7 +964,7 @@ $line-height: 1.9;
 }
 
 .archive {
-  padding: 75px 100px;
+  padding: 75px var(--gutter);
   border-top: 3px solid red;
   font-family: $open-stack;
   position: relative;
