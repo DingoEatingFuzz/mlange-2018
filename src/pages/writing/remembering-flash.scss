@@ -558,7 +558,7 @@ $line-height: 1.9;
         right: 3px;
         bottom: 3px;
         border-radius: 50px;
-        background: linear-gradient(to bottom, rgba(#fff, 0.9), transparent);
+        background: linear-gradient(to bottom, rgba(#fff, 0.9), rgba(#fff, 0));
         content: " ";
         pointer-events: none;
       }
@@ -576,7 +576,7 @@ $line-height: 1.9;
           rgba(#bebebe, 0.8),
           rgba(#bebebe, 0.6) 1px,
           rgba(#d6d6d6, 0.6) 1px,
-          transparent 70%
+          rgba(#fff, 0) 70%
         );
         content: " ";
       }
@@ -588,7 +588,7 @@ $line-height: 1.9;
           background: linear-gradient(
             to bottom,
             rgba(#c6ffff, 0.9),
-            transparent
+            rgba(#fff, 0)
           );
         }
 
@@ -597,7 +597,7 @@ $line-height: 1.9;
             rgba(#bebebe, 0.8),
             rgba(#bebebe, 0.8) 1px,
             rgba(#56aaf8, 0.4) 1px,
-            transparent 70%
+            rgba(#fff, 0) 70%
           );
         }
       }
@@ -792,6 +792,18 @@ $line-height: 1.9;
   z-index: 5;
   margin-top: -15px;
   margin-bottom: -15px;
+  padding-bottom: 150px;
+
+  a {
+    color: #007bd4;
+
+    &:hover {
+      color: #1aaf7a;
+    }
+    &:visited {
+      color: #7e21c7;
+    }
+  }
 
   p {
     margin-bottom: 1.5em;
@@ -828,5 +840,99 @@ $line-height: 1.9;
     p {
       margin-bottom: 1em;
     }
+  }
+}
+
+.future {
+  padding: 100px;
+  font-family: $open-stack;
+  background: #fff;
+  box-shadow: 0 -30px 30px #fff;
+  position: relative;
+  z-index: 5;
+  font-size: 14px;
+  line-height: $line-height;
+
+  h2 {
+    margin: 0;
+    font-size: 64px;
+    font-weight: lighter;
+    font-family: $open-stack;
+    line-height: 1;
+    text-indent: -13px;
+  }
+
+  p {
+    max-width: 700px;
+  }
+
+  span.end-mark {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+    background-image: url("./remembering-flash/flash-logo.jpg");
+    background-size: contain;
+    vertical-align: -2px;
+  }
+}
+
+.further {
+  padding: 75px 100px 150px;
+  font-family: $open-stack;
+  position: relative;
+  z-index: 5;
+  font-size: 14px;
+  line-height: $line-height;
+
+  $bg-blue: #5ac1e1;
+  $bg: #fff;
+  $spacing: 6px;
+  background: linear-gradient(
+    to bottom,
+    $bg-blue,
+    $bg-blue 5px,
+    $bg 5px,
+    $bg ($spacing + 5px),
+    $bg-blue ($spacing + 5px),
+    $bg-blue ($spacing + 5px + 3px),
+    $bg ($spacing + 5px + 3px),
+    $bg ($spacing * 2 + 5px + 3px),
+    $bg-blue ($spacing * 2 + 5px + 3px),
+    $bg-blue ($spacing * 2 + 5px + 3px + 2px),
+    $bg ($spacing * 2 + 5px + 3px + 2px),
+    $bg ($spacing * 3 + 5px + 3px + 2px),
+    $bg-blue ($spacing * 3 + 5px + 3px + 2px),
+    $bg-blue ($spacing * 3 + 5px + 3px + 2px + 1px),
+    $bg ($spacing * 3 + 5px + 3px + 2px + 1px)
+  );
+
+  h2 {
+    margin: 0;
+    font-size: 36px;
+    font-weight: bold;
+    font-family: $open-stack;
+    color: $bg-blue;
+    line-height: 1;
+  }
+
+  p {
+    max-width: 700px;
+  }
+}
+
+.archive {
+  padding: 75px 100px;
+  border-top: 3px solid red;
+  font-family: $open-stack;
+  position: relative;
+  z-index: 5;
+  font-size: 14px;
+
+  h2 {
+    font-family: $open-stack;
+    font-size: 36px;
+    font-weight: normal;
+    margin: 0;
   }
 }

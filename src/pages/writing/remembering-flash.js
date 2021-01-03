@@ -183,11 +183,44 @@ const TestPiece = ({ data }) => {
           content={preservation.node.body}
         />
 
-        <h2>The Future</h2>
+        <div className="future">
+          <h2>The Future</h2>
+          <p>
+            Everything around us will have an end of life. Sometimes by old age
+            and sometimes violently taken too soon. Technology expires faster
+            than almost anything humans have created. It's our duty to celebrate
+            everything we have ever held dear and to make sure we preserve all
+            that's worth remembering. <span className="end-mark" />
+          </p>
+        </div>
 
-        <h2>Further Reading</h2>
+        <div className="further">
+          <h2>Further Reading</h2>
+          <p>
+            The Flash diaspora reaches far and wide. Some people stayed in games
+            and moved to different platforms, others kept with animation but now
+            work in broadcast and video, some of us moved to UI engineering for
+            the web like I did, and others left tech entirely.
+          </p>
 
-        <h2>My Personal Archive</h2>
+          <p>
+            Here is an incomplete collection of how other people remember Flash.
+            If you have written your own piece or recorded your own video,
+            please contact me; I’d love to include it here.
+          </p>
+
+          <p>
+            If you can’t get enough about this topic, start some conversations.
+            If you work with people who are writing JavaScript, making
+            generative art, or making indie games, I bet they have memories to
+            share.
+          </p>
+        </div>
+
+        <div className="archive">
+          <h2>My Personal Archive</h2>
+          <p>TBD</p>
+        </div>
 
         <CommonFooter />
       </div>
