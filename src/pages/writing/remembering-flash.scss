@@ -28,6 +28,7 @@ $line-height: 1.9;
   --thoughts-size: 36px;
   --graphic-scale: 1;
   --margin-visibility: block;
+  --open-web-offset: 0;
 }
 
 @media (max-width: 700px) {
@@ -42,6 +43,7 @@ $line-height: 1.9;
     --thoughts-size: 22px;
     --graphic-scale: 0.5;
     --margin-visibility: none;
+    --open-web-offset: -150px;
   }
 }
 
@@ -312,6 +314,7 @@ body {
   background: #fff;
   position: relative;
   padding-top: 30px;
+  margin-left: var(--open-web-offset);
 
   div {
     background: url("./remembering-flash/cs5-splash.svg");
@@ -798,7 +801,7 @@ body {
   padding: 100px 0;
 
   h2 {
-    margin: 0 0 0 100px;
+    margin: 0 0 0 var(--gutter);
     font-family: $serif-stack;
     font-size: 64px;
     font-weight: normal;
@@ -808,20 +811,21 @@ body {
   .mask {
     overflow: hidden;
     background: #f4f4f4;
-    //opacity: 0.5;
     height: 200px;
     transform-origin: top left;
     transform: rotate(-15deg);
 
     width: 150%;
     height: calc(100vw * 0.6);
-    left: -100px;
+    left: calc(-1 * var(--gutter));
     top: 248px;
     position: absolute;
 
     p {
-      margin-left: 202px;
+      $offset: 200px;
+      margin: -1 * $offset * math.sin(-15deg) 0 0 $offset * math.cos(-15deg);
     }
+
     span {
       display: block;
       transform-origin: top left;
@@ -829,11 +833,18 @@ body {
       transform: rotate(15deg);
       color: #7b6b5b;
 
-      $offset: 112px;
+      $offset: 148px;
       margin-top: -$offset * math.cos(15deg);
       margin-left: $offset * math.sin(15deg);
 
       user-select: none;
+    }
+
+    @media (max-width: 700px) {
+      p {
+        $offset: 50px;
+        margin: -1 * $offset * math.sin(-15deg) 0 0 $offset * math.cos(-15deg);
+      }
     }
   }
 }
