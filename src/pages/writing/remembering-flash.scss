@@ -39,7 +39,7 @@ $line-height: 1.9;
     --label-offset: -13px;
     --thoughts-gutter: 15px;
     --thoughts-gutter-big: 20px;
-    --thoughts-size: 24px;
+    --thoughts-size: 22px;
     --graphic-scale: 0.5;
     --margin-visibility: none;
   }
@@ -429,6 +429,7 @@ body {
     transform: translateY(-50%);
     color: #393939;
     text-shadow: 0 1.5px 1px rgba(#fff, 0.5);
+    white-space: nowrap;
 
     .beginning {
       padding: 1em var(--thoughts-gutter) 1em var(--thoughts-gutter-big);
