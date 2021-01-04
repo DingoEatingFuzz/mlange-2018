@@ -82,6 +82,8 @@ const TestPiece = ({ data }) => {
     .sort((a, b) => a.name.localeCompare(b.name));
 
   const title = "Remembering Flash";
+  const fullThumbnailUrl =
+    "https://" + data.site.siteMetadata.host + fullThumbnail;
 
   return (
     <Layout>
@@ -90,19 +92,19 @@ const TestPiece = ({ data }) => {
           <title>{title}</title>
 
           <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:site" content="Michael Lange" />
+          <meta name="twitter:site" content="@dingoeatingfuzz" />
           <meta name="twitter:title" content={title} />
           <meta
             name="twitter:description"
             content="A personal story about my experience with Flash with some talk about the open web, new media, and the Internet along the way."
           />
-          <meta name="twitter:image" content={fullThumbnail} />
+          <meta name="twitter:image" content={fullThumbnailUrl} />
 
           <meta property="og:title" content={title} />
           <meta property="og:site_name" content="Michael Lange" />
           <meta property="og:type" content="article" />
           <meta property="og:locale" content="en_US" />
-          <meta property="og:image" content={fullThumbnail} />
+          <meta property="og:image" content={fullThumbnailUrl} />
         </Helmet>
 
         <NarrowHeader link="/writing" noun="writing" />
@@ -339,6 +341,12 @@ export const query = graphql`
         swf
         video
         hidden
+      }
+    }
+
+    site {
+      siteMetadata {
+        host
       }
     }
   }
