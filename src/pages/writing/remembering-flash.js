@@ -8,6 +8,7 @@ import Layout from "../../components/layout";
 import "./remembering-flash.scss";
 import bonziBuddy from "./remembering-flash/bonzi-buddy.svg";
 import GoldenNoise from "../../components/visualizations/gold-noise";
+import fullThumbnail from "./remembering-flash/flash-splash.png";
 
 const ShowMoreDialog = ({ children }) => {
   const [visibilityState, setVisibilityState] = useState(null);
@@ -80,13 +81,29 @@ const TestPiece = ({ data }) => {
     .filter(p => !p.hidden)
     .sort((a, b) => a.name.localeCompare(b.name));
 
+  const title = "Remembering Flash";
+
   return (
     <Layout>
       <div className="flash">
-        <Helmet
-          title="Remembering Flash"
-          description="A personal story about my experience with Flash with some talk about the open web, new media, and the Internet along the way."
-        />
+        <Helmet>
+          <title>{title}</title>
+
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:site" content="Michael Lange" />
+          <meta name="twitter:title" content={title} />
+          <meta
+            name="twitter:description"
+            content="A personal story about my experience with Flash with some talk about the open web, new media, and the Internet along the way."
+          />
+          <meta name="twitter:image" content={fullThumbnail} />
+
+          <meta property="og:title" content={title} />
+          <meta property="og:site_name" content="Michael Lange" />
+          <meta property="og:type" content="article" />
+          <meta property="og:locale" content="en_US" />
+          <meta property="og:image" content={fullThumbnail} />
+        </Helmet>
 
         <NarrowHeader link="/writing" noun="writing" />
 
