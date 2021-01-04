@@ -76,6 +76,9 @@ const TestPiece = ({ data }) => {
   const preservation = fragmentFor("preservation");
 
   const links = data.pagesWritingRememberingFlashLinksToml.link;
+  const archive = data.pagesWritingRememberingFlashArchiveToml.project
+    .filter(p => !p.hidden)
+    .sort((a, b) => a.name.localeCompare(b.name));
 
   return (
     <Layout>
@@ -231,7 +234,7 @@ const TestPiece = ({ data }) => {
 
           <ol className="further-reading-links">
             {links.map(link => (
-              <li>
+              <li key={link.name}>
                 <p>
                   <a href={link.link} target="_blank" rel="noopener noreferrer">
                     {link.name}
@@ -246,7 +249,31 @@ const TestPiece = ({ data }) => {
 
         <div className="archive">
           <h2>My Personal Archive</h2>
-          <p>TBD</p>
+          <p className="barely-loud">Games are listed in alphabetical order.</p>
+          <ul>
+            {archive.map(f => (
+              <li key={f.name}>
+                <h3>
+                  {f.name} <span className="date">{f.date}</span>
+                </h3>
+                <div className="commentary">
+                  {f.commentary.split("\n\n").map((l, idx) => (
+                    <p key={idx}>{l}</p>
+                  ))}
+                </div>
+                {!f.video ? null : (
+                  <iframe
+                    width="700"
+                    height="394"
+                    src={`https://www.youtube.com/embed/${f.video}`}
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  ></iframe>
+                )}
+              </li>
+            ))}
+          </ul>
         </div>
 
         <CommonFooter />
@@ -284,6 +311,17 @@ export const query = graphql`
         commentary
         link
         name
+      }
+    }
+
+    pagesWritingRememberingFlashArchiveToml {
+      project {
+        commentary
+        date
+        name
+        swf
+        video
+        hidden
       }
     }
   }
