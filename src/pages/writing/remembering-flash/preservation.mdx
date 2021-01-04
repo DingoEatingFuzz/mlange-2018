@@ -1,0 +1,47 @@
+Clearly I have a lot to say about all of this, but what I haven't stopped to admit is that I am okay with Flash going away. I mean, let's be honest, Flash has been gone for a long time now. I have already moved on both professionally and personally. What I am not okay with is losing so much of the Internet all at once. Especially so much independent creation made for no reason other than personal passion. If the last ten years had an overture of Flash archival to it, then this would be happy finale. Unfortunately, I'm not seeing it, or at least not enough of it.
+
+<p class="kinda-loud">We have already lost so much.</p>
+
+A bulk of Flash was full site experiences that are inaccessible in any archive and no longer hosted. They are just gone, or at least destined to rot away on the forgotten spinning disks of their makers.
+
+There is also little to no community. So many people in the web today have given heartfelt talks and rants about how we must not break the web. How URLs need to be permanent. How tragic it is that articles from even five years ago have broken links. These same people are ready for the ticker tape parade now that Flash is gone forever. We all broke the web when we let this happen. Flash, proprietary or not, web standard or not, was a substantial part of the web.
+
+Fortunately, it's not too late for the bulk of Flash animations, games, and any interactive experience that falls somewhere in between. These were all typically uploaded to online portals. As long as these portals preserve the original swf files, the data isn't lost.
+
+A record is useless without a record player, so what good does a swf file do without Flash Player? At bare minimum, people could download swf files and run them locally with a standalone Flash Player. This is the concept behind [Flashpoint](https://bluemaxima.org/flashpoint/), which includes [all sorts of other plugins too](https://bluemaxima.org/flashpoint/platforms/). This is a heroic act, but it's also not the web. It's a standalone program with downloadable archives.
+
+People can also record footage of these swfs and upload something that resembles the original. I have done this for all of my games, but this isn't true to the originals. It's better than losing everything, but to lose interactivity can at best be described as extremely lossy archiving.
+
+Flash isn't the first ancient tech, and it won't be the last. Perhaps the best way to preserve the authenticity of the content and the nature of the web is through emulation.
+
+There have been Flash emulators in the past: Mozilla had [Shumway](https://github.com/mozilla/shumway) and Google had [Swiffy](https://developers.google.com/swiffy). Both projects unsurprisingly came from browser vendors. To their credit, Mozilla and Google were interested in bridging the old web with the new open web. Neither of these emulators ever achieved complete coverage of AVM1 or AVM2 (the runtimes underneath AS1/2 and AS3 respectively). To their distinct discredit, both emulators quietly died once the bulk of the ad industry--publishing, creative, and operations--transitioned to HTML5. Some things can be so predictable and still be incredibly heartbreaking.
+
+Today there are a few emulators outside of big tech. There is the enterprise emulator [CheerpX For Flash](https://www.leaningtech.com/pages/cheerpxflash.html), but they seem most interested in providing life support to all the enterprises that bet on Flex in the late 00s. [Lightspark](http://lightspark.github.io/), which shares a common author with CheerpX, is the most mature open source Flash emulator, but it is distributed as either a standalone application or a browser plugin.
+
+**Our best hope is probably [Ruffle](https://ruffle.rs/)**, which will play original swf files as a canvas using WebAssembly for both performance and as a secure sandbox. The project is maintained by [Mike Welsh](http://tilde.town/~herschel/) of Newgrounds, and I can't imagine better stewards of Flash preservation. Ruffle is still [a long way from complete AVM1 and AVM2 coverage](https://ruffle.rs/#compatibility), but in my opinion they are taking the right approach. This is the opinion of the Internet Archive too, [which has chosen Ruffle as their emulator of choice](http://blog.archive.org/2020/11/19/flash-animations-live-forever-at-the-internet-archive/) for their meta-emulator project [Emularity](https://github.com/db48x/emularity).
+
+> Why We Emulate Flash
+>
+> The Internet Archive has moved aggressively in making a whole range of older software run in the browser over the past decade. We’ve done this project, The Emularity, because one of our fundamental tenets is _Access Drives Preservation_; being able to immediately experience a version of the software in your browser, while not perfect or universal, makes it many times more likely that support will arrive to preserve these items.
+
+Well said, Internet Archive.
+
+If you're looking to contribute, the Ruffle project is accepting donations as well as code contributions (the bulk of it is in Rust, so that's fun!). I personally did some tire-kicking and found it to be pretty magical for animations but not quite there yet for even AS2 games.
+
+The good news here is that Web Assembly isn't going away anytime soon so Ruffle should only get better with time. We may have a few dark years ahead, but as long as swf files are preserved, continued "Flash" support through emulation will only improve.
+
+<p class="barely-loud">The bad news is that there will be dark years.</p>
+
+<p class="kinda-loud">And this is where I have to call out Adobe.</p>
+
+I've been so kind to Adobe up until this point because seriously they made some great things and they took care of Flash when they acquired Macromedia.
+
+<p class="barely-loud">But that was 10 years ago.</p>
+
+<p class="tight-line">What has been their contribution to Flash and Flash Player since? They turned Flash Pro into Animate and tried to get everyone on the HTML5 wagon, which is fine.</p>
+<p class="tight-line indent-1">They then did nothing for years?</p>
+<p class="tight-line indent-2">And then they announced an end of life for Flash Player??</p>
+
+How is it that Adobe (~$240B market cap, btw) is not a part of the Flash preservation story? I mean, at least throw us a bone and open source the player now. As much as I accused Steve Jobs of being a typical capitalist only interested in power and control, so it seems the same of Adobe. With Flash Player out of browsers, there isn't even the security risk of newly discovered vulnerabilities causing broad issues. The risk is still present in some enterprise scenarios where Adobe is extending support, but that risk seems so minor when set next to the opportunity of having the original Flash Player source code available to reference for emulation.
+
+I could make a plea to try to get Adobe to open source Flash player, but that was [already attempted once](https://github.com/open-source-flash/open-source-flash).

@@ -1,11 +1,11 @@
-@import '../styles/fonts';
-@import '../styles/colors';
+@import "../styles/fonts";
+@import "../styles/colors";
 
 .projects-page {
-  width:90vw;
+  width: 90vw;
   max-width: 1200px;
-  margin:auto;
-  font-size:16px;
+  margin: auto;
+  font-size: 16px;
   font-family: $sans-stack;
 
   > * {
@@ -23,15 +23,21 @@
   section {
     line-height: 1.5;
 
-    h3, h4 {
-      margin:0;
+    h3,
+    h4 {
+      margin: 0;
     }
 
     h3 {
       font-size: 1.5em;
     }
 
-    h1, h2, h3, h4, h5, h6 {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
       > a {
         text-decoration: none;
       }
@@ -39,16 +45,16 @@
 
     > ul {
       list-style: none;
-      margin:0;
-      padding:0;
-      display:flex;
+      margin: 0;
+      padding: 0;
+      display: flex;
       flex-flow: wrap;
-      margin-left:-2em;
-      margin-right:-2em;
+      margin-left: -2em;
+      margin-right: -2em;
 
       > li {
-        width:50%;
-        padding:2em;
+        width: 50%;
+        padding: 2em;
 
         .thumbnail {
           img {
@@ -69,9 +75,8 @@
     }
 
     @media (max-width: 700px) {
-      font-size:3.5vw;
+      font-size: 3.5vw;
     }
-
   }
 
   @media (max-width: 900px) {
@@ -79,33 +84,34 @@
   }
 }
 
-.projects-page, .project-detail {
-    .tags {
-      list-style: none;
-      margin:0;
-      padding:0;
-      display:flex;
-      font-size:0.8em;
-      flex-flow: wrap;
+.projects-page,
+.project-detail {
+  .tags {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    font-size: 0.8em;
+    flex-flow: wrap;
 
-      > li {
-        padding:0.25em 0.5em;
-        margin-right:0.5em;
-        margin-top:0.5em;
-        border:1px solid $gray-200;
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
-        background: $gray-100;
-        color: $primary-600;
-        white-space: nowrap;
-      }
+    > li {
+      padding: 0.25em 0.5em;
+      margin-right: 0.5em;
+      margin-top: 0.5em;
+      border: 1px solid $gray-200;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      background: $gray-100;
+      color: $primary-600;
+      white-space: nowrap;
     }
+  }
 }
 
 .project-detail {
   display: flex;
 
-  @media (max-width:1200px) {
+  @media (max-width: 1200px) {
     flex-direction: column;
   }
 
@@ -118,7 +124,7 @@
     .markdown-article {
       width: 60%;
 
-      @media (max-width:1200px) {
+      @media (max-width: 1200px) {
         width: 100%;
       }
     }
@@ -132,7 +138,7 @@
     color: $yellow-600;
     display: none;
 
-    @media (max-width:1200px) {
+    @media (max-width: 1200px) {
       display: block;
     }
   }
@@ -144,7 +150,7 @@
     padding: 0;
     margin-top: 350px;
 
-    @media (max-width:1200px) {
+    @media (max-width: 1200px) {
       width: 100%;
       padding: 2em 0;
       margin-top: 0;
@@ -161,7 +167,7 @@
         padding: 0;
         text-align: right;
 
-        @media (max-width:1200px) {
+        @media (max-width: 1200px) {
           text-align: center;
         }
 
@@ -170,7 +176,7 @@
           border-top-left-radius: 5px;
           border-bottom-left-radius: 5px;
 
-          @media (max-width:1200px) {
+          @media (max-width: 1200px) {
             border-radius: 0;
           }
         }
@@ -185,7 +191,7 @@
           width: 100%;
           text-align: left;
 
-          @media (max-width:1200px) {
+          @media (max-width: 1200px) {
             padding: 0 2em;
           }
         }
@@ -193,7 +199,6 @@
     }
   }
 }
-
 
 .project-detail + footer.common-footer {
   justify-content: center;

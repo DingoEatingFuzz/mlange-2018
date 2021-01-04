@@ -8,6 +8,17 @@ const typeToTemplate = {
   blog: "./src/templates/blog-post.js"
 };
 
+// lol
+
+// Creepy hack to make components et. al top level making mdx authoring easier
+exports.onCreateWebpackConfig = ({ actions }) => {
+  actions.setWebpackConfig({
+    resolve: {
+      modules: [path.resolve(__dirname, "src"), "node_modules"]
+    }
+  });
+};
+
 exports.onCreateNode = async args => {
   await markdownAugmentationsTransformer(args);
   await mdxAugmentationsTransformer(args);
@@ -104,14 +115,16 @@ function mdxPages(graphql, { createPage }) {
     `)
       .then(result => {
         result.data.allMdx.edges.forEach(({ node }) => {
-          createPage({
-            path: node.fields.slug,
-            component: path.resolve(typeToTemplate[node.fields.type]),
-            context: {
-              slug: node.fields.slug,
-              id: node.fields.id
-            }
-          });
+          if (typeToTemplate[node.fields.type]) {
+            createPage({
+              path: node.fields.slug,
+              component: path.resolve(typeToTemplate[node.fields.type]),
+              context: {
+                slug: node.fields.slug,
+                id: node.fields.id
+              }
+            });
+          }
         });
         resolve();
       })

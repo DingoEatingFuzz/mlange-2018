@@ -7,14 +7,21 @@ module.exports = {
   },
   plugins: [
     "gatsby-plugin-react-helmet",
-    "gatsby-plugin-sass",
+    {
+      resolve: "gatsby-plugin-sass",
+      options: {
+        implementation: require("sass")
+      }
+    },
     {
       resolve: "gatsby-transformer-remark",
       options: {
         plugins: [
           {
             resolve: "gatsby-remark-prismjs",
-            classPrefix: "language-"
+            options: {
+              classPrefix: "language-"
+            }
           },
           {
             resolve: "gatsby-remark-images",
@@ -37,7 +44,9 @@ module.exports = {
         gatsbyRemarkPlugins: [
           {
             resolve: "gatsby-remark-prismjs",
-            classPrefix: "language-"
+            options: {
+              classPrefix: "language-"
+            }
           },
           {
             resolve: "gatsby-remark-images",

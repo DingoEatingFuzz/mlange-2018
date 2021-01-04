@@ -1,0 +1,128 @@
+[[project]]
+name = "Ebola B Gone"
+hidden = true
+date = "April 2006"
+video = ""
+swf = ""
+commentary = """
+My second ever animation, the first I ever published.
+
+This was one of many instances where I turned my homework into a Flash project. I hardly remember the assignment anymore, but it clearly had to do with studying diseases.
+"""
+
+[[project]]
+name = "Dog Eat Dog"
+date = "September 2006"
+video = "HlieuPRu8l0"
+swf = ""
+commentary = """
+My second ever game, the first I ever published.
+
+I made this game in one weekend, and it's almost entirely a ripoff of another Flash game, Fishy. Somehow this became my most popular game with somewhere around 500,000 plays that I know about. A large part of this was due to Kongregate's hidden treasures week. This game was featured on the home page for one day during that week and drove loads of traffic. Since Kongregate also had a revenue sharing model, it meant I got an unexpected paycheck that week.
+
+I went back and read reviews a few years back and saw that someone revisited the game in 2016 saying they played it a lot as a kid. On one hand, it's endearing to know that my game became a childhood memory. On the other hand, I have never felt older than I did when I read that.
+"""
+
+[[project]]
+name = "Defenseless Stick"
+date = "September 2006"
+video = "NcYBDha7qeE"
+swf = ""
+commentary = """
+My second published game.
+
+I still think this is a novel concept that should be explored more, but the movement physics are so so bad that no one liked it. I got caught up in the turnaround animation and didn't stop to think that maybe slippery floors were annoying. I also got caught up in "realistic physics" which meant no changing directions midair.
+
+It's kind of a pity no one liked it since there's also a boss fight at the end. I'm not sure how many people got that far.
+"""
+
+[[project]]
+name = "Night of the Living Blam"
+date = "November 2006"
+video = "GPoUQrFbrAY"
+swf = ""
+commentary = """
+I believe I made this one for a NewGrounds competition? There were a lot of game competitions back in the day. I eventually learned that it was better to make the games you wanted to make and seek out a sponsorship, but some lessons are learned the hard way.
+
+In this game you play as Newgrounds creator Tom Fulp (except poorly drawn and with what appear to be horse hooves instead of feet) as you "blam" zombie flash files.
+
+The flash file zombies are styled after the old Flash logo, which was both a nod to them being undead as well as a play on an idle clicker on the Newgrounds portal which had swf files icons of this style falling into a portal/singularity.
+
+A "blam", by the way, was when user uploaded content was voted so poorly by first viewers it got deleted rather than being saved to the portal forever. This was web 2.0 before there was a web 2.0.
+"""
+
+[[project]]
+name = "Tur3t Duhfenz"
+date = "September 2007"
+video = "-Xpbw5Dr4PE"
+swf = ""
+commentary = """
+This was the last game I made and published solo.
+
+By this point, I had been a regular on Newgrounds for a long time, and I had formed opinions on trends. This game is a parody of those trends while also maybe exposing how tortured I was to be creative.
+
+I put more time into this game than any other, and I think that polish comes through. Unfortunately, the mechanics aren't very interesting so it wasn't very popular. Nonetheless, I got a sponsorship for it which gave me some spending cash for my senior year in high school.
+"""
+
+[[project]]
+name = "Rudiments"
+date = "July 2007"
+video = "1T-OC9UOQig"
+swf = ""
+commentary = """
+Yet another game for a competition, this one focused on music.
+
+Being a percussionist, I thought something focused on rudiments would be novel. I still think it's novel, but it's also incredibly niche. What I remember most about making this one was painstakingly adding keyframes to incredibly long timelines to represent the beats of the song. It wasn't exactly the best way to chart a track, and I thought a lot about how to do it better, but this is what I ended up with.
+"""
+
+[[project]]
+name = "Missiles OMG"
+date = "January 2009"
+video = "kEVW-HEQJ3w"
+swf = ""
+commentary = """
+This game is pure chaos.
+
+I worked with two friends on it, and we divided work into programming, music/sound, and art. I did all the art. I remember convincing them we should make a game because I wanted to use my friend's Wacom tablet. It wasn't hard to convince them of this since we were all very much into the Flash games scene.
+
+The biggest takeaway from this one is that you need outside people playtesting your games. Most people found this one to be too hard. I still like that it exists. More restrictive platforms would have shunned something so bizarre and difficult.
+"""
+
+[[project]]
+name = "Sledder"
+date = "December 2006"
+video = "T67lragvG1c"
+swf = ""
+commentary = """
+This was my only game (outside of collaborations) that one a daily award! Fourth best submission to Newgrounds of the day!
+
+Tragically, the extra attention this garnered meant the average score dropped due to people thinking it didn't deserve the recognition. This alone would have been alright, but since it was submitted to a competition that paid out based on average score, the backlash cost me about $1000.
+"""
+
+[[project]]
+name = "Kong Ball"
+date = "July 2007"
+video = "954ePrQyPZo"
+swf = ""
+commentary = """
+Kongregate gave creators a larger percentage of revenue for titles that were exclusive to their platform. I wanted to try out this model, so I made an exclusive.
+
+It worked surprisingly well for the Kongregate experience, which put games and chat rooms side-by-side. People would idly play this game while primarily socializing.
+
+This is also the first time I learned about the complexities of software interactions. I got multiple reports of this game "not registering clicks" which is incredibly important in a game that is all about timing clicks. I denied the claims adamantly because I programmed the thing. I knew full well that every time you clicked the ball, your score incremented and the ball kicked up.
+
+What I didn't know was that by submitting your new high score to the Kongregate leaderboard on every click would cause a tiny amount of lag. And that tiny amount of lag could cause your click to be delayed past the point of the ball being where your cursor was.
+
+I rewrote the code to only submit high scores when the ball hit the ground again, and I apologized to people.
+"""
+
+[[project]]
+name = "Holzbach Cannon"
+date = "June 2007"
+video = "g5cGKl1PZF0"
+swf = ""
+commentary = """
+This is a game that truly didn't need to go on the Internet. I made it as a combination school assignment and inside joke only my classmates would get.
+
+It's decently polished, and the cannon genre was popular so I was able to get a sponsorship for it anyway.
+"""
