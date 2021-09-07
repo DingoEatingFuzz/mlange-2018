@@ -34,7 +34,7 @@
     "react-markdown": "^4.3.1",
     "react-masonry-component": "^6.2.1",
     "remark": "^11.0.2",
-    "remark-html": "^10.0.0",
+    "remark-html": "^13.0.2",
     "remark-preset-lint-recommended": "^3.0.4",
     "uuid": "^8.3.2",
     "vfile-reporter": "^6.0.2",
