@@ -24,7 +24,7 @@
     "hast-util-to-html": "^6.1.0",
     "js-yaml": "^3.14.1",
     "mdast-util-to-hast": "^6.0.2",
-    "node-sass": "^4.14.1",
+    "node-sass": "^7.0.0",
     "normalize-newline": "^3.0.0",
     "normalize.css": "^8.0.1",
     "prismjs": "^1.23.0",
